@@ -1,0 +1,246 @@
+[
+  {
+    "texto": "## k-Vizinhos mais Próximos\n\n## k-Vizinhos Mais Próximos\n\n- Aprendizado baseado em instâncias simplesmente armazena os exemplos de treinamento.\n- Quando um novo exemplo (caso) precisa ser classificado, esse exemplo é comparado com os exemplos armazenados.\n- A classificação é decidida a partir da similaridade entre o exemplo a ser classificado e os exemplos armazenados.\n\n## k-Vizinhos Mais Próximos\n\n- Aprendizado baseados em instâncias é chamado também de aprendizado ' lazy '.\n- Isso se deve ao f",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "\n\n- Aprendizado baseados em instâncias é chamado também de aprendizado ' lazy '.\n- Isso se deve ao fato do processamento ser atrasado até o momento de classificação de um novo exemplo.\n\n## k-Vizinhos Mais Próximos\n\n- Dois métodos bastante conhecidos de aprendizado baseado em instâncias são:\n-  k-vizinhos mais próximos;\n-  Regressão com pesos locais.\n- A idéia do método k-vizinhos mais próximos é bastante simples...\n\n## K-Vizinhos mais Próximos\n\n- Inicialmente, os exemplos de treinamento são ar",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " bastante simples...\n\n## K-Vizinhos mais Próximos\n\n- Inicialmente, os exemplos de treinamento são armazenados.\n\n<!-- image -->\n\n5\n\n## K-Vizinhos mais Próximos\n\n- Inicialmente, os exemplos de treinamento são armazenados.\n- Quando uma novo exemplo precisa ser classificado...\n\n<!-- image -->\n\n6\n\n## K-Vizinhos mais Próximos\n\n- Inicialmente, os exemplos de treinamento são armazenados.\n- Quando uma novo exemplo precisa ser classificado, é verificada a sua similaridade.\n\n<!-- image -->\n\n7\n\n## K-Vizinho",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " exemplo precisa ser classificado, é verificada a sua similaridade.\n\n<!-- image -->\n\n7\n\n## K-Vizinhos mais Próximos\n\n- Por fim, o novo exemplo é classificado segundo a sua proximidade com os exemplos de treinamento.\n\n<!-- image -->\n\n8\n\n## K-Vizinhos mais Próximos: Parâmetro k\n\n- O parâmetro k do k-vizinhos mais próximos é o número de vizinhos a serem considerados na classificação.\n- O parâmetro k é geralmente um inteiro pequeno e ímpar (1,3,5,7,9) para evitar empates (número par de classes).\n- P",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "é geralmente um inteiro pequeno e ímpar (1,3,5,7,9) para evitar empates (número par de classes).\n- Portanto, o 3-vizinhos mais próximos utiliza na classificação os 3 exemplos mais próximos do novo exemplo.\n\n## K-Vizinhos mais Próximos: Parâmetro k\n\n- Quando k = 1 (1-vizinho mais próximo) apenas o exemplo mais próximo ao exemplo a ser classificado é considerado.\n- O uso de k = 1 levar à classificações incorretas caso existam exemplos com ruído no conjunto de treinamento.\n\n## K-Vizinhos mais Próxi",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "ões incorretas caso existam exemplos com ruído no conjunto de treinamento.\n\n## K-Vizinhos mais Próximos: Distância\n\n- K-vizinhos mais próximos assume que todos os exemplos correspondem a pontos no espaço n -dimensional  n .\n- Os vizinhos mais próximos de um exemplos são definidos por uma medida de distância, tipicamente a distância euclidiana.\n\n## K-Vizinhos mais Próximos: Distância\n\nTable 2: Data set in attribute-value f form.\n\n|    | A1   | A2   | AM   | Y   |\n|----|------|------|------|-----",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "a set in attribute-value f form.\n\n|    | A1   | A2   | AM   | Y   |\n|----|------|------|------|-----|\n| E1 | C11  | C12  | α1M  | y1  |\n| E2 | C21  | C22  | C2M  | y2  |\n| NH | CN1  | CN2  | CNM  | YN  |\n\n## K-Vizinhos mais Próximos: Distância\n\n- A distância euclidiana entre dois exemplos E i e E j é definida por\n\n<!-- formula-not-decoded -->\n\n- O k-vizinhos mais próximos pode ser utilizado tanto com um atributo classe ( Y ) contínuo quando discreto.\n\n## K-Vizinhos mais Próximos: Classificação\n\n",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "com um atributo classe ( Y ) contínuo quando discreto.\n\n## K-Vizinhos mais Próximos: Classificação\n\n- Para o caso na qual Y é discreto (problema de classificação), então deve-se encontrar os k exemplos mais próximos do exemplo a ser classificado.\n- Dentre os k exemplos, verifica-se a classe mais freqüente. Essa classe é atribuída ao novo exemplo.\n\n## K-Vizinhos mais Próximos: Classificação\n\n- Algoritmo de treinamento:\n-  Armazenar todos os exemplos de treinamento em um conjunto CT .\n- Algoritmo",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "ritmo de treinamento:\n-  Armazenar todos os exemplos de treinamento em um conjunto CT .\n- Algoritmo de classificação:\n-  Dado um novo exemplo E novo ;\n-  Sejam E' 1 ,... E' k os k exemplos em CT mais próximos à E novo .\n-  Retornar a classe que ocorre com maior freqüência nos exemplo E' 1 ,... E' k .\n\n## K-Vizinhos mais Próximos: Regressão\n\n- O k-vizinhos mais próximos pode ser adaptado para aproximar um atributo Y com valores contínuos.\n- Para isso, basta retornar a média dos valores do var",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "proximar um atributo Y com valores contínuos.\n- Para isso, basta retornar a média dos valores do variável Y para os k-vizinhos mais próximos.\n- Por exemplo, pense em uma aplicação que precisa fornecer o salário de um funcionário dada a sua titulação, experiência, cargo, etc.\n\n## K-Vizinhos mais Próximos: Exemplo 1\n\n- Calcule a distância entre o exemplo Novo e os demais:\n\n| Nr.Ex.   |   At.1 |   At.2 |   At.3 | Classe   |\n|----------|--------|--------|--------|----------|\n| 1        |      5 |   ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": ".2 |   At.3 | Classe   |\n|----------|--------|--------|--------|----------|\n| 1        |      5 |      1 |     90 | +        |\n| 2        |      2 |      3 |    105 | -        |\n| 3        |      1 |      4 |    120 | +        |\n| Novo     |      3 |      3 |    100 | ?        |\n\n## K-Vizinhos mais Próximos: Normalização\n\n- Segundo a distância euclidiana, a distância entre os exemplos 1 e Novo é: d ( 1, novo )= √ ( 5 -3 ) 2 +( 1 -3 ) 2 +( 90 -100 ) 2 = √ 2 2 +(-2 ) 2 +(-10 ) 2 = √ 4 + 4 + 100 ≃ ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "d ( 1, novo )= √ ( 5 -3 ) 2 +( 1 -3 ) 2 +( 90 -100 ) 2 = √ 2 2 +(-2 ) 2 +(-10 ) 2 = √ 4 + 4 + 100 ≃ 10.39\n- Para resultado final, 10.39, todos os atributos contribuíram igualmente?\n\n## K-Vizinhos mais Próximos: Normalização\n\n- Alguns atributos assumem uma faixa de valores mais ampla do que outro.\n- Para evitar que esses atributos tenham um influência maior, deve ser realizada uma normalização.\n- A normalização faz com que todos os atributos fiquem na mesma faixa de valores.\n\n## K-Vizinhos mais P",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " normalização faz com que todos os atributos fiquem na mesma faixa de valores.\n\n## K-Vizinhos mais Próximos: Normalização\n\n- Existem diversas formas de normalização, uma das mais utilizadas é a normalização linear para o intervalo [0,1]:\n\n## Na qual:\n\n-  v n é o valor normalizado;\n-  v i é o valor não normalizado;\n-  min e max são os valores mínimo e máximo do atributo.\n\n<!-- formula-not-decoded -->\n\n## K-Vizinhos mais Próximos: Exemplo 2\n\n- Normalize os atributos da tabela do exemplo 1 segun",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "d -->\n\n## K-Vizinhos mais Próximos: Exemplo 2\n\n- Normalize os atributos da tabela do exemplo 1 segundo a normalização linear:\n\n| Nr.Ex.   |   At.1 |   At.2 |   At.3 | Classe   |\n|----------|--------|--------|--------|----------|\n| 1        |      5 |      1 |     90 | +        |\n| 2        |      2 |      3 |    105 | -        |\n| 3        |      1 |      4 |    120 | +        |\n| Novo     |      3 |      3 |    100 | ?        |\n\n## K-Vizinhos mais Próximos: Exemplo 3\n\n- Calcule a distância entr",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "3 |      3 |    100 | ?        |\n\n## K-Vizinhos mais Próximos: Exemplo 3\n\n- Calcule a distância entre o exemplo Novo e o exemplo 1, dada a tabela normalizada:\n\n| Nr.Ex.   |   At.1 |   At.2 |   At.3 | Classe   |\n|----------|--------|--------|--------|----------|\n| 1        |      1 |      0 |      0 | +        |\n| 2        |   0.25 |   0.66 |    0.5 | -        |\n| 3        |      0 |      1 |      1 | +        |\n| Novo     |    0.5 |   0.66 |   0.33 | ?        |\n\n## K-Vizinhos mais Próximos: Atri",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "1 | +        |\n| Novo     |    0.5 |   0.66 |   0.33 | ?        |\n\n## K-Vizinhos mais Próximos: Atributos Discretos\n\n- Um segundo problema com a distância euclidiana é o cálculo com atributos discretos.\n\nNr.Ex.\n\n1\n\n2\n\n3\n\nNovo At.1\n\nazul\n\nverde\n\nverde\n\nazul At.2\n\nnovo\n\nnovo\n\nantigo\n\nantigo At.3\n\nford\n\ngm\n\nvolks\n\ngm Classe\n\n+\n\n-\n\n+\n\n?\n\n## K-Vizinhos mais Próximos: Atributos Discretos\n\n- Uma forma simples de solucionar esse problema é utilizar a medida overlap . Nessa medida, a distância é zero se ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "mples de solucionar esse problema é utilizar a medida overlap . Nessa medida, a distância é zero se os valores são iguais ou 1 se são diferentes.\n- Uma forma mais sofisticada é a Value Difference Metric (VDM) (Stanfil, 1986).\n\n## Value Difference Metric (VDM)\n\n- A idéia é que valores simbólicos são similares se eles possuem correlações similares com a classe.\n- Por exemplo, para um atributo 'cor' que assume os valores 'vermelho', 'verde' e 'azul', e para uma aplicação de identificar se um objeto",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "que assume os valores 'vermelho', 'verde' e 'azul', e para uma aplicação de identificar se um objeto é maça ou não, os valores 'vermelho' e 'verde' serão considerados mais próximos.\n\n## Value Difference Metric (VDM)\n\n<!-- formula-not-decoded -->\n\n## Na qual:\n\n-  Nx ir : número de exemplos com valor x ir\n-  Nx ir ,Cl : número exemplos com valor x ir e pertencentes a classe Cl\n-  Ncl : número de classes\n-  c : uma constante (tipicamente 1 ou 2)\n\n## Value Difference Metric (VDM)\n\n- VDM é uma mé",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "classes\n-  c : uma constante (tipicamente 1 ou 2)\n\n## Value Difference Metric (VDM)\n\n- VDM é uma métrica pois possui as propriedades de não negatividade, simetria e desigualdade triangular.\n- (Wilson &amp; Martinez, 2000) fizeram um amplo estudo sobre como compor medidas de distâncias heterogêneas como a distância Euclidiana e VDM e Overlap .\n\n## K-Vizinhos mais Próximos: Pesos\n\n- Uma variação popular algoritmo kvizinhos mais próximos é utilizar um peso para cada vizinho proporcional à sua dist",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "pular algoritmo kvizinhos mais próximos é utilizar um peso para cada vizinho proporcional à sua distância.\n\n## K-Vizinhos mais Próximos: Pesos\n\n- Uma sugestão é ajustar o peso do voto de cada vizinho pela equação:\n- Dessa forma, quanto mais distante estiver o vizinho mais próximo ( E i ) do exemplo a ser classificado E novo , menor será o seu peso.\n\n<!-- image -->\n\n## K-Vizinhos mais Próximos: Pesos\n\n- Quando se utiliza os pesos para decidir a classe, pode-se deixar de usar apenas os k vizinhos ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "os\n\n- Quando se utiliza os pesos para decidir a classe, pode-se deixar de usar apenas os k vizinhos mais próximos, e passar a utilizar todo o conjunto de treinamento.\n- Isso porque exemplos muito distantes terão pouca influência na classificação do novo exemplo.\n\n## K-Vizinhos mais Próximos: Global e Local\n\n- Se todos os exemplos são utilizados para classificar um novo exemplo, então o método é chamado de global .\n- Se somente os vizinhos mais próximos são considerados, então o método é chamado ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "amado de global .\n- Se somente os vizinhos mais próximos são considerados, então o método é chamado de local .\n- Um método global utilizado para regressão é chamado de método de Shepard (Shepard, 1968).\n\n## K-Vizinhos mais Próximos: Observações\n\n- Algumas observações:\n-  K-vizinhos mais próximos é uma método bastante simples, mas que provê bons resultados na prática;\n-  Ele é robusto a ruído e bastante efetivo quando o conjunto de treinamento não é muito pequeno;\n-  A melhor explicação que o ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "astante efetivo quando o conjunto de treinamento não é muito pequeno;\n-  A melhor explicação que o método pode prover é mostrar ao usuário os vizinhos mais próximos do novo exemplo quando o método é local;\n\n## K-Vizinhos mais Próximos: Observações\n\n- Algumas observações:\n-  Portanto, o grau de explicação desses método pode ser considerada inferior ao dos métodos simbólicos;\n-  O k-vizinhos mais próximos considera todos os atributos ao classificar um novo exemplo. Isso pode ser um sério proble",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " próximos considera todos os atributos ao classificar um novo exemplo. Isso pode ser um sério problema quando existem muitos atributos irrelevantes;\n\n## K-Vizinhos mais Próximos: Observações\n\n- Algumas observações:\n-  Para solucionar o problema de atributos irrelevantes pode-se utilizar pesos para os atributos na medida de distância;\n-  Outro problema é o desempenho (em tempo de execução) para classificar novos casos quando o conjunto de treinamento é muito grande;\n\n## K-Vizinhos mais Próximos",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "lassificar novos casos quando o conjunto de treinamento é muito grande;\n\n## K-Vizinhos mais Próximos: Observações\n\nn : número de exemplos\n\nm : número de atributos\n\nk: número de vizinhos\n\nComplexidade de Treino: O(1)\n\nComplexidade de Teste: O(nk+mn)\n\nO(m.n) para calcular a distância de todos os exemplos\n\nO(n.k) para encontrar os vizinhos mais próximos\n\nQuando o conjunto de treinamento é muito grande, torna-se computacionalmente caro encontrar os vizinhos mais próximos.\n\n## K-Vizinhos mais Próximo",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "e, torna-se computacionalmente caro encontrar os vizinhos mais próximos.\n\n## K-Vizinhos mais Próximos: Observações\n\nn : número de exemplos\n\nm : número de atributos\n\nk: número de vizinhos\n\nComplexidade de Treino: O(1)\n\nComplexidade de Teste: O(nk+mn)\n\nO(m.n) para calcular a distância de todos os exemplos\n\nO(n.k) para encontrar os vizinhos mais próximos\n\nQuando o conjunto de treinamento é muito grande, torna-se computacionalmente caro encontrar os vizinhos mais próximos.\n\n## K-Vizinhos mais Próxim",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "de, torna-se computacionalmente caro encontrar os vizinhos mais próximos.\n\n## K-Vizinhos mais Próximos: Observações\n\n- Esse problema pode ser reduzido se forem armazenados apenas exemplos prototípicos ou quando se utiliza algum método de indexação como kd-trees (Bentley, 1975), m-trees (Ciaccia, 1997) ou slim-trees (Train Jr., 2000).\n\n## Indexação\n\n- Uma forma de indexar exemplos foi proposta por (Orchard, 1991);\n- O método de Orchard é bastante simples, apesar de ser pouco utilizado por requere",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "(Orchard, 1991);\n- O método de Orchard é bastante simples, apesar de ser pouco utilizado por requerer O ( n 2 ) para espaço.\n- Entretanto, (Ye et al., 2009) transformou esse algoritmo para ser da classe anyspace .\n\n## Indexação\n\n<!-- image -->\n\n| Item   | 1s NN {s!p}   | 2d NN {dist}   | 3d NN {dist}   | 4h NN {dist}   | 5th NN {dist}   | 6th NN {s!p}   |\n|--------|---------------|----------------|----------------|----------------|-----------------|----------------|\n| a      | 6 {5.0}       | 4 ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "|----------------|----------------|-----------------|----------------|\n| a      | 6 {5.0}       | 4 {7.1}        | 2{8.0}         | 7 {8.0}        | 3 {8.1}         | 5 {8.2}        |\n| a2     | 3 {1.0}       | 4 {5.8}        | 1 {8.0}        | 6{9.4}         | 5 {10.0}        | 7 {11.3}       |\n| a3     | 2 {1.0}       | 4 {5.0}        | 1 {8.1}        | 6{8.9)         | 5 (9.2}         | 7 {10.6}       |\n| Ql4    | 5{4.2}        | 3 {5.0}        | 6 {5.0}        | 2 {5.8}        | 7 {5.8}     ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "}       |\n| Ql4    | 5{4.2}        | 3 {5.0}        | 6 {5.0}        | 2 {5.8}        | 7 {5.8}         | 1 {7.1}        |\n| Q5     | 7 {2.0}       | 6 {3.6}        | 4{4.2}         | 1 {8.2}        | 3 {9.2}         | 2 {10.0}       |\n| a6     | 7 {3.0}       | 5 {3.6}        | 1 {5.0}        | 4 {5.0}        | 3{8.9}          | 2 {9.4}        |\n| a7     | 5 {2.0}       | 6 {3.0}        | 4 {5.8}        | 1 {8.0}        | 3 {10.6}        | 2 {11.3}       |\n\n(Ye et al., 2009)\n\nDataset A\n\n<!-- im",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "        | 1 {8.0}        | 3 {10.6}        | 2 {11.3}       |\n\n(Ye et al., 2009)\n\nDataset A\n\n<!-- image -->\n\n## Indexação\n\n- Dado um objeto de consulta q, e a sua distância calculada para um objeto a i ( d ( a i , q )), qualquer objeto a j que d ( a i , a j ) ≥ 2 x d ( a i , q ) pode ser eliminado da busca por similaridade.\n- Esse conceito é ilustrado na figura a seguir...\n\n## Indexação\n\n<!-- image -->\n\n- Sabendo d ( a i , q ), podemos eliminar o objeto a j' , mas não podemos eliminar a j\n\n## In",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "e -->\n\n- Sabendo d ( a i , q ), podemos eliminar o objeto a j' , mas não podemos eliminar a j\n\n## Indexação\n\n```\nFunction [nn.loc, nn.dist] Orchards(P[A]，q ) nn.loc C = random_interger_inrangeof(l, |AH) nn.dist = dist(ann.loc) (b index : = 1 While P[ann.loc] .dist[index] < 2 * nn.dist AND index <|A| do node = P[ann.loc] ,node[index] If node is not yet testedt then dist (anode) (b If d < nn.dist then nn.dist = d nn.loc = node index = 1 Else index= index +1 EndIf Else index = index + 1 EndIf EndWh",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "en nn.dist = d nn.loc = node index = 1 Else index= index +1 EndIf Else index = index + 1 EndIf EndWhile\n```\n\n```\n(Ye et al., 2009)\n```\n\n## Template Reduction fo KNN (TRKNN)\n\n1\n\n<!-- image -->\n\n## Template Reduction for KNN (TRKNN)\n\nTabela 1 Taxa de acerto obtida utilizando validacao cruzada de 10 partiqoes para cada tipo de movimento utilizando TRKNN e KNN\n\n| Movimento                  | 1-NN          | TR-1NN        | 3-NN          | TR-3NN        | 5-NN          | TR-5NN        |\n|------------",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "     | TR-1NN        | 3-NN          | TR-3NN        | 5-NN          | TR-5NN        |\n|----------------------------|---------------|---------------|---------------|---------------|---------------|---------------|\n| Baixo                      | 100% (0.0)    | 95% (10,80)   | 97% (9,48)    | 97% (9,48)    | 97% (9.48)    | 97% (9,48)    |\n| Cima                       | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 99% (3,16)    | 100% (0.0)    | 99% (3,16)    |\n| Circulo                    | 9",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "  | 100% (0.0)    | 99% (3,16)    | 100% (0.0)    | 99% (3,16)    |\n| Circulo                    | 97% (9,48)    | 99% (3,16)    | 97% (6,74)    | 98% (6,32)    | 96% (8,43)    | 95% (8,49)    |\n| Diagonal Inferior Esquerda | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    |\n| Diagonal Inferior Direita  | 92% (17,51)   | 89% (17,91)   | 91% (20,24)   | 83% (29.07)   | 90% (21,60)   | 78% (30,84)   |\n| Diagonal Superior Direita  | 97% (9,48)    | 96% ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " 83% (29.07)   | 90% (21,60)   | 78% (30,84)   |\n| Diagonal Superior Direita  | 97% (9,48)    | 96% (12.64)   | 97% (9,48)    | 96% (12.64)   | 97% (9.48)    | 94% (15,77)   |\n| Diagonal Superior Esquerda | 100% (0.0)    | 99% (3,16)    | 100% (0.0)    | 99% (3,16)    | 100% (0.0)    | 95% (15.81)   |\n| Direita                    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    |\n| Esquerda                   | 100% (0.0)    | 100% (0.0)    | 100% (0",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "0% (0.0)    | 100% (0.0)    |\n| Esquerda                   | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    |\n| Quadrado                   | 96% (12,64)   | 96% (0,0)     | 96% (12,64)   | 96% (12,64)   | 100% (0.0)    | 96% (12,64)   |\n| Tennis                     | 97% (4,83)    | 91% (19,11)   | 94% (9.66)    | 87% (27,90)   | 92% (15,49)   | 86% (27,96)   |\n| Z                          | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "27,96)   |\n| Z                          | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0.0)    | 100% (0,0)    |\n| Media                      | 98.16% (2,47) | 97,08% (2,49) | 97.66% (2,96) | 96,24% (3,66) | 97,33% (3,32) | 94,99% (4,04) |\n\n## Template Reduction for KNN (TRKNN)\n\nTempo médio de execução para 3600 movimentos\n\nTempo(KNN) = 90,33s (3,15) Tempo(TRKNN) = 26,45s (2,51)\n\n10\n\n6\n\nQ\n\nX--\n\nY--\n\nX-一\n\n2\n\n4\n\n(2,3)\n\n6\n\n8\n\n(5,4)\n\n10\n\n(4,7)\n\nKD-Tree\n\n(7.2)\n\n(8,1)\n\n(9'6)\n\n",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "(2,51)\n\n10\n\n6\n\nQ\n\nX--\n\nY--\n\nX-一\n\n2\n\n4\n\n(2,3)\n\n6\n\n8\n\n(5,4)\n\n10\n\n(4,7)\n\nKD-Tree\n\n(7.2)\n\n(8,1)\n\n(9'6)\n\n## Índice Invertido\n\nD1: 'promoção iphone'        spam\n\nD2: 'promoção samsung'    spam\n\nD3: 'projeto ia'                    não-spam\n\nD4: 'filtro spam'                  não-spam\n\nNovo exemplo: 'projeto filtro'\n\n<!-- image -->\n\n## Locality-Sensitive Hashing (LSH) Hiper-planos aleatórios h … h\n\nComparar somente com os vizinhos que estiverem na mesma partição\n\n1 k\n\n<!-- image -->\n\n## Improving Instan",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "ar somente com os vizinhos que estiverem na mesma partição\n\n1 k\n\n<!-- image -->\n\n## Improving Instance Selection via Metric Learning\n\nEduardo Zrate Max Computer Faculty UFMS Brazil eduardo.max @ gmail.com Ricardo Marcacine Computer Faculty UFMS Brazil ricardo.marcacine@ufms.br\n\nAbstract—The k-Nearest Neighbor (k-NN)rule is widely used for classification tasks because of its simplicity and efficiency. However, a well-known drawback of k-NN is its dependence on the quality of the training set, sin",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "cy. However, a well-known drawback of k-NN is its dependence on the quality of the training set, since the k-NN makes no assumptionabouttheimportance ofeachinstance.Infact,the existence ofnoisyandsuperfluousinstancesinthetrainingset tends toincrease the classification error rate.Thus,instance selection methods are useful to identify which instances belonging tothe training set will be considered in the k-NN classifier. Our proposal shows a simple and effective way to improve instance selection m",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "n the k-NN classifier. Our proposal shows a simple and effective way to improve instance selection methods using metric learning. The idea of our proposal relies on a pure geometric intuition that metric learning transforms the input space where points in the same classaresimultaneouslyneareachotherandfarfrompointsin the other classes.In a more \"organised\" space,we show that instanceselectionmethods canbenefitfromthistransformed space.We carried out an experimental evaluation to compare theinsta",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "ds canbenefitfromthistransformed space.We carried out an experimental evaluation to compare theinstance selectionwith andwithoutmetriclearning onUCI benchmarkdatasets.Theresultsreveals thatthecombination of metric and instance selection is very welcome.All tested instance selectionmethodsimprovedsignificantly.\n\nEdson Takashi Matsubara ComputerFaculty UFMS Brazil edsontm@facom.ufms.br\n\nAlthoughthere isawidevarietyof instanceselection methods, the performance of the instance selection depends on t",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "e isawidevarietyof instanceselection methods, the performance of the instance selection depends on the distance measure used to identify the nearest neighbor instances [5]-[7]. In fact, the choice of the distance measure is a non-trivial task because it depends on the (i) data type, (i) the importance of some attributes, and (ii) the application domain [8]. This kind of information is generally not available, thereby promoting the widespread use of traditional measures such as Euclidean distance",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "t available, thereby promoting the widespread use of traditional measures such as Euclidean distance without a study of their suitability for the problem. Thus, we assume that the learning of an appropriate distance measure for a given dataset can significantly improve instance selection task - and consequently reduce the error rate of the k-NN classifier by considering only representative instances in the training set.\n\nIndex Terms-metriclearning,instance selection\n\n## 1. INTRODUCTION\n\nThe k-Ne",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "es in the training set.\n\nIndex Terms-metriclearning,instance selection\n\n## 1. INTRODUCTION\n\nThe k-Nearest Neighbor Classifier (k-NN) is a well-known supervised classification algorithm based on a simple and intuitive rule: the class of a new instance is the majority class of their most k similar instances [1]. The popularity of the k-NN is also justified because of its strong statistical basis: \"in the large sample case,this simple rule has a probability of-errorwhichislessthantwice-theBavesnroh",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "n the large sample case,this simple rule has a probability of-errorwhichislessthantwice-theBavesnrohabilitof Considering the advantages of using an appropriate distance measure for nearest neighbor-based classification problems, in this paper we experimentally show that the use of metric learning before an instance selection method improves,in most cases, the accuracy of k-NN.\n\nTo illustrate our proposal, Figure 1 shows an example of using metric learning in instance selection process. We select",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "roposal, Figure 1 shows an example of using metric learning in instance selection process. We select thePetallength andSepalwidth attributes of thewell-known Iris UCI dataset, and all the instances of the classes Versicolor and Virginica. In the left frame, the instances are plotted from original euclidean space, where the colors identify the two different classes. We learn an appropriate metric for the dataset by using the problem formulation defined in Equation 4. In the middle frame the insta",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "or the dataset by using the problem formulation defined in Equation 4. In the middle frame the instances are plotted considering this new\\_metric-snace. eThe-inter-class-and intra-class\\_senaration\n\n## Tranformação do espaço\n\n<!-- image -->\n\n## Resultados\n\n| instsel   | #ds     | Without KNCA   | Without KNCA   | With KNCA     | With KNCA   |\n|-----------|---------|----------------|----------------|---------------|-------------|\n| instsel   | #ds     | Avg ± StdDev   | #Sel           | Avg ± Std",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "-|---------------|-------------|\n| instsel   | #ds     | Avg ± StdDev   | #Sel           | Avg ± StdDev  | #Sel        |\n| CHC       | 一       | 0.904 ± 0.058  | 316.5          | 0.980 ± 0.023 | 297.3       |\n| CHC       | 2       | 0.789 ± 0.051  | 87.0           | 0.804 ± 0.033 | 93.0        |\n| CHC       | 3       | 0.835 ± 0.021  | 113.6          | 0.850 ± 0.021 | 111.3       |\n| CHC       | 4       | 0.897 ± 0.050  | 180.2          | 0.930 ± 0.045 | 176.7       |\n| CHC       |         | 1.0",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "       | 0.897 ± 0.050  | 180.2          | 0.930 ± 0.045 | 176.7       |\n| CHC       |         | 1.000 ± 0.000  | 44.6           | 1.000 ± 0.000 | 52.6        |\n| CHC       | 6       | 0.495 ± 0.057  | 85.3           | 0.531 ± 0.071 | 82.3        |\n| CHC       | 7       | 0.789 ± 0.035  | 106.0          | 0.697 ± 0.026 | 97.0        |\n| CHC       |         | 0.909 ± 0.105  | 452.4          | 0.945 ± 0.082 | 445.3       |\n| NNO       | 1       | 0.833 ± 0.100  | 112.2          | 0.977 ± 0.020 | 4",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " ± 0.082 | 445.3       |\n| NNO       | 1       | 0.833 ± 0.100  | 112.2          | 0.977 ± 0.020 | 49.5        |\n| CNN       | 2       | 0.659 ± 0.056  | 48.0           | 0.731 ± 0.075 | 47.6        |\n| CNN       | 3       | 0.737 ± 0.031  | 58.6           | 0.818 ± 0.024 | 59.3        |\n| NN        | 4       | 0.860 ± 0.073  | 53.8           | 0.834 ± 0.061 | 48.3        |\n| CNN       |         | 0.500± 0.000   | 2.3            | 0.500 ±0.000  | 2.0         |\n| CNN       | 6       | 0.490 ± 0.0",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " 0.500± 0.000   | 2.3            | 0.500 ±0.000  | 2.0         |\n| CNN       | 6       | 0.490 ± 0.030  | 14.3           | 0.531 ± 0.097 | 15.6        |\n| CNN       | 7       | 0.625 ± 0.071  | 53.6           | 0.760 ± 0.059 | 32.6        |\n| NNO       | 8       | 0.877 ± 0.054  | 34.5           | 0.885 ± 0.064 | 22.9        |\n| ENN       | 1       | 0.909 ± 0.058  | 523.6          | 0.975 ± 0.032 | 547.6       |\n| ENN       | 2       | 0.724 ± 0.091  | 113.0          | 0.705 ± 0.033 | 109.0    ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " | 547.6       |\n| ENN       | 2       | 0.724 ± 0.091  | 113.0          | 0.705 ± 0.033 | 109.0       |\n| ENN       | 3       | 0.825 ± 0.021  | 145.0          | 0.841 ± 0.012 | 149.3       |\n| ENN       | 4       | 0.826 ± 0.077  | 265.2          | 0.856 ± 0.055 | 280.7       |\n| ENN       |         | 1.000 ± 0.000  | 100.0          | 1.000 ± 0.000 | 100.0       |\n| ENN       | 6       | 0.472 ± 0.072  | 119.0          | 0.521 ± 0.016 | 126.6       |\n| ENN       | 7       | 0.760 ± 0.025  | 14",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " 0.072  | 119.0          | 0.521 ± 0.016 | 126.6       |\n| ENN       | 7       | 0.760 ± 0.025  | 146.0          | 0.736 ± 0.027 | 160.6       |\n| ENN       |         | 0.897 ± 0.086  | 886.7          | 9600960       | 890.0       |\n| RMHC      | 一       | 0.936 ± 0.055  | 56.0           | 0.978 ± 0.022 | 56.0        |\n| RMHC      | 2       | 0.614 ± 0.062  | 14.0           | 0.611 ± 0.056 | 14.0        |\n| RMHC      | 3       | 0.839 ± 0.029  | 17.0           | 0.842 ± 0.039 | 17.0        |\n| R",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "       |\n| RMHC      | 3       | 0.839 ± 0.029  | 17.0           | 0.842 ± 0.039 | 17.0        |\n| RMHC      | 4       | 0.842 ± 0.100  | 31.0           | 0.882 ± 0.049 | 31.0        |\n| RMHC      |         | 1.000 ± 0.000  | 9.3            | 1.000 ± 0.000 | 9.3         |\n| RMHC      | 6       | 0.469 ± 0.154  | 13.0           | 0.548 ± 0.054 | 13.0        |\n| RMHC      | 7       | 0.746 ± 0.041  | 17.0           | 0.734 ± 0.092 | 17.0        |\n| RMHC      | 8       | 0.905 ± 0.082  | 89.0      ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "| 17.0           | 0.734 ± 0.092 | 17.0        |\n| RMHC      | 8       | 0.905 ± 0.082  | 89.0           | 0.930 ± 0.097 | 89.0        |\n| average   | average | 0.780 ± 0.160  | 134.61         | 0.808 ± 0.159 | 132.60      |\n\n## Referências\n\n<!-- image -->\n\n## Referências:\n\n-  Bentley, J. Multimensional binary search trees used for associative searching. Communications of the ACM, 18(9), 509-517, 1975.\n-  Ciaccia, P .; Patella, M.; Zezula, P . M-tree: an efficient access method for similarity ",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": " 1975.\n-  Ciaccia, P .; Patella, M.; Zezula, P . M-tree: an efficient access method for similarity search in metric spaces. Proceedings of VLDB, 426-435, 1997.\n-  Mitchell, T. Machine Learning. McGraw-Hill, 1997.\n-  Orchard, M. T. A fast nearest-neighbor search algorithm. International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 22972300, IEEE Computer Society Press, 1991.\n- 52  Datar, Mayur, et al. \"Locality-sensitive hashing scheme based on p-stable distributions.",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "991.\n- 52  Datar, Mayur, et al. \"Locality-sensitive hashing scheme based on p-stable distributions.\" Proceedings of the twentieth annual symposium on Computational geometry. ACM, 2004.\n\n## Referências\n\n<!-- image -->\n\n## Referências:\n\n-  Traina, Jr., C.; T raina, A.; Seeger, B.; Faloutsos, C. Slim-trees: high performance metric trees minimizing overlap between nodes. Proceedings of ETBT, 51-65, 2000.\n-  Shepard, D. A two-dimensional interpolation function for irregularly spaced data. Proceedi",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "2000.\n-  Shepard, D. A two-dimensional interpolation function for irregularly spaced data. Proceedings of the 23rd National Conference of the ACM, 517-523, 1968.\n-  Stanfil, C.; Waltz, D. Towards Memory-based reasoning. Communications of the ACM, 29, 12131228, 1986.\n\n## Referências\n\n<!-- image -->\n\n## Referências:\n\n-  Ye, L.; Wang, X.; Keogh, E.; Mafra-Neto, A. Autocannibalistic and Anyspace Indexing Algorithms with Applications to Sensor Data Mining . SIAM International Conference on Data Mi",
+    "documento": "aula-KNN (1)"
+  },
+  {
+    "texto": "dexing Algorithms with Applications to Sensor Data Mining . SIAM International Conference on Data Mining, 2009.\n-  Wilson, D. R.; Martinez, T. R. Improved heterogeneous distance functions. Journal of Artificial Intelligence Research (JAIR), 6:1-34, 1997.",
+    "documento": "aula-KNN (1)"
+  }
+]

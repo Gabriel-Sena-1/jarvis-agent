@@ -1,0 +1,134 @@
+[
+  {
+    "texto": "## Interação Humano-Computador Design Thinking\n\nLeonardo S. Victorio\n\nFaculdade de Computação - UFMS\n\n<!-- image -->\n\n## Sumário\n\n- 1 Introdução ao Design Thinking\n\n- 2 Fase 1: Empatia\n\n- 3 Fase 2: (Re)Definição\n\n- 4 Fase 3: Idealização\n\n- 5 Fases 4 e 5: Prototipação e Teste\n\n- 6 Conclusão\n\n<!-- image -->\n\n## O que é Design Thinking?\n\n- Uma abordagem para a resolução de problemas complexos e inovadores.\n\n<!-- image -->\n\n## O que é Design Thinking?\n\n- Uma abordagem para a resolução de problemas c",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "dores.\n\n<!-- image -->\n\n## O que é Design Thinking?\n\n- Uma abordagem para a resolução de problemas complexos e inovadores.\n- Focada em entender profundamente as necessidades humanas.\n\n<!-- image -->\n\n## O que é Design Thinking?\n\n- Uma abordagem para a resolução de problemas complexos e inovadores.\n- Focada em entender profundamente as necessidades humanas.\n- É um processo iterativo, flexível e colaborativo.\n\n<!-- image -->\n\nA idéia aqui é ensinar o processo, mas não só como ele acontece na práti",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "aborativo.\n\n<!-- image -->\n\nA idéia aqui é ensinar o processo, mas não só como ele acontece na prática. A mentalidade por trás é mais importante:\n\n- Curiosidade: Abordar o desconhecido com curiosidade, não com ceticismo racional.\n- Viés para Ação (Bias to Action): Como não há dados sobre o futuro, a melhor forma de avançar é fazendo, construindo e testando.\n- Colaboração Radical: Unir equipes multidisciplinares para ter perspectivas diversas.\n- Reformulação (Reframing): Entender que o problema q",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "idisciplinares para ter perspectivas diversas.\n- Reformulação (Reframing): Entender que o problema que recebemos raramente é o problema real.\n\n<!-- image -->\n\n## Por que precisamos de um processo?\n\n- Usuários muitas vezes não sabem o que querem ou o que é tecnologicamente possível.\n- Ao descobrir que algo pode ser feito, usuários tendem a mudar de ideia\n- 'Wicked Problem'\n- O objetivo é descobrir as necessidades latentes por trás dos desejos declarados.\n- 'expert problem'\n\n<!-- image -->\n\n## O D",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "as necessidades latentes por trás dos desejos declarados.\n- 'expert problem'\n\n<!-- image -->\n\n## O Desafio dos 'Wicked Problems'\n\n- Problemas humanos são 'Wicked Problems' (problemas perversos).\n\n<!-- image -->\n\n## O Desafio dos 'Wicked Problems'\n\n- Problemas humanos são 'Wicked Problems' (problemas perversos).\n- Suas características são:\n- Requisitos incompletos, contraditórios e que mudam constantemente .\n- Os requisitos mudam no momento em que você mostra uma solução possível.\n- A pessoa diz:",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "ntemente .\n- Os requisitos mudam no momento em que você mostra uma solução possível.\n- A pessoa diz: 'Isso é o que eu pedi, mas agora que eu vi, mudei de ideia'.\n\n<!-- image -->\n\n## O Desafio dos 'Wicked Problems'\n\n- Problemas humanos são 'Wicked Problems' (problemas perversos).\n- Suas características são:\n- Requisitos incompletos, contraditórios e que mudam constantemente .\n- Os requisitos mudam no momento em que você mostra uma solução possível.\n- A pessoa diz: 'Isso é o que eu pedi, mas agora",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "no momento em que você mostra uma solução possível.\n- A pessoa diz: 'Isso é o que eu pedi, mas agora que eu vi, mudei de ideia'.\n\nWICKED PROBLEM\n\n<!-- image -->\n\n<!-- image -->\n\n## O Desafio dos 'Wicked Problems'\n\n<!-- image -->\n\n## Conclusão\n\nNão podemos analisar nosso caminho até a solução. Precisamos construir nosso caminho até ela.\n\n<!-- image -->\n\n## As 5 Fases do Design Thinking\n\n<!-- image -->\n\n<!-- image -->\n\n## Fase 1: Empatia\n\nO objetivo é ganhar um entendimento profundo sobre as pesso",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "-->\n\n<!-- image -->\n\n## Fase 1: Empatia\n\nO objetivo é ganhar um entendimento profundo sobre as pessoas para quem estamos projetando.\n\n## Buscamos entender:\n\n- Suas necessidades;\n- Seus comportamentos;\n- Seus sentimentos e emoções;\n- O contexto em que vivem e atuam.\n\n<!-- image -->\n\n## O Problema do Especialista (The Expert Problem)\n\n- Quando perguntamos a um usuário sobre as dificuldades de uma tarefa, ele pode dizer: 'Nenhuma, funciona muito bem'.\n\n<!-- image -->\n\n## O Problema do Especialista ",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "refa, ele pode dizer: 'Nenhuma, funciona muito bem'.\n\n<!-- image -->\n\n## O Problema do Especialista (The Expert Problem)\n\n- Quando perguntamos a um usuário sobre as dificuldades de uma tarefa, ele pode dizer: 'Nenhuma, funciona muito bem'.\n- Por quê? Porque ele se tornou um especialista em contornar os problemas existentes.\n\n<!-- image -->\n\n## O Problema do Especialista (The Expert Problem)\n\n- Quando perguntamos a um usuário sobre as dificuldades de uma tarefa, ele pode dizer: 'Nenhuma, funciona",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "ndo perguntamos a um usuário sobre as dificuldades de uma tarefa, ele pode dizer: 'Nenhuma, funciona muito bem'.\n- Por quê? Porque ele se tornou um especialista em contornar os problemas existentes.\n- Ele criou ' workarounds ' e truques que se tornaram inconscientes para ele.\n\n<!-- image -->\n\n## O Problema do Especialista (The Expert Problem)\n\n- Quando perguntamos a um usuário sobre as dificuldades de uma tarefa, ele pode dizer: 'Nenhuma, funciona muito bem'.\n- Por quê? Porque ele se tornou um e",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "s de uma tarefa, ele pode dizer: 'Nenhuma, funciona muito bem'.\n- Por quê? Porque ele se tornou um especialista em contornar os problemas existentes.\n- Ele criou ' workarounds ' e truques que se tornaram inconscientes para ele.\n\n## Implicação\n\nApenas a observação atenta pode revelar os atritos e as necessidades latentes que nem mesmo o usuário percebe mais.\n\n<!-- image -->\n\n## Framework AEIOU\n\nUma lente para guiar a observação de campo:\n\n- A ctivities (Atividades): O que as pessoas estão fazendo",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": " lente para guiar a observação de campo:\n\n- A ctivities (Atividades): O que as pessoas estão fazendo?\n\n<!-- image -->\n\n## Framework AEIOU\n\nUma lente para guiar a observação de campo:\n\n- A ctivities (Atividades): O que as pessoas estão fazendo?\n- E nvironments (Ambientes): Qual o contexto e o ambiente?\n\n<!-- image -->\n\n## Framework AEIOU\n\nUma lente para guiar a observação de campo:\n\n- A ctivities (Atividades): O que as pessoas estão fazendo?\n- E nvironments (Ambientes): Qual o contexto e o ambien",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "Atividades): O que as pessoas estão fazendo?\n- E nvironments (Ambientes): Qual o contexto e o ambiente?\n- I nteractions (Interações): Quais interações (com pessoas ou objetos) ocorrem?\n\n<!-- image -->\n\n## Framework AEIOU\n\n## Uma lente para guiar a observação de campo:\n\n- A ctivities (Atividades): O que as pessoas estão fazendo?\n- E nvironments (Ambientes): Qual o contexto e o ambiente?\n- I nteractions (Interações): Quais interações (com pessoas ou objetos) ocorrem?\n- O bjects (Objetos): Que obje",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "ions (Interações): Quais interações (com pessoas ou objetos) ocorrem?\n- O bjects (Objetos): Que objetos e ferramentas são utilizados?\n\n<!-- image -->\n\n## Framework AEIOU\n\n## Uma lente para guiar a observação de campo:\n\n- A ctivities (Atividades): O que as pessoas estão fazendo?\n- E nvironments (Ambientes): Qual o contexto e o ambiente?\n- I nteractions (Interações): Quais interações (com pessoas ou objetos) ocorrem?\n- O bjects (Objetos): Que objetos e ferramentas são utilizados?\n- U sers (Usuário",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": " objetos) ocorrem?\n- O bjects (Objetos): Que objetos e ferramentas são utilizados?\n- U sers (Usuários): Quem são as pessoas envolvidas?\n\n<!-- image -->\n\n## Ferramentas para Empatia: Entrevistas\n\n## Boas Práticas:\n\n- Entreviste usuários extremos para amplificar as necessidades.\n- Faça perguntas abertas. Evite direcionar a resposta.\n- Peça por histórias e exemplos específicos.\n- Adote uma postura de aprendiz, não de especialista.\n\n<!-- image -->\n\n## Síntese da Empatia: O Mapa de Empatia\n\n<!-- imag",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": " aprendiz, não de especialista.\n\n<!-- image -->\n\n## Síntese da Empatia: O Mapa de Empatia\n\n<!-- image -->\n\nÉ uma ferramenta para sintetizar observações e extrair informações sobre os usuários , buscando contradições entre o que se diz e o que se faz.\n\n<!-- image -->\n\n## Fase 2: (Re)Definição\n\nO objetivo é transformar os dados brutos da fase de empatia em um problema acionável.\n\n## Nesta fase, nós:\n\n- Avaliamos as informações coletadas.\n- Analisamos e sintetizamos os dados para definir o problema",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "\n\n- Avaliamos as informações coletadas.\n- Analisamos e sintetizamos os dados para definir o problema central.\n- Buscamos encontrar um problema real e suas causas.\n\n<!-- image -->\n\n## Comece com as Pessoas, não com o Problema\n\nMuitas vezes, um 'problema' já é uma solução disfarçada.\n\n- Exemplo: O Projeto do Carrinho de Mão\n- Problema Apresentado: 'Projete um carrinho de mão inovador'.\n- Isso levaria a melhorias incrementais: duas rodas, pegas mais ergonômicas, etc.\n\n<!-- image -->\n\n## Comece com ",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "a a melhorias incrementais: duas rodas, pegas mais ergonômicas, etc.\n\n<!-- image -->\n\n## Comece com as Pessoas, não com o Problema\n\nMuitas vezes, um 'problema' já é uma solução disfarçada.\n\n- Exemplo: O Projeto do Carrinho de Mão\n- Problema Apresentado: 'Projete um carrinho de mão inovador'.\n- Isso levaria a melhorias incrementais: duas rodas, pegas mais ergonômicas, etc.\n- Problema Real (após empatia): 'Trabalhadores precisam mover materiais (ex: tijolos) de um ponto a outro em um canteiro de o",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "atia): 'Trabalhadores precisam mover materiais (ex: tijolos) de um ponto a outro em um canteiro de obras'.\n- Essa reformulação abre espaço para soluções radicais: drones de entrega, empilhadeiras autônomas, etc.\n\n<!-- image -->\n\n## Ferramenta Principal: Ponto de Vista (POV)\n\n- O POV é uma frase que enquadra o problema de forma centrada no usuário, inspiradora e que serve de guia para a idealização.\n\n## Estrutura do POV\n\n- Nós encontramos... (descreve o usuário)\n- Nós ficamos surpresos ao descobr",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": ".\n\n## Estrutura do POV\n\n- Nós encontramos... (descreve o usuário)\n- Nós ficamos surpresos ao descobrir que... (revela a necessidade/tensão/insight)\n- Seria transformador se... (define o desafio de design)\n\n<!-- image -->\n\n## Exemplo de POV\n\n<!-- image -->\n\n- Nós encontramos Harried, mãe de 3, que sempre fica estressada ao viajar de avião com seus filhos em feriados.\n\n<!-- image -->\n\n## Exemplo de POV\n\n<!-- image -->\n\n- Nós encontramos Harried, mãe de 3, que sempre fica estressada ao viajar de av",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "POV\n\n<!-- image -->\n\n- Nós encontramos Harried, mãe de 3, que sempre fica estressada ao viajar de avião com seus filhos em feriados.\n- Ficamos surpresos ao descobrir que as brincadeiras dos filhos irritam ainda mais os demais passageiros.\n\n<!-- image -->\n\n## Exemplo de POV\n\n<!-- image -->\n\n- Nós encontramos Harried, mãe de 3, que sempre fica estressada ao viajar de avião com seus filhos em feriados.\n- Ficamos surpresos ao descobrir que as brincadeiras dos filhos irritam ainda mais os demais pass",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "s.\n- Ficamos surpresos ao descobrir que as brincadeiras dos filhos irritam ainda mais os demais passageiros.\n- Seria transformador se ela tivesse como distrair seus filhos de forma construtiva.\n\n<!-- image -->\n\n## Fase 3: Idealização\n\n## O objetivo é gerar o maior volume possível de ideias para o desafio definido no POV.\n\nÉ a transição da identificação do problema para a exploração de soluções.\n\n- Foco em quantidade, não qualidade nesta etapa.\n- Pensamento divergente : explorar o espaço de soluç",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": " Foco em quantidade, não qualidade nesta etapa.\n- Pensamento divergente : explorar o espaço de soluções.\n- Colaboração com perfis diversos é fundamental.\n\n<!-- image -->\n\n## How Might We (HMW)\n\n- Transformamos o desafio do POV em perguntas abertas que estimulam a idealização.\n- A estrutura 'Como a gente poderia...' (CGP) permite explorar soluções sem julgamento.\n\n<!-- image -->\n\n## How Might We (HMW)\n\n- Transformamos o desafio do POV em perguntas abertas que estimulam a idealização.\n- A estrutur",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "MW)\n\n- Transformamos o desafio do POV em perguntas abertas que estimulam a idealização.\n- A estrutura 'Como a gente poderia...' (CGP) permite explorar soluções sem julgamento.\n\n## Exemplo (baseado no POV da Harried):\n\n- CGP reduzir o stress da mãe?\n- CGP divertir as crianças e ao mesmo tempo proteger os outros passageiros da frustração?\n- CGP mudar o sentimento dos passageiros em relação às crianças?\n\n<!-- image -->\n\n## Brainstorming: Regras para uma Sessão Produtiva\n\n- 1 Adie o julgamento: Não ",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "as?\n\n<!-- image -->\n\n## Brainstorming: Regras para uma Sessão Produtiva\n\n- 1 Adie o julgamento: Não há ideias ruins neste momento.\n- 2 Encoraje ideias 'malucas': Elas podem destravar a criatividade.\n- 3 Construa sobre as ideias dos outros: Use 'e se...' para expandir.\n- 4 Foque no tópico: Mantenha o HMW visível para todos.\n- 5 Uma conversa por vez: Evite conversas paralelas.\n- 6 Seja visual: Desenhe, use post-its.\n- 7 Busque quantidade: O objetivo é gerar um grande volume de opções.\n\n<!-- image ",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "he, use post-its.\n- 7 Busque quantidade: O objetivo é gerar um grande volume de opções.\n\n<!-- image -->\n\n## Fase 4: Prototipação\n\nO objetivo é criar representações tangíveis das ideias para validar hipóteses.\n\n- É uma fase experimental para identificar a melhor solução.\n- Construa protótipos de baixo custo e simplificados ( low-fidelity ).\n- A ideia é 'errar cedo e errar barato'.\n\n<!-- image -->\n\n## Fase 4: Prototipação\n\n## O objetivo é criar representações tangíveis das ideias para validar hipó",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "## Fase 4: Prototipação\n\n## O objetivo é criar representações tangíveis das ideias para validar hipóteses.\n\n- É uma fase experimental para identificar a melhor solução.\n- Construa protótipos de baixo custo e simplificados ( low-fidelity ).\n- A ideia é 'errar cedo e errar barato'.\n\n## Exemplos:\n\n- Storyboard\n- [Maquete / Protótipo em papel](https://www.youtube.com/watch?v=nA9QP9lkl20)\n- Encenação / Role-playing\n\n<!-- image -->\n\n## O objetivo é solicitar feedback sobre os protótipos com os próprio",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": " Role-playing\n\n<!-- image -->\n\n## O objetivo é solicitar feedback sobre os protótipos com os próprios usuários.\n\n- Validar as ideias geradas com as pessoas.\n- Descobrir problemas e oportunidades de melhoria para refinar a proposta.\n- Lembre-se: o protótipo é testado, não o usuário. Mostre, não venda a ideia.\n\n<!-- image -->\n\n## O objetivo é solicitar feedback sobre os protótipos com os próprios usuários.\n\n- Validar as ideias geradas com as pessoas.\n- Descobrir problemas e oportunidades de melhor",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "uários.\n\n- Validar as ideias geradas com as pessoas.\n- Descobrir problemas e oportunidades de melhoria para refinar a proposta.\n- Lembre-se: o protótipo é testado, não o usuário. Mostre, não venda a ideia.\n\n## O Processo é Iterativo\n\nOs resultados do teste podem te levar de volta para qualquer uma das fases anteriores: para gerar novas ideias, redefinir o problema ou até mesmo ganhar mais empatia.\n\n## O Ciclo Completo\n\n<!-- image -->\n\n- O Design Thinking é uma jornada não linear de entendimento,",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "\n\n## O Ciclo Completo\n\n<!-- image -->\n\n- O Design Thinking é uma jornada não linear de entendimento, exploração e materialização.\n\n<!-- image -->\n\n## Resumo\n\n- Design Thinking é uma abordagem poderosa para inovar de forma centrada no ser humano.\n\n<!-- image -->\n\n## Resumo\n\n- Design Thinking é uma abordagem poderosa para inovar de forma centrada no ser humano.\n- As 5 fases (Empatia, Definição, Idealização, Prototipação, Teste) fornecem uma estrutura para navegar por problemas complexos.\n\n<!-- ima",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "lização, Prototipação, Teste) fornecem uma estrutura para navegar por problemas complexos.\n\n<!-- image -->\n\n## Resumo\n\n- Design Thinking é uma abordagem poderosa para inovar de forma centrada no ser humano.\n- As 5 fases (Empatia, Definição, Idealização, Prototipação, Teste) fornecem uma estrutura para navegar por problemas complexos.\n- Empatia é a base de tudo: sem entender o usuário, não há solução relevante.\n\n<!-- image -->\n\n## Resumo\n\n- Design Thinking é uma abordagem poderosa para inovar de ",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "ão relevante.\n\n<!-- image -->\n\n## Resumo\n\n- Design Thinking é uma abordagem poderosa para inovar de forma centrada no ser humano.\n- As 5 fases (Empatia, Definição, Idealização, Prototipação, Teste) fornecem uma estrutura para navegar por problemas complexos.\n- Empatia é a base de tudo: sem entender o usuário, não há solução relevante.\n- O processo é iterativo : falhar, aprender e refinar é parte do caminho para uma boa solução.\n\n<!-- image -->\n\n## Dúvidas?\n\n<!-- image -->",
+    "documento": "IHC___Aula_04"
+  },
+  {
+    "texto": "o caminho para uma boa solução.\n\n<!-- image -->\n\n## Dúvidas?\n\n<!-- image -->",
+    "documento": "IHC___Aula_04"
+  }
+]
