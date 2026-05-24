@@ -76,9 +76,13 @@ API disponível em `http://localhost:8000` — documentação em `/docs`.
 
 ## Endpoints
 
-| Método | Rota                | Descrição                                 |
-| ------ | ------------------- | ----------------------------------------- |
-| `POST` | `/api/ask`          | Envia uma pergunta ao chatbot             |
-| `POST` | `/api/files/upload` | Faz upload de um documento (.txt ou .pdf) |
-| `GET`  | `/api/files`        | Lista os documentos carregados            |
-| `GET`  | `/stats`            | Estatísticas do RAG (chunks, documentos)  |
+| Método   | Rota                        | Descrição                                                |
+| -------- | --------------------------- | -------------------------------------------------------- |
+| `POST`   | `/api/ask`                  | Envia uma pergunta ao chatbot                            |
+| `POST`   | `/api/files/upload`         | Faz upload de um documento (.txt ou .pdf)                |
+| `GET`    | `/api/files`                | Lista os documentos carregados                           |
+| `GET`    | `/stats`                    | Estatísticas do RAG (chunks, documentos)                 |
+| `GET`    | `/api/agenda`               | Lista compromissos (filtro opcional: `?data=YYYY-MM-DD`) |
+| `POST`   | `/api/agenda`               | Cria um novo compromisso                                 |
+| `PATCH`  | `/api/agenda/{id}/concluir` | Marca um compromisso como concluído                      |
+| `DELETE` | `/api/agenda/{id}`          | Remove um compromisso                                    |
