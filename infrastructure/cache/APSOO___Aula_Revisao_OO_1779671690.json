@@ -1,0 +1,98 @@
+[
+  {
+    "texto": "Análise e Projeto de Software Orientado a Objetos Revisão dos conceitos do paradigma orientado a objetos\n\nLeonardo S. Victorio\n\nFaculdade de Computação - UFMS\n\n<!-- image -->\n\n## Sumário\n\n- 1 O Conceito de Abstração\n- 2 Objetos e Classes\n- 3 Atributos, Métodos e Encapsulamento\n- 4 Mensagens e Relacionamentos\n- 5 Herança e Polimorfismo\n\n<!-- image -->\n\n## Introdução à Abstração\n\n- Um dos principais conceitos da orientação a objetos, usado na análise de domínio para representar um escopo.\n- Consis",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": " conceitos da orientação a objetos, usado na análise de domínio para representar um escopo.\n- Consiste em observar um recorte da realidade e representar suas entidades, ações e caracterizações.\n- Foca no que é necessário para a aplicação atingir seu objetivo.\n\n<!-- image -->\n\n## O Mecanismo de Foco\n\n- A abstração deixa de lado os aspectos que são irrelevantes para aquele contexto específico.\n- Na modelagem, busca-se focar em quais atividades são realizadas, como são feitas e quem as realiza.\n- E",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "modelagem, busca-se focar em quais atividades são realizadas, como são feitas e quem as realiza.\n- Evita a tentativa incorreta de mapear absolutamente todas as propriedades do mundo real.\n\n<!-- image -->\n\n## Subjetividade na Abstração\n\n- Um mesmo cenário pode ser abstraído de formas completamente diferentes dependendo do observador.\n- Exemplo: Um software de música modelado por um usuário comum será diferente daquele modelado por um músico ou produtor.\n- Depende diretamente do conhecimento do an",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "rá diferente daquele modelado por um músico ou produtor.\n- Depende diretamente do conhecimento do analista e do objetivo final do sistema.\n\n<!-- image -->\n\n## Modelagem e Realidade\n\n- Não existe uma única resposta ou modelagem correta para um problema.\n- Existem inúmeras modelagens que podem representar fielmente a mesma situação.\n- Um modelo só estará incorreto se estiver incompatível com o mundo real ou não atender ao objetivo.\n\n<!-- image -->\n\n## Tudo é Objeto\n\n- Na orientação a objetos, tudo",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": " real ou não atender ao objetivo.\n\n<!-- image -->\n\n## Tudo é Objeto\n\n- Na orientação a objetos, tudo (ou quase tudo) é tratado como um objeto.\n- Um objeto é o resultado direto da aplicação do mecanismo de abstração sobre uma entidade do mundo real.\n- Pode ser uma entidade concreta, uma ideia, um sentimento ou uma informação volátil.\n\n<!-- image -->\n\n## A Dinâmica dos Objetos\n\n- Possuem características internas e realizam operações inerentes ao sistema observado.\n- São entidades 'vivas': são cria",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "icas internas e realizam operações inerentes ao sistema observado.\n- São entidades 'vivas': são criados (instanciados), modificados, executam ações e podem ser destruídos ao longo da execução.\n\n<!-- image -->\n\n## Identificando Objetos: Exemplo Prático\n\n- Cenário: Software de rastreamento de ônibus em um sistema viário urbano.\n- O 'Ponto de Ônibus' é um elemento do mundo real que precisa ser abstraído como um objeto no sistema.\n- O analista define como ele será representado e quais ações poderá r",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "ído como um objeto no sistema.\n- O analista define como ele será representado e quais ações poderá realizar.\n\n<!-- image -->\n\n## Ponto deOnibus\n\n- +Localizacao:String\n- +Horarios:List&lt;Horario&gt;\n- +Endereco:String\n+ temAbrigo: Boolean\n\n<!-- image -->\n\n## O Conceito de Classe\n\n- Muitas vezes as definições de classe e objeto se confundem, mas são conceitos distintos.\n- Uma classe é um agrupamento estrutural que define o mesmo conjunto de atributos e métodos.\n- Atua como um molde para agrupar o",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "o estrutural que define o mesmo conjunto de atributos e métodos.\n- Atua como um molde para agrupar objetos instanciados no sistema.\n\n<!-- image -->\n\n## Diferença entre Classe e Objeto\n\n- A classe define os tipos de dados sem necessariamente definir os valores.\n- O objeto é a instância real de uma classe.\n- Ele atribui valores próprios aos atributos que foram desenhados na classe.\n- Exemplo: A definição 'Ponto de Ônibus' é a classe. O ponto da 'Avenida Central, 123' é o objeto.\n\n<!-- image -->\n\n<",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "nição 'Ponto de Ônibus' é a classe. O ponto da 'Avenida Central, 123' é o objeto.\n\n<!-- image -->\n\n<!-- image -->\n\n## Atributos: O Estado do Objeto\n\n- Buscam representar os elementos de dados que dão características exclusivas a um objeto.\n- Podem ser entendidos como variáveis que descrevem o estado atual daquele objeto.\n- Representam valores armazenados que podem ser lidos, alterados ou excluídos.\n\n<!-- image -->\n\n## Definição de Atributos\n\n- Quem define os atributos necessários é o analista, d",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": ".\n\n<!-- image -->\n\n## Definição de Atributos\n\n- Quem define os atributos necessários é o analista, de acordo com o objetivo do sistema.\n- Exemplo: Uma classe 'Ponto de Ônibus' pode ter localização e lista de horários.\n- Se o sistema exige saber se há proteção contra chuva, adiciona-se o atributo 'tem abrigo' (booleano).\n\n## PontodeOnibus\n\n- +Localizacao:String\n- +Horarios:List&lt;Horario&gt;\n- +Endereco:String\n- +temAbrigo:Boolean\n\n+\n\n<!-- image -->\n\n## Métodos: O Comportamento\n\n- Também conheci",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "dereco:String\n- +temAbrigo:Boolean\n\n+\n\n<!-- image -->\n\n## Métodos: O Comportamento\n\n- Também conhecidos como operações ou funções, são as ações que o objeto pode realizar.\n- Geralmente atuam alterando o estado do objeto e manipulando suas informações.\n- Descrevem uma sequência de ações pré-definidas.\n\n<!-- image -->\n\n## Características dos Métodos\n\n- Junto aos atributos, os métodos compõem a totalidade dos objetos e não podem ser isolados deles.\n- Exemplo: Na classe 'Ponto de Ônibus', podemos te",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "idade dos objetos e não podem ser isolados deles.\n- Exemplo: Na classe 'Ponto de Ônibus', podemos ter métodos como 'mostrar horário' e 'atualizar horário'.\n\n<!-- image -->\n\n<!-- image -->\n\n## O Conceito de Encapsulamento\n\n- Uma característica vital que consiste em esconder e proteger detalhes de implementação entre entidades.\n- É alcançado gerenciando a visibilidade (privacidade) dos atributos do objeto.\n- O acesso direto à informação interna por outros objetos deve ser evitado.\n\n<!-- image -->\n",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "objeto.\n- O acesso direto à informação interna por outros objetos deve ser evitado.\n\n<!-- image -->\n\n## A Interface Pública\n\n- Em geral, atributos são configurados como privados e métodos como públicos.\n- Os métodos públicos compõem o que chamamos de 'Interface Pública da Classe'.\n- A única forma segura de acessar ou modificar um atributo privado é acionando um método fornecido pelo próprio objeto.\n\n<!-- image -->\n\n## Vantagens do Encapsulamento\n\n- Restringe a visibilidade de regras de negócio i",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": ".\n\n<!-- image -->\n\n## Vantagens do Encapsulamento\n\n- Restringe a visibilidade de regras de negócio internas.\n- Aumenta de forma drástica a manutenibilidade das operações.\n- Facilita a modularização natural e a responsabilização que a classe fornece no projeto.\n\n<!-- image -->\n\n## A Comunicação via Mensagens\n\n- É o mecanismo que permite a comunicação e a interoperabilidade entre diferentes objetos no sistema.\n- Na prática, o envio de uma mensagem corresponde ao acionamento (ou chamada) da execuçã",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "no sistema.\n- Na prática, o envio de uma mensagem corresponde ao acionamento (ou chamada) da execução de um método.\n- Essa comunicação respeita rigorosamente o encapsulamento através da interface pública.\n\n<!-- image -->\n\n## Estrutura de uma Mensagem\n\n- É composta por um nome simbólico chamado de seletor (o próprio nome da operação).\n- O objeto emissor solicita a execução da mensagem.\n- O objeto receptor é aquele que recebe a solicitação e executa a operação de fato.\n\n<!-- image -->\n\n## Argument",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "eceptor é aquele que recebe a solicitação e executa a operação de fato.\n\n<!-- image -->\n\n## Argumentos na Mensagem\n\n- A mensagem pode carregar um conjunto de argumentos (ou parâmetros) necessários para a execução.\n- A ordem dos parâmetros geralmente deve respeitar a assinatura do método (embora dependa da linguagem).\n- Exemplo Prático: Um emissor envia a mensagem 'abastecer' passando os argumentos 'diesel' e '50' para o objeto receptor 'meu\\_onibus'.\n\n<!-- image -->\n\n<!-- image -->\n\n## Introduçã",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": " 'diesel' e '50' para o objeto receptor 'meu\\_onibus'.\n\n<!-- image -->\n\n<!-- image -->\n\n## Introdução aos Relacionamentos\n\n- Objetos frequentemente possuem relações expressas entre si.\n- Ocorrem quando uma característica de uma entidade é complexa demais para ser representada apenas por um tipo primitivo.\n- Exemplo: Um 'Ônibus' precisa ter conhecimento dos locais de parada. Uma lista de tipos primitivos não basta para definir completamente um 'Ponto de Ônibus'.\n\n<!-- image -->\n\n## O Relacionamen",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "itivos não basta para definir completamente um 'Ponto de Ônibus'.\n\n<!-- image -->\n\n## O Relacionamento de Associação\n\n- É o tipo mais comum de relacionamento.\n- Indica que uma determinada classe ou objeto conhece outro, estabelecendo uma conexão estrutural.\n- Na implementação, significa que um dos atributos do objeto 'Ônibus' é do tipo (ou lista do tipo) da classe 'Ponto de Ônibus'.\n\n<!-- image -->\n\n<!-- image -->\n\n## O Mecanismo de Herança\n\n- Permite definir uma nova classe a partir de uma clas",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": ">\n\n<!-- image -->\n\n## O Mecanismo de Herança\n\n- Permite definir uma nova classe a partir de uma classe já existente.\n- A classe original é chamada de superclasse , e a nova classe derivada é a subclasse .\n- A subclasse herda automaticamente todos os métodos e atributos da superclasse.\n\n<!-- image -->\n\n## A Extensão via Herança\n\n- A subclasse tem a liberdade de adicionar novos atributos e métodos exclusivos.\n- Pode também alterar (sobrescrever) características recebidas da superclasse se houver n",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "xclusivos.\n- Pode também alterar (sobrescrever) características recebidas da superclasse se houver necessidade.\n- Exemplo: Uma superclasse 'Veículo' pode derivar as subclasses 'Ônibus', 'Van' e 'Ônibus Elétrico'.\n\n<!-- image -->\n\n<!-- image -->\n\n## Generalização e Especialização\n\n- Generalização: Observar da subclasse para a superclasse. Podemos afirmar que todo ônibus é um veículo.\n- Especialização: Observar da superclasse para a subclasse. Um veículo pode ser do tipo Van.\n- Na generalização, u",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "ão: Observar da superclasse para a subclasse. Um veículo pode ser do tipo Van.\n- Na generalização, uma variável do tipo superclasse pode receber instâncias de suas subclasses.\n\n<!-- image -->\n\n## Hierarquia e Execução de Métodos\n\n- Ao receber uma mensagem, o objeto procura o método correspondente primeiro em sua própria classe.\n- Se o método não for encontrado ali, a busca avança para cima, procurando na superclasse na hierarquia.\n- Esse processo se repete de baixo para cima até a operação ser e",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "ando na superclasse na hierarquia.\n- Esse processo se repete de baixo para cima até a operação ser encontrada para execução.\n\n<!-- image -->\n\n## Introdução ao Polimorfismo\n\n- É a capacidade que um objeto instanciado possui de assumir formas de comportamento diferentes.\n- Complementa o uso de hierarquias de herança permitindo forte flexibilidade ao código.\n\n<!-- image -->\n\n## Polimorfismo de Sobrescrita (Override)\n\n- A subclasse altera o comportamento interno de um método herdado mantendo exatame",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "crita (Override)\n\n- A subclasse altera o comportamento interno de um método herdado mantendo exatamente a mesma assinatura.\n- Exemplo: 'Ônibus Elétrico' altera a execução do método 'abastecer' de 'Veículo' por não utilizar diesel, mas energia.\n- O método da superclasse continua acessível se for chamado via operador como 'super'.\n\n<!-- image -->\n\n## Polimorfismo de Sobrecarga (Overload)\n\n- Uma única classe apresenta múltiplos métodos utilizando o mesmo seletor (nome).\n- Cada um desses métodos pos",
+    "documento": "APSOO___Aula_Revisao_OO"
+  },
+  {
+    "texto": "a classe apresenta múltiplos métodos utilizando o mesmo seletor (nome).\n- Cada um desses métodos possui uma assinatura diferente (quantidade ou tipo de parâmetros recebidos).\n- A decisão sobre qual método específico executar é tomada dinamicamente em tempo de execução com base nos argumentos enviados.\n\n<!-- image -->",
+    "documento": "APSOO___Aula_Revisao_OO"
+  }
+]

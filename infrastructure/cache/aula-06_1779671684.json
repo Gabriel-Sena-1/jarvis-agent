@@ -1,0 +1,90 @@
+[
+  {
+    "texto": "## Análise e Projeto de Software Orientado a Objetos Diagramas de Sequência de Sistema\n\nLeonardo S. Victorio\n\nFaculdade de Computação - UFMS\n\n2026/1\n\n<!-- image -->\n\n## Sumário\n\n- 1 Introdução\n- 2 Elementos do Diagrama de Sequência\n- 3 Representação de Casos de Uso\n- 4 Ligação da Interface com o Domínio\n- 5 Estratégias Statefull e Stateless\n- 6 Exceções em Diagramas\n- 7 Padrão DTO\n- 8 Conclusão\n\n<!-- image -->\n\n## Utilização dos Casos de Uso Expandidos\n\nNa atividade de análise, o texto dos casos",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "!-- image -->\n\n## Utilização dos Casos de Uso Expandidos\n\nNa atividade de análise, o texto dos casos de uso expandidos possui duas utilizações principais:\n\n## 1. Modelo Conceitual\n\nAtua como fonte de informação para encontrar conceitos (entidades e regras) do domínio (estudado na próxima aula).\n\n## 2. Comportamento do Sistema\n\nFonte primária para encontrar as operações e consultas de sistema. Estas darão origem aos métodos que fazem a interface do sistema com o mundo externo.\n\n<!-- image -->\n\n##",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "s darão origem aos métodos que fazem a interface do sistema com o mundo externo.\n\n<!-- image -->\n\n## Operações vs Consultas de Sistema\n\nPara garantir reusabilidade (Meyer, 1988) e coesão, separamos o comportamento em:\n\n## Operações de Sistema\n\n- Ativadas a partir de um evento (ação do usuário).\n- Indicam fluxo de informação do exterior para o interior.\n- Alteram informações gerenciadas pelo sistema.\n- Por definição, não retornam dados.\n\n## Funcionalidade Efetiva\n\nOperações + Consultas de sistema",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "a.\n- Por definição, não retornam dados.\n\n## Funcionalidade Efetiva\n\nOperações + Consultas de sistema = totalidade das funções do sistema.\n\n## Consultas de Sistema\n\n- Correspondem à verificação de informação armazenada.\n- O retorno pode ser o dado puro ou processado (ex: média, total).\n- Não inserem, removem ou alteram dados.\n\n## O Diagrama de Sequência de Sistema\n\nA UML possui o diagrama de sequência para representar a linha do tempo dos eventos em um cenário de caso de uso.\n\n- Atores: instância",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "cia para representar a linha do tempo dos eventos em um cenário de caso de uso.\n\n- Atores: instâncias de usuários ou sistemas externos comunicantes. Sempre estão ativos.\n- Sistema: representado como um único objeto do tipo caixa-preta (a Interface).\n- Linha de tempo: linhas verticais (tracejada = inativo, cheia = ativo/aguardando).\n- Mensagens: linhas horizontais representando o fluxo de informação.\n\n<!-- image -->\n\n## Exemplo Visual do Diagrama\n\n<!-- image -->\n\n- Setas cheias: requisições/envio",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "o.\n\n<!-- image -->\n\n## Exemplo Visual do Diagrama\n\n<!-- image -->\n\n- Setas cheias: requisições/envio de informações para o sistema.\n- Setas tracejadas: mensagens retornadas (o sistema apenas reage).\n\n## Mapeamento: Caso de Uso → Sequência\n\n- O diagrama de sequência sistematiza o caso de uso, refinando o funcionamento em duas etapas:\n- 1 Atores ↔ Interface: passos do caso de uso viram trocas de mensagem.\n- 2 Interface ↔ Domínio: chamadas para a controladora-fachada.\n\n## Passos do Caso de Uso\n\n- [",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "sagem.\n- 2 Interface ↔ Domínio: chamadas para a controladora-fachada.\n\n## Passos do Caso de Uso\n\n- [IN]: Envio de informação do ator para a interface.\n- [OUT]: Envio de informação da interface para o ator (resposta).\n\n<!-- image -->\n\n## Exemplo: Caso de Uso 'Comprar livros'\n\n## Caso de Uso:\n\n1. [IN] Informa identificação.\n2. [OUT] Sistema informa livros disponíveis.\n3. [IN] Seleciona livros.\n4. [OUT] Sistema informa total e opções de endereço.\n5. [IN] Seleciona endereço.\n\n...\n\n<!-- image -->\n\n<!",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "UT] Sistema informa total e opções de endereço.\n5. [IN] Seleciona endereço.\n\n...\n\n<!-- image -->\n\n<!-- image -->\n\n## Exemplo: Diagrama de Sequência para 'Comprar livros'\n\n## CasodeUso:Comprar1ivros\n\n- [IN] o comprador informa sua identificacao.(1)\n- [ouT] o sistema informa os livros disponiveispara venda (titulo, capa e preco). (1.1)\n3. [IN] o comprador seleciona os livros que deseja comprar.(2)\n4. [our]osistema informa ovalor to= coes de endereco cadastradas.( (2.1 e 2.2)\n5. [IN] O comprador se",
+    "documento": "aula-06"
+  },
+  {
+    "texto": ". [our]osistema informa ovalor to= coes de endereco cadastradas.( (2.1 e 2.2)\n5. [IN] O comprador seleciona um ende= reco para entrega.(3)\n6. [ouT]osistema informa ovalor do frete e total geral, bem como a lista de cartoes de credito ja cadastrados para pagamento.(3.1, 3.2 e 3.3)\n- [IN] o comprador seleciona um cartao de crédito.(4)\n8. [ouT] o sistema envia os dados do cartao e valor da venda para a ope= radora. (4.1)\n9. [IN]A operadora informa o codigo de autorizacao.(5)\n10. [ouT] o sistema inf",
+    "documento": "aula-06"
+  },
+  {
+    "texto": " a ope= radora. (4.1)\n9. [IN]A operadora informa o codigo de autorizacao.(5)\n10. [ouT] o sistema informa ao comprador o prazo de entrega. (5.1)\n\n<!-- image -->\n\n<!-- image -->\n\n## Da Interface para a Camada de Domínio\n\nAções do usuário na interface (ex: apertar botão, preencher formulário) geram chamadas a procedimentos computacionais na camada de domínio .\n\nA camada de domínio é representada pela Controladora-fachada , que gerencia as operações e consultas acessíveis a partir da interface.\n\n- E",
+    "documento": "aula-06"
+  },
+  {
+    "texto": " Controladora-fachada , que gerencia as operações e consultas acessíveis a partir da interface.\n\n- Evento de sistema → Transforma-se em uma operação se altera dados, ou em parâmetros para uma consulta.\n- Resposta de sistema → Requer a execução prévia de uma consulta de sistema.\n\n<!-- image -->\n\n## Derivação de Operações e Consultas\n\n## Operação de Sistema\n\n<!-- image -->\n\nAltera dados e não retorna valor (exceto retornos para criar elementos conceituais novos, ex: ID da compra).\n\n## Consulta de ",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "a valor (exceto retornos para criar elementos conceituais novos, ex: ID da compra).\n\n## Consulta de Sistema\n\n<!-- image -->\n\nRetorna informações solicitadas e não altera dados armazenados.\n\n<!-- image -->\n\n## Gerenciamento de Estado: O Problema\n\nMuitas vezes, uma transação (como uma compra) requer dados que o usuário envia no início (ex: o ID do comprador) ao longo de várias operações sucessivas.\n\n## A Decisão de Projeto\n\nComo a Controladora lida com esses parâmetros? Ela deve ter memória tempor",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "\n## A Decisão de Projeto\n\nComo a Controladora lida com esses parâmetros? Ela deve ter memória temporária ( Statefull ) ou receber todos os parâmetros novamente a cada chamada ( Stateless )?\n\n<!-- image -->\n\n## Estratégia Stateless (Sem Estado)\n\nNesta estratégia, cada vez que uma operação precisa da informação, a interface a repassa explicitamente .\n\n<!-- image -->\n\n- Vantagem: controladora sem mecanismo de memória temporária.\n- Desvantagem: grande passagem de parâmetros a cada chamada.\n\n<!-- ima",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "anismo de memória temporária.\n- Desvantagem: grande passagem de parâmetros a cada chamada.\n\n<!-- image -->\n\n## Estratégia Statefull (Com Estado)\n\nA controladora implementa uma memória temporária para \"lembrar\"os dados contextuais (ex: compra corrente) e evitar o reenvio de parâmetros.\n\n<!-- image -->\n\n- Vantagem: informações transmitidas uma única vez pela rede.\n- Desvantagem: exige memória temporária / associações transitórias.\n\n<!-- image -->\n\n## Tratamento de Exceções\n\nPassos alternativos do ",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "ária / associações transitórias.\n\n<!-- image -->\n\n## Tratamento de Exceções\n\nPassos alternativos do caso de uso normalmente representam exceções ou erros.\n\n## No Diagrama de Sequência\n\nUma exceção pode ser modelada como um evento condicional (usando fragmentos) que aborta a operação ou desvia o fluxo.\n\nExceções tipicamente ocorrem nas operações de sistema (consultas em geral retornam listas vazias ou resultados nulos em vez de abortar fluxos primários).\n\n<!-- image -->\n\n## Representação de Fragm",
+    "documento": "aula-06"
+  },
+  {
+    "texto": " ou resultados nulos em vez de abortar fluxos primários).\n\n<!-- image -->\n\n## Representação de Fragmentos (opt e ref)\n\n<!-- image -->\n\n- opt : Bloco executado apenas se a condição for verdadeira.\n- ref : Referência a outro diagrama, reduzindo complexidade e facilitando a leitura.\n\n<!-- image -->\n\n## Alternativa: Exceção como Precondição\n\nOutra abordagem é evitar que o erro atinja a operação, transformando a exceção em uma precondição .\n\n- Consulta Prévia: Faz-se uma verificação antes da operação",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "formando a exceção em uma precondição .\n\n- Consulta Prévia: Faz-se uma verificação antes da operação.\n- Seleção Fechada: O ator seleciona dados de uma lista válida enviada pelo sistema, impossibilitando erros de digitação (ex: lista de cartões).\n\n<!-- image -->\n\n<!-- image -->\n\n## Data Transfer Object (DTO)\n\nRotular transições no diagrama com muitos atributos individuais (nome, endereço, CPF, telefone) é impraticável e poluído.\n\n## O que é um DTO?\n\nUma classe estilo registro/tupla contendo infor",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "fone) é impraticável e poluído.\n\n## O que é um DTO?\n\nUma classe estilo registro/tupla contendo informações alfanuméricas. Diferente das classes conceituais, um DTO não tem funcionalidade complexa , possuindo apenas métodos de acesso ( getters e setters ).\n\n- São encapsulamentos coesos de atributos, transferindo dados entre a interface e o sistema.\n- Atuam como visões ( views em banco de dados), isolando a camada conceitual de mudanças na interface.\n\n<!-- image -->\n\n## Exemplo de Representação do",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "olando a camada conceitual de mudanças na interface.\n\n<!-- image -->\n\n## Exemplo de Representação do DTO\n\n<!-- image -->\n\nRecomenda-se o uso do sufixo DTO (ex: CompradorDTO ) para distinguir claramente das classes da camada de domínio.\n\n<!-- image -->\n\n## Considerações Finais\n\n- O diagrama de sequência de sistema foca no fluxo de dados entre os atores e a camada de aplicação.\n- A sistematização revela informações e passos esquecidos no caso de uso.\n- A identificação das **operações** e **consult",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "vela informações e passos esquecidos no caso de uso.\n- A identificação das **operações** e **consultas de sistema** prepara o terreno para a elaboração dos contratos (modelagem funcional).\n- Decisões cruciais, como gerenciamento de estado ( statefull/stateless ) e empacotamento de dados (DTOs), são definidas neste momento.\n\n<!-- image -->\n\n## Referências Bibliográficas\n\n<!-- image -->\n\n- WAZLAWICK, Raul Sidnei. Análise e Projeto de Sistemas de Informação Orientados a Objetos . 3. ed. Rio de Jane",
+    "documento": "aula-06"
+  },
+  {
+    "texto": ", Raul Sidnei. Análise e Projeto de Sistemas de Informação Orientados a Objetos . 3. ed. Rio de Janeiro: Elsevier, 2015. Cap. 8 - Contratos.\n- LARMAN, Craig. Utilizando UML e Padrões . 3. ed. Porto Alegre: Bookman, 2007. Cap. 11 - Applying GoF Design Patterns.\n\n<!-- image -->\n\n<!-- image -->\n\n## Obrigado!\n\nDúvidas e Discussões\n\nLeonardo S. Victorio\n\nleonardo.victorio@ufms.br\n\nFaculdade de Computação - UFMS\n\n<!-- image -->",
+    "documento": "aula-06"
+  },
+  {
+    "texto": "ão - UFMS\n\n<!-- image -->",
+    "documento": "aula-06"
+  }
+]

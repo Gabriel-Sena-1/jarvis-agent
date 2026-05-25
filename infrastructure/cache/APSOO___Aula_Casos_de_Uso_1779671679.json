@@ -1,0 +1,338 @@
+[
+  {
+    "texto": "Análise e Projeto de Software Orientado a Objetos Engenharia de Requisitos: Casos de Uso, Diagramas UML e Validação\n\nLeonardo S. Victorio\n\nFaculdade de Computação - UFMS\n\n2026/1\n\n<!-- image -->\n\n## Sumário\n\n- 1 Introdução aos Casos de Uso\n- 2 Diagrama de Casos de Uso\n- 3 Descrição Textual dos Casos de Uso\n- 4 Cenários nos Casos de Uso\n- 5 Casos de Uso na Prática\n- 6 O Documento de Requisitos de Software\n- 7 Validação de Requisitos\n- 8 Construindo Diagramas de Casos de Uso\n- 9 Conclusão\n\n<!-- ima",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ftware\n- 7 Validação de Requisitos\n- 8 Construindo Diagramas de Casos de Uso\n- 9 Conclusão\n\n<!-- image -->\n\n<!-- image -->\n\n## O que são Casos de Uso?\n\n## Definição (Sommerville)\n\nCasos de uso são uma maneira de descrever as interações entre usuários e um sistema usando um modelo gráfico e um texto estruturado .\n\n- Foram introduzidos pela primeira vez no método Objectory (JACOBSON et al., 1993).\n- Tornaram-se uma característica fundamental da UML (Unified Modeling Language).\n- Identificam os ato",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " Tornaram-se uma característica fundamental da UML (Unified Modeling Language).\n- Identificam os atores envolvidos em uma interação e nomeiam o tipo de interação .\n- Podem ser complementados por diagramas de sequência ou de máquina de estados.\n\n<!-- image -->\n\n## Origem e Evolução\n\n## Método Objectory (1993)\n\n- Criado por Ivar Jacobson.\n- Primeiro método orientado a objetos a utilizar casos de uso sistematicamente.\n- Foco na interação ator-sistema.\n\n## UML (Padrão Atual)\n\n- A UML padronizou os c",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " sistematicamente.\n- Foco na interação ator-sistema.\n\n## UML (Padrão Atual)\n\n- A UML padronizou os casos de uso como artefato central.\n- Diagrama de Casos de Uso é um dos 14 tipos de diagramas UML.\n- Padrão amplamente adotado pela indústria.\n\n<!-- image -->\n\n## Por que usar Casos de Uso?\n\n- Comunicação: Facilitam o diálogo entre engenheiros e stakeholders não técnicos.\n- Escopo: O conjunto de casos de uso representa todas as interações possíveis descritas nos requisitos de sistema.\n- Base para t",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "s de uso representa todas as interações possíveis descritas nos requisitos de sistema.\n- Base para testes: Cada caso de uso pode derivar casos de teste para validação.\n- Documentação: Servem como registro das funcionalidades esperadas do sistema.\n\n## Observação de Sommerville\n\nCasos de uso são mais úteis no projeto de sistemas do que propriamente na fase inicial de elicitação de requisitos, pois stakeholders muitas vezes não compreendem o termo.\n\n<!-- image -->\n\n## Casos de Uso e a Engenharia de",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "takeholders muitas vezes não compreendem o termo.\n\n<!-- image -->\n\n## Casos de Uso e a Engenharia de Requisitos\n\n- A UML é um padrão para modelagem orientada a objetos.\n- Os casos de uso e a elicitação baseada neles são utilizados no processo de engenharia de requisitos.\n- No entanto, na prática, eles são muitas vezes refinados demais para a discussão inicial de requisitos.\n\n## Posição do Sommerville\n\n- Stakeholders não compreendem o termo caso de uso .\n- Não acham útil o modelo gráfico isoladam",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "lle\n\n- Stakeholders não compreendem o termo caso de uso .\n- Não acham útil o modelo gráfico isoladamente.\n- Muitas vezes não estão interessados em uma descrição detalhada de cada interação.\n\n<!-- image -->\n\n## A Forma Mais Simples de um Caso de Uso\n\n## Em sua forma mais simples, um caso de uso:\n\n- 1 Identifica os atores envolvidos na interação.\n- 2 Nomeia o tipo de interação que ocorre.\n- 3 Adiciona informações descritivas sobre essa interação.\n\n## Essas informações podem ser:\n\n- Uma descrição t",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "na informações descritivas sobre essa interação.\n\n## Essas informações podem ser:\n\n- Uma descrição textual da interação.\n- Um ou mais modelos gráficos (diagramas de sequência, máquina de estados).\n\n<!-- image -->\n\n## Componentes Básicos do Diagrama\n\nOs casos de uso são documentados por meio de um diagrama de casos de uso de alto nível :\n\nAtores Representados como 'bonecos palito'. Podem ser seres humanos ou outros sistemas.\n\nCasos de Uso Representados como elipses nomeadas . Cada elipse indica u",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "humanos ou outros sistemas.\n\nCasos de Uso Representados como elipses nomeadas . Cada elipse indica uma classe de interação.\n\nLinhas de Associação Fazem a ligação entre atores e interações. Pontas de Seta Opcionais; indicam quem inicia a interação. Sistema Retângulo que delimita a fronteira do sistema.\n\n<!-- image -->\n\n## O que é um Ator?\n\n## Definição\n\nUm ator é qualquer entidade - humana ou sistema externo - que interage diretamente com o sistema para alcançar um objetivo.\n\n## Atores Humanos\n\n-",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ma externo - que interage diretamente com o sistema para alcançar um objetivo.\n\n## Atores Humanos\n\n- Recepcionista\n- Médico\n- Gerente\n- Profissional de enfermagem\n\n## Atores Sistêmicos\n\n- Sistema bancário externo\n- Sistema de autenticação\n- Serviço de e-mail\n- Banco de dados legado\n\n<!-- image -->\n\n## Exemplo: Sistema Mentcare - Atores e Casos de Uso\n\nO sistema Mentcare (sistema de informações de saúde mental) possui os seguintes atores e casos de uso:\n\n## Casos de Uso:\n\n- Registrar o paciente\n-",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "saúde mental) possui os seguintes atores e casos de uso:\n\n## Casos de Uso:\n\n- Registrar o paciente\n- Visualizar informações pessoais\n- Visualizar registro\n- Editar registro\n- Realizar discussão de caso\n- Exportar estatísticas\n- Gerar relatório\n\n## Atores:\n\n- Recepcionista\n- Profissional de enfermagem\n- Médico\n- Gerente\n\n<!-- image -->\n\n## Leitura do Diagrama: Relacionamentos\n\n- A linha simples entre ator e caso de uso indica uma associação\n- o ator participa daquele caso de uso.\n- Um ator pode e",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "re ator e caso de uso indica uma associação\n- o ator participa daquele caso de uso.\n- Um ator pode estar associado a múltiplos casos de uso.\n- Um caso de uso pode envolver múltiplos atores.\n\n## Exemplo do Mentcare\n\n- Recepcionista → Registrar paciente, Visualizar informações pessoais.\n- Médico → Visualizar registro, Editar registro, Realizar discussão de caso.\n- Profissional de enfermagem → Visualizar registro, Editar registro, Realizar discussão de caso.\n- Gerente → Exportar estatísticas, Gerar",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "izar registro, Editar registro, Realizar discussão de caso.\n- Gerente → Exportar estatísticas, Gerar relatório.\n\n<!-- image -->\n\n## Relações Avançadas entre Casos de Uso\n\nAlém da associação simples, a UML define relações entre casos de uso:\n\n- «include» Um caso de uso inclui obrigatoriamente o comportamento de outro. Usado para fatorar passos comuns.\n- «extend» Um caso de uso estende outro com comportamento opcional ou condicional. Usado para variações.\n\nGeneralização Um caso de uso filho herda ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "portamento opcional ou condicional. Usado para variações.\n\nGeneralização Um caso de uso filho herda o comportamento do pai e pode sobrescrevê-lo.\n\n## Exemplo Prático\n\nEditar Registro «include» Autenticar Usuário - sempre que alguém edita um registro, deve estar autenticado.\n\n<!-- image -->\n\n## Fronteira do Sistema\n\n- No diagrama, um retângulo delimita o sistema sendo modelado.\n- Casos de uso ficam dentro do retângulo (são responsabilidade do sistema).\n- Atores ficam fora do retângulo (são entida",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " dentro do retângulo (são responsabilidade do sistema).\n- Atores ficam fora do retângulo (são entidades externas).\n- A fronteira define claramente o escopo do sistema: o que está dentro e o que está fora.\n\n## Importância do Escopo\n\nDefinir corretamente a fronteira evita a inclusão de funcionalidades além do escopo e ajuda a alinhar expectativas com os stakeholders.\n\n<!-- image -->\n\n## Nível de Granularidade do Diagrama\n\n## Alto Nível vs. Detalhado\n\n- O diagrama de alto nível mostra apenas as pri",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "nularidade do Diagrama\n\n## Alto Nível vs. Detalhado\n\n- O diagrama de alto nível mostra apenas as principais interações\n- adequado para comunicação com clientes.\n- Diagramas detalhados incluem relações include / extend e especificam subfluxos.\n- O nível de granularidade deve ser proporcional ao estágio do desenvolvimento.\n- Muito detalhe prematuramente pode confundir mais do que ajudar.\n- O conjunto de casos de uso representa todas as interações possíveis que serão descritas nos requisitos de sis",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "o de casos de uso representa todas as interações possíveis que serão descritas nos requisitos de sistema.\n\n<!-- image -->\n\n## Documentando Além do Diagrama\n\n## Princípio Fundamental\n\nCada caso de uso deve ser documentado com uma descrição textual , que pode ser ligada a outros modelos UML para compor um cenário mais detalhado.\n\n- O diagrama gráfico é apenas a visão geral - sozinho, não é suficiente.\n- A descrição textual fornece o contexto , as pré-condições , os fluxos e as pós-condições .\n- Di",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "e.\n- A descrição textual fornece o contexto , as pré-condições , os fluxos e as pós-condições .\n- Diferentes níveis de detalhe são usados em diferentes fases do projeto.\n\n<!-- image -->\n\n## Exemplo Real: 'Realizar Discussão de Caso'\n\n## Descrição Resumida (Sommerville, 2011)\n\nRealizar discussão de caso permite que dois ou mais médicos, trabalhando em consultórios diferentes, vejam o registro do mesmo paciente ao mesmo tempo. Um médico inicia a discussão do caso de um paciente escolhendo as pesso",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "smo paciente ao mesmo tempo. Um médico inicia a discussão do caso de um paciente escolhendo as pessoas envolvidas em um menu suspenso de médicos que estão on-line. O registro do paciente é exibido em suas telas, mas apenas o médico que iniciou a consulta pode editar o registro. Além disso, cria-se um chat para ajudar a coordenar as ações. Presume-se que uma chamada telefônica ou comunicação por voz possa ser providenciada separadamente.\n\n<!-- image -->\n\n## Analisando a Descrição: Elementos Prese",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "z possa ser providenciada separadamente.\n\n<!-- image -->\n\n## Analisando a Descrição: Elementos Presentes\n\nAo analisar a descrição do caso 'Realizar Discussão de Caso', identificamos:\n\nAtores Dois ou mais médicos (ator principal: médico que inicia). Pré-condição implícita Médicos devem estar autenticados e on-line. Fluxo principal Escolher participantes → Exibir registro → Colaborar.\n\nRestrição Apenas o médico iniciador pode editar o registro. Funcionalidade auxiliar Chat integrado para coordenaç",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "nas o médico iniciador pode editar o registro. Funcionalidade auxiliar Chat integrado para coordenação. Fora do escopo Comunicação por voz (presumida como externa).\n\n<!-- image -->\n\n## Estrutura Formal de uma Descrição de Caso de Uso\n\n## Campos Típicos\n\n- Nome: Verbo + substantivo (ex: 'Registrar Paciente').\n- ID: Identificador único (ex: UC-05).\n- Ator(es) principal(is): Quem inicia a interação.\n- Ator(es) secundário(s): Quem participa, mas não inicia.\n- Pré-condições: Estado do sistema antes d",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "- Ator(es) secundário(s): Quem participa, mas não inicia.\n- Pré-condições: Estado do sistema antes da execução.\n- Fluxo principal (caminho feliz): Sequência normal de eventos.\n- Fluxos alternativos/de exceção: O que acontece se algo der errado.\n- Pós-condições: Estado do sistema após a execução.\n\n<!-- image -->\n\n## Exemplo Estruturado: Registrar Paciente\n\n## Caso de Uso: Registrar Paciente (UC-01)\n\n- Ator principal: Recepcionista.\n- Pré-condição: Recepcionista autenticada no sistema.\n- Fluxo pri",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "\n\n- Ator principal: Recepcionista.\n- Pré-condição: Recepcionista autenticada no sistema.\n- Fluxo principal:\n- 1 Recepcionista seleciona 'Novo Paciente'.\n- 2 Sistema exibe formulário de cadastro.\n- 3 Recepcionista preenche os dados pessoais.\n- 4 Sistema valida os dados e salva o registro.\n- 5 Sistema exibe confirmação com número do paciente.\n- Fluxo alternativo: Dados inválidos → sistema exibe mensagem de erro e permite correção.\n- Pós-condição: Paciente registrado; registro disponível para médic",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "agem de erro e permite correção.\n- Pós-condição: Paciente registrado; registro disponível para médicos.\n\n<!-- image -->\n\n## Nível de Detalhe: Resumido vs. Detalhado\n\n## Descrição Detalhada\n\n- Formulário estruturado completo.\n- Adequada para fases de projeto.\n- Inclui todos os fluxos e exceções.\n- Usada como base para casos de teste.\n\n<!-- image -->\n\n## Descrição Resumida\n\n- Parágrafo narrativo curto.\n- Adequada para fases iniciais.\n- Facilita comunicação com stakeholders não técnicos.\n- Usada em",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "to.\n- Adequada para fases iniciais.\n- Facilita comunicação com stakeholders não técnicos.\n- Usada em diagramas de alto nível.\n\n## Boas Práticas na Descrição Textual\n\n- Nome no infinitivo: 'Registrar', 'Visualizar', 'Gerar' - ação do ponto de vista do ator.\n- Evitar soluções técnicas: Descreva o que acontece, não como será implementado.\n- Voz ativa e clara: 'O médico seleciona...' e não 'O registro é selecionado pelo médico...'.\n- Um passo por vez: Cada etapa do fluxo deve ser atômica e verificáv",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " é selecionado pelo médico...'.\n- Um passo por vez: Cada etapa do fluxo deve ser atômica e verificável.\n- Cobrir as exceções: Identificar o que acontece quando algo foge do fluxo normal.\n\n## Atenção\n\nCasos de uso descrevem comportamento externo do sistema - o que o usuário observa - e não a lógica interna de implementação.\n\n<!-- image -->\n\n## Ligação entre Descrição Textual e Outros Modelos UML\n\nA descrição textual pode ser complementada por:\n\nDiagrama de Sequência Mostra a troca de mensagens en",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " descrição textual pode ser complementada por:\n\nDiagrama de Sequência Mostra a troca de mensagens entre objetos ao longo do tempo para executar o caso de uso.\n\nDiagrama de Atividades Representa o fluxo de controle entre as etapas do caso de uso.\n\nDiagrama de Máquina de Estados Mostra como o sistema muda de estado durante a execução.\n\n## Na Prática\n\nPara casos de uso simples, a descrição textual basta. Para casos complexos com muitos fluxos alternativos, complementar com diagramas reduz ambiguida",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "sta. Para casos complexos com muitos fluxos alternativos, complementar com diagramas reduz ambiguidades.\n\n<!-- image -->\n\n## O que é um Cenário?\n\n## Definição\n\nUm cenário é uma instância de execução de um caso de uso: uma sequência específica de eventos que ocorre durante uma interação particular entre um ator e o sistema.\n\n- Cenários são concretos e situacionais - descrevem uma situação específica.\n- Um caso de uso pode englobar múltiplos cenários (normal, alternativo, exceção).\n- São úteis par",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "a.\n- Um caso de uso pode englobar múltiplos cenários (normal, alternativo, exceção).\n- São úteis para comunicar exemplos reais com os stakeholders.\n- Ajudam a identificar fluxos alternativos que poderiam ser esquecidos.\n\n<!-- image -->\n\n## Duas Visões sobre a Relação Caso de Uso - Cenário\n\nExiste uma discussão na literatura sobre como relacionar casos de uso e cenários:\n\n## Visão 1: 1 Caso de Uso = 1 Cenário\n\n- Cada caso de uso é um cenário único e detalhado .\n- Abordagem mais simples e direta.\n",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "= 1 Cenário\n\n- Cada caso de uso é um cenário único e detalhado .\n- Abordagem mais simples e direta.\n- Mais fácil de gerenciar em projetos pequenos.\n\n## Sommerville\n\nNa prática, dá para usá-los de ambas as formas , dependendo da complexidade do sistema e do estilo da equipe.\n\n## Visão 2: Stevens &amp; Pooley (2006)\n\n- Cada caso de uso inclui um conjunto relacionado de cenários .\n- Um cenário por caminho do caso de uso.\n- Mais adequado para casos de uso complexos.\n\n## Tipos de Cenários em um Caso ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "minho do caso de uso.\n- Mais adequado para casos de uso complexos.\n\n## Tipos de Cenários em um Caso de Uso\n\n## 1 Cenário principal (caminho feliz):\n\nA sequência normal de eventos quando tudo corre como esperado. Ex.: Médico acessa o sistema, localiza o paciente e edita o registro com sucesso.\n\n## 2 Cenários alternativos:\n\nVariações válidas do fluxo principal que levam ao mesmo resultado. Ex.: Médico não encontra o paciente pelo nome e busca pelo CPF.\n\n## 3 Cenários de exceção:\n\nSituações de erro",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "co não encontra o paciente pelo nome e busca pelo CPF.\n\n## 3 Cenários de exceção:\n\nSituações de erro que interrompem o fluxo normal. Ex.: Sessão expira durante a edição - sistema solicita reautenticação.\n\n<!-- image -->\n\n## Cenários como Ferramenta de Elicitação\n\n- Cenários são altamente eficazes para elicitar requisitos , pois são concretos e compreensíveis por leigos.\n- Em vez de perguntar 'Quais são os requisitos do sistema?', o analista pergunta: 'O que você faz quando precisa registrar um p",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "s são os requisitos do sistema?', o analista pergunta: 'O que você faz quando precisa registrar um paciente novo? Me conte passo a passo.'\n- A resposta do stakeholder é, essencialmente, um cenário que pode ser formalizado em um caso de uso.\n\n## Vantagem\n\nAs pessoas se lembram melhor de situações concretas do que de abstrações. Perguntar sobre cenários extrai informações mais ricas e precisas.\n\n<!-- image -->\n\n## Exemplo: Cenários do Caso de Uso 'Editar Registro'\n\n## Cenário 1: Caminho Feliz\n\nMéd",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "- image -->\n\n## Exemplo: Cenários do Caso de Uso 'Editar Registro'\n\n## Cenário 1: Caminho Feliz\n\nMédico autentica-se. Busca o paciente pelo número de matrícula. Localiza o registro. Atualiza as informações de diagnóstico. Sistema salva e exibe confirmação.\n\n## Cenário 2: Paciente não Localizado\n\nMédico autentica-se. Busca pelo nome e não encontra. Sistema sugere busca por CPF. Médico informa CPF. Paciente é localizado. Médico edita o registro.\n\n## Cenário 3: Permissão Insuficiente\n\nProfissional ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "Paciente é localizado. Médico edita o registro.\n\n## Cenário 3: Permissão Insuficiente\n\nProfissional de enfermagem tenta editar um campo restrito. Sistema exibe mensagem: 'Você não tem permissão para editar este campo.' Ação é bloqueada.\n\n<!-- image -->\n\n## Da Narrativa ao Diagrama\n\nO processo de formalização de cenários segue uma progressão:\n\n- 1 Narrativa informal: Descrição em linguagem natural coletada com o stakeholder.\n- 2 Descrição estruturada: Preenchimento do formulário de caso de uso (p",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "coletada com o stakeholder.\n- 2 Descrição estruturada: Preenchimento do formulário de caso de uso (pré-condições, fluxos, pós-condições).\n- 3 Diagrama de casos de uso: Representação gráfica UML das interações identificadas.\n- 4 Modelos complementares: Diagramas de sequência para detalhar os fluxos mais complexos.\n\n## Atenção\n\nA narrativa não substitui a formalização, mas é o ponto de partida. Sem ela, o diagrama pode ser criado sem compreensão real do domínio.\n\n<!-- image -->\n\n## Casos de Uso e ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ela, o diagrama pode ser criado sem compreensão real do domínio.\n\n<!-- image -->\n\n## Casos de Uso e Especificações Tabulares\n\nEm alguns casos, especialmente quando há múltiplas condições, tabelas complementam as descrições textuais:\n\n| Condição                    | Ação do Sistema                      |\n|-----------------------------|--------------------------------------|\n| Dados do paciente válidos   | Salvar registro e confirmar          |\n| CPF já cadastrado           | Exibir alerta de dupl",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "dos   | Salvar registro e confirmar          |\n| CPF já cadastrado           | Exibir alerta de duplici- dade       |\n| Campo obrigatório em branco | Destacar campo e bloquear salvamento |\n| Sessão expirada             | Redirecionar para tela de login      |\n\nTabelas são úteis quando há série de situações alternativas e é preciso descrever as ações para cada uma delas.\n\n<!-- image -->\n\n## Casos de Uso no Processo de Desenvolvimento\n\n## Onde se Encaixam?\n\nOs casos de uso são utilizados em difere",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "e Uso no Processo de Desenvolvimento\n\n## Onde se Encaixam?\n\nOs casos de uso são utilizados em diferentes fases do desenvolvimento orientado a objetos:\n\n- 1 Elicitação de Requisitos: Para capturar interações com stakeholders.\n- 2 Análise: Para identificar as classes e objetos do domínio.\n- 3 Projeto (Design): Para guiar o design das interfaces e a distribuição de responsabilidades.\n- 4 Testes: Como base para casos de teste de aceitação.\n\n## Sommerville\n\nOs casos de uso são mais úteis no projeto d",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " base para casos de teste de aceitação.\n\n## Sommerville\n\nOs casos de uso são mais úteis no projeto de sistemas do que na engenharia de requisitos propriamente dita.\n\n## O Desafio com Stakeholders\n\nAo utilizar casos de uso diretamente com stakeholders não técnicos:\n\n- Os stakeholders frequentemente não compreendem o termo 'caso de uso'.\n- O modelo gráfico (diagrama) nem sempre é considerado útil ou intuitivo por eles.\n- Muitas vezes, não estão interessados em uma descrição detalhada de cada inter",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " intuitivo por eles.\n- Muitas vezes, não estão interessados em uma descrição detalhada de cada interação do sistema.\n\n## Estratégia Recomendada\n\nUtilizar cenários narrativos e linguagem natural na fase inicial com stakeholders. Formalizar em casos de uso UML posteriormente com a equipe técnica.\n\n<!-- image -->\n\n## Casos de Uso como Base para o Projeto OO\n\n- No capítulo 5 de Sommerville, casos de uso são utilizados com outros modelos para documentar o projeto (design) .\n- Cada caso de uso pode gu",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "so são utilizados com outros modelos para documentar o projeto (design) .\n- Cada caso de uso pode guiar a identificação de:\n- Classes do domínio (substantivos nos fluxos).\n- Métodos das classes (verbos nos fluxos).\n- Responsabilidades e colaborações entre objetos.\n- O diagrama de sequência derivado do caso de uso mostra como os objetos trocam mensagens para realizar a funcionalidade.\n\n<!-- image -->\n\n## Da Análise Textual ao Caso de Uso - Passo a Passo\n\n- 1 Ler a descrição do sistema ou narrativ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "->\n\n## Da Análise Textual ao Caso de Uso - Passo a Passo\n\n- 1 Ler a descrição do sistema ou narrativa do stakeholder.\n- 2 Identificar os atores: Quem interage com o sistema? Quem se beneficia?\n- 3 Identificar os casos de uso: Quais são os objetivos dos atores? Quais serviços o sistema oferece?\n- 4 Definir o escopo: O que está dentro e fora do sistema?\n- 5 Descrever textualmente cada caso de uso com pré-condições, fluxo e pós-condições.\n- 6 Construir o diagrama UML representando os relacionamento",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "m pré-condições, fluxo e pós-condições.\n- 6 Construir o diagrama UML representando os relacionamentos.\n- 7 Validar com os stakeholders.\n\n<!-- image -->\n\n## Exercício de Leitura: Identificando Atores e Casos de Uso\n\n## Texto de exemplo (sistema de emissão de bilhetes):\n\nUma máquina de emitir bilhetes vende passagens de trem. Os usuários escolhem seu destino e fornecem um cartão de crédito e um número de identificação pessoal. A passagem de trem é emitida e o cartão de crédito dos usuários é cobra",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ro de identificação pessoal. A passagem de trem é emitida e o cartão de crédito dos usuários é cobrado. Quando os usuários pressionam o botão de iniciar, ativam um menu de possíveis destinos, junto com uma mensagem para a escolha de um destino e do tipo de bilhete necessário.\n\n## Identifique:\n\n- Atores:\n\n<!-- image -->\n\n## Exercício de Leitura: Identificando Atores e Casos de Uso\n\n## Texto de exemplo (sistema de emissão de bilhetes):\n\nUma máquina de emitir bilhetes vende passagens de trem. Os us",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "plo (sistema de emissão de bilhetes):\n\nUma máquina de emitir bilhetes vende passagens de trem. Os usuários escolhem seu destino e fornecem um cartão de crédito e um número de identificação pessoal. A passagem de trem é emitida e o cartão de crédito dos usuários é cobrado. Quando os usuários pressionam o botão de iniciar, ativam um menu de possíveis destinos, junto com uma mensagem para a escolha de um destino e do tipo de bilhete necessário.\n\n## Identifique:\n\n- Atores: Usuário (passageiro), Sist",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "e um destino e do tipo de bilhete necessário.\n\n## Identifique:\n\n- Atores: Usuário (passageiro), Sistema bancário (cartão de crédito).\n- Casos de uso:\n\n<!-- image -->\n\n## Exercício de Leitura: Identificando Atores e Casos de Uso\n\n## Texto de exemplo (sistema de emissão de bilhetes):\n\nUma máquina de emitir bilhetes vende passagens de trem. Os usuários escolhem seu destino e fornecem um cartão de crédito e um número de identificação pessoal. A passagem de trem é emitida e o cartão de crédito dos us",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "dito e um número de identificação pessoal. A passagem de trem é emitida e o cartão de crédito dos usuários é cobrado. Quando os usuários pressionam o botão de iniciar, ativam um menu de possíveis destinos, junto com uma mensagem para a escolha de um destino e do tipo de bilhete necessário.\n\n## Identifique:\n\n- Atores: Usuário (passageiro), Sistema bancário (cartão de crédito).\n- Casos de uso: Selecionar destino, Fornecer pagamento, Emitir bilhete.\n\n<!-- image -->\n\n## Ambiguidades e Omissões nos R",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ionar destino, Fornecer pagamento, Emitir bilhete.\n\n<!-- image -->\n\n## Ambiguidades e Omissões nos Requisitos\n\nAo analisar o texto do sistema de bilhetes, percebemos problemas típicos:\n\n- Ambiguidade: 'Número de identificação pessoal' - PIN do cartão ou CPF do usuário?\n- Omissão: O que acontece se o cartão for recusado?\n- Omissão: O que acontece se o destino selecionado estiver indisponível?\n- Omissão: É possível cancelar a operação no meio do processo?\n- Ambiguidade: 'Tipo de bilhete necessário",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ssão: É possível cancelar a operação no meio do processo?\n- Ambiguidade: 'Tipo de bilhete necessário' - ida e volta? Classe?\n\n## Conclusão\n\nConstruir casos de uso formais força a identificação de ambiguidades e omissões que passariam despercebidas em descrições informais.\n\n## Casos de Uso e Requisitos Não Funcionais\n\n- Casos de uso descrevem interações funcionais -o que o sistema faz.\n- Requisitos Não Funcionais (RNFs) não aparecem diretamente nos casos de uso.\n- Os RNFs se aplicam transversalme",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " Não Funcionais (RNFs) não aparecem diretamente nos casos de uso.\n- Os RNFs se aplicam transversalmente a múltiplos casos de uso.\n\n## Exemplo\n\n- Caso de Uso: Registrar Paciente (descreve o fluxo).\n- RNF associado: O registro deve ser salvo em no máximo 2 segundos (desempenho).\n- RNF associado: Os dados devem ser criptografados em repouso (segurança).\n\nAnotar os RNFs relevantes diretamente na documentação de cada caso de uso é uma boa prática.\n\n<!-- image -->\n\n## Casos de Uso como Contrato entre ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "entação de cada caso de uso é uma boa prática.\n\n<!-- image -->\n\n## Casos de Uso como Contrato entre Cliente e Desenvolvedor\n\n- Os casos de uso funcionam como um contrato informal : o que o sistema promete fazer.\n- A validação por stakeholders garante que o entendimento está alinhado antes do desenvolvimento .\n- Alterações nos casos de uso após o início do desenvolvimento geram retrabalho e custo .\n\n## Boas Práticas de Gerenciamento\n\n- Numerar e versionar cada caso de uso.\n- Registrar quem aprovo",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "\n\n## Boas Práticas de Gerenciamento\n\n- Numerar e versionar cada caso de uso.\n- Registrar quem aprovou cada versão.\n- Associar casos de uso a requisitos funcionais numerados.\n- Manter rastreabilidade entre caso de uso → módulo → teste.\n\n<!-- image -->\n\n## O que é o Documento de Requisitos?\n\n## Definição\n\nO Documento de Requisitos de Software (às vezes chamado de Especificação de Requisitos de Software ou ERS / SRS ) é uma declaração oficial do que os desenvolvedores do sistema devem implementar.\n",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "are ou ERS / SRS ) é uma declaração oficial do que os desenvolvedores do sistema devem implementar.\n\n- Pode incluir os requisitos de usuário e uma especificação detalhada dos requisitos de sistema.\n- Às vezes, requisitos de usuário e de sistema são integrados em uma descrição única.\n- Em outros casos, os requisitos de usuário são descritos em um capítulo introdutório.\n\n<!-- image -->\n\n## Quando o Documento é Essencial?\n\nOs documentos de requisito são essenciais quando:\n\n- Os sistemas têm seu des",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "Documento é Essencial?\n\nOs documentos de requisito são essenciais quando:\n\n- Os sistemas têm seu desenvolvimento terceirizado .\n- Times diferentes desenvolvem partes diferentes do sistema.\n- Uma análise detalhada dos requisitos é obrigatória (sistemas críticos, regulados).\n\nEm outras circunstâncias, como o desenvolvimento de um produto de software interno ou de um sistema de negócio ágil , um documento de requisitos detalhado pode não ser necessário.\n\n## Métodos Ágeis\n\nEm vez de um documento for",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "mento de requisitos detalhado pode não ser necessário.\n\n## Métodos Ágeis\n\nEm vez de um documento formal, as abordagens ágeis coletam requisitos incrementalmente em histórias de usuário em cartões ou lousas.\n\n<!-- image -->\n\n## Usuários do Documento de Requisitos\n\n- O documento tem um conjunto diverso de usuários:\n\nClientes do sistema Especificam os requisitos e os leem para conferir se satisfazem suas necessidades. Especificam mudanças nos requisitos.\n\nGerentes Usam o documento para planejar uma",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "suas necessidades. Especificam mudanças nos requisitos.\n\nGerentes Usam o documento para planejar uma proposta para o sistema e planejar o processo de desenvolvimento.\n\nEngenheiros de sistema Usam os requisitos para compreender qual sistema deve ser desenvolvido.\n\nEngenheiros de teste Usam os requisitos para desenvolver testes de validação do sistema.\n\nEngenheiros de manutenção Usam os requisitos para entender o sistema e as relações entre suas partes.\n\n<!-- image -->\n\n## Estrutura do Documento d",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ara entender o sistema e as relações entre suas partes.\n\n<!-- image -->\n\n## Estrutura do Documento de Requisitos (IEEE)\n\n| Capítulo           | Descrição                                           |\n|--------------------|-----------------------------------------------------|\n| Prefácio           | Histórico de versões e fundamenta- ção              |\n| Introdução         | Necessidade do sistema e objetivos de negócio       |\n| Glossário          | Termos técnicos utilizados                      ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "objetivos de negócio       |\n| Glossário          | Termos técnicos utilizados                          |\n| Req. de usuário    | Serviços fornecidos ao usuário (RF e RNF)           |\n| Arq. do sistema    | Visão geral e distribuição de funções               |\n| Esp. de sistema    | Requisitos funcionais e não funcio- nais detalhados |\n| Modelos do sistema | Diagramas UML                                       |\n| Evolução           | Mudanças previstas no sistema                       |\n| Apêndic",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "            |\n| Evolução           | Mudanças previstas no sistema                       |\n| Apêndices          | Hardware, banco de dados etc.                       |\n| Índice             | Índice alfabético, de diagramas e funções           |\n\n<!-- image -->\n\n## Detalhe: Prefácio e Introdução\n\n## Introdução\n\n- Descreve a necessidade do sistema.\n- Resume as funções do sistema.\n- Explica como o sistema trabalha com outros sistemas.\n- Como o sistema se encaixa nos objetivos de negócio .\n\n<!-- ima",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "stema trabalha com outros sistemas.\n- Como o sistema se encaixa nos objetivos de negócio .\n\n<!-- image -->\n\n## Prefácio\n\n- Define o público-alvo do documento.\n- Histórico de versões.\n- Fundamentação para cada nova versão.\n- Resumo das mudanças feitas.\n\n## Detalhe: Modelos do Sistema e Evolução\n\n## Modelos do Sistema\n\nInclui modelos gráficos mostrando as relações entre os componentes do sistema e entre o sistema e seu ambiente. Exemplos:\n\n- Modelos de objeto (diagramas de classes).\n- Modelos de f",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ntre o sistema e seu ambiente. Exemplos:\n\n- Modelos de objeto (diagramas de classes).\n- Modelos de fluxo de dados.\n- Modelos semânticos de dados.\n- Diagramas de casos de uso e de sequência.\n\n## Evolução do Sistema\n\nDescreve os pressupostos fundamentais e mudanças previstas em virtude da evolução do hardware , das necessidades dos usuários etc. Ajuda projetistas a evitar decisões que restringiriam futuras mudanças.\n\n<!-- image -->\n\n## Nível de Detalhe do Documento\n\n- O nível de detalhe depende do",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "futuras mudanças.\n\n<!-- image -->\n\n## Nível de Detalhe do Documento\n\n- O nível de detalhe depende do tipo de sistema e do processo de desenvolvimento:\n- Sistemas críticos (safety/security): Requisitos muito detalhados, pois erros podem causar riscos graves.\n- Desenvolvimento terceirizado: Especificações detalhadas e precisas são obrigatórias para evitar disputas contratuais.\n- Desenvolvimento interno iterativo: Pode ser menos detalhado; ambiguidades são resolvidas durante o desenvolvimento.\n\n̸\n\n",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "rno iterativo: Pode ser menos detalhado; ambiguidades são resolvidas durante o desenvolvimento.\n\n̸\n\n## Documento longo = Documento bom\n\nA diversidade dos usuários significa que o documento deve ser acordado por todos . Inclua uma tabela de conteúdo abrangente e um índice para facilitar a navegação.\n\n<!-- image -->\n\n## Padrões de Documento de Requisitos\n\n## Principais Organizações Padronizadoras\n\n- IEEE (Institute of Electrical and Electronics Engineers) desenvolveu o padrão IEEE 830 para estrutu",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " IEEE (Institute of Electrical and Electronics Engineers) desenvolveu o padrão IEEE 830 para estrutura de documentos de requisitos.\n- Departamento de Defesa dos EUA - define padrões para sistemas militares com longa vida útil.\n- Esses padrões são genéricos e podem ser adaptados a usos específicos.\n- O padrão IEEE é mais adequado para sistemas como comando e controle militar , desenvolvidos por um grupo de organizações ao longo de muitos anos.\n- Organizações podem criar padrões internos baseados ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "grupo de organizações ao longo de muitos anos.\n- Organizações podem criar padrões internos baseados nesses padrões genéricos.\n\n<!-- image -->\n\n## Documento de Requisitos vs. Métodos Ágeis\n\n## Desenvolvimento Tradicional\n\n- Documento formal completo.\n- Aprovado antes do desenvolvimento.\n- Serve de contrato entre cliente e fornecedor.\n- Essencial para sistemas críticos e terceirizados.\n\n## Recomendação de Sommerville\n\nMesmo em projetos ágeis, é útil manter um documento resumido que defina o negóci",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ção de Sommerville\n\nMesmo em projetos ágeis, é útil manter um documento resumido que defina o negócio e os requisitos de dependabilidade - é fácil esquecê-los ao focar nos requisitos funcionais de cada sprint.\n\n## Desenvolvimento Ágil\n\n- Requisitos em cartões (histórias de usuário).\n- Incrementais e priorizados pelo cliente.\n- Documento formal pode ficar obsoleto rapidamente.\n- Ainda útil para requisitos de dependabilidade.\n\n## O que é Validação de Requisitos?\n\n## Definição\n\nA validação de requi",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "uisitos de dependabilidade.\n\n## O que é Validação de Requisitos?\n\n## Definição\n\nA validação de requisitos é o processo de conferir se os requisitos definem o sistema que o cliente realmente quer . Ele se sobrepõe à elicitação e à análise, pois é voltado para encontrar problemas antes que eles se tornem caros.\n\n- Erros em um documento de requisitos podem levar a grandes custos de retrabalho quando descobertos durante o desenvolvimento.\n- O custo de corrigir um problema nos requisitos com uma alte",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "descobertos durante o desenvolvimento.\n- O custo de corrigir um problema nos requisitos com uma alteração no sistema é muito maior do que corrigir erros de projeto ou de código .\n- Uma mudança nos requisitos significa que o projeto e a implementação também deverão ser modificados .\n\n<!-- image -->\n\n## Por que a Validação é Criticamente Importante?\n\n## O Custo Cresce com o Tempo\n\nEstudos clássicos de engenharia de software mostram que o custo de corrigir um defeito cresce exponencialmente conform",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "de engenharia de software mostram que o custo de corrigir um defeito cresce exponencialmente conforme avançamos nas fases do desenvolvimento:\n\n- Corrigir na fase de requisitos : custo 1x.\n- Corrigir na fase de projeto : custo 5x.\n- Corrigir na fase de implementação : custo 10x.\n- Corrigir após a entrega : custo 100x.\n\n<!-- image -->\n\n## As Cinco Conferências da Validação\n\nDurante o processo de validação de requisitos, cinco tipos de conferências devem ser executados:\n\n- 1 Conferência da validade",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "idação de requisitos, cinco tipos de conferências devem ser executados:\n\n- 1 Conferência da validade: Os requisitos refletem as reais necessidades dos usuários do sistema?\n- 2 Conferência da consistência: Os requisitos no documento não entram em conflito entre si?\n- 3 Conferência da completude: O documento inclui todos os serviços e restrições pretendidos?\n- 4 Conferência do realismo: Os requisitos podem ser implementados com o orçamento e tecnologia disponíveis?\n- 5 Verificabilidade: É possível",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "s podem ser implementados com o orçamento e tecnologia disponíveis?\n- 5 Verificabilidade: É possível escrever um conjunto de testes que demonstre que o requisito foi satisfeito?\n\n<!-- image -->\n\n## Os Três Elementos Visuais do Diagrama\n\n<!-- image -->\n\n| Ator   | Caso deUso        | Comunicacao   |\n|--------|-------------------|---------------|\n| YIO    | Solicita Consulta | elou          |\n\n<!-- image -->\n\n## Diagrama Básico: Atores e Casos de Uso\n\n<!-- image -->\n\nCada ator é conectado aos caso",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "image -->\n\n## Diagrama Básico: Atores e Casos de Uso\n\n<!-- image -->\n\nCada ator é conectado aos casos de uso que ele pode executar por meio de uma associação .\n\n<!-- image -->\n\n## Exemplo: Sistema de Consultas Médicas\n\n<!-- image -->\n\n<!-- image -->\n\n## Adicionando o Relacionamento «include»\n\n<!-- image -->\n\n<!-- image -->\n\n## Relacionamentos «include» e «extend»\n\n<!-- image -->\n\n<!-- image -->\n\n## Pontos-Chave: Casos de Uso\n\n- Casos de uso são a forma padrão UML de descrever interações entre at",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "# Pontos-Chave: Casos de Uso\n\n- Casos de uso são a forma padrão UML de descrever interações entre atores e o sistema .\n- O diagrama de casos de uso oferece uma visão geral das funcionalidades; a descrição textual fornece o detalhe .\n- Cada caso de uso pode englobar múltiplos cenários : caminho feliz, alternativo e de exceção.\n- Casos de uso são mais úteis no projeto de sistemas do que na elicitação inicial de requisitos com leigos.\n- Cada caso de uso deve ser documentado com pré-condições, fluxo",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "o inicial de requisitos com leigos.\n- Cada caso de uso deve ser documentado com pré-condições, fluxos e pós-condições .\n\n<!-- image -->\n\n## Pontos-Chave: Documento de Requisitos\n\n- O Documento de Requisitos de Software (SRS/ERS) é a declaração oficial do que o sistema deve implementar.\n- É essencial em sistemas terceirizados, críticos ou desenvolvidos por múltiplas equipes.\n- Deve ser organizado para que clientes e desenvolvedores possam usá-lo.\n- A estrutura IEEE inclui: prefácio, introdução, g",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "ara que clientes e desenvolvedores possam usá-lo.\n- A estrutura IEEE inclui: prefácio, introdução, glossário, requisitos de usuário, arquitetura, especificação de sistema, modelos, evolução e apêndices.\n- O documento tem usuários diversificados : clientes, gerentes, engenheiros, testadores e mantenedores.\n\n<!-- image -->\n\n## Pontos-Chave: Validação de Requisitos\n\n- Validação verifica se os requisitos definem o sistema que o cliente realmente quer .\n- As cinco conferências essenciais: validade, c",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "tos definem o sistema que o cliente realmente quer .\n- As cinco conferências essenciais: validade, consistência, completude, realismo e verificabilidade .\n- Três técnicas principais: revisões de requisitos, prototipação e geração de casos de teste .\n- Erros de requisitos descobertos após a implementação custam exponencialmente mais do que os descobertos cedo.\n- É raro encontrar todos os problemas durante a validação - mais alterações serão necessárias.\n\n<!-- image -->\n\n## Pontos-Chave: Gerenciam",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "durante a validação - mais alterações serão necessárias.\n\n<!-- image -->\n\n## Pontos-Chave: Gerenciamento de Requisitos\n\n- Mudanças em requisitos são inevitáveis -o ambiente de negócio, a tecnologia e os stakeholders mudam.\n- Requisitos duradouros mudam lentamente; requisitos voláteis mudam frequentemente.\n- O processo formal de gerenciamento de mudança tem três estágios: análise do problema, análise de custo e implementação .\n- A rastreabilidade é essencial para avaliar o impacto de mudanças.\n- ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "se de custo e implementação .\n- A rastreabilidade é essencial para avaliar o impacto de mudanças.\n- Evitar modificar o sistema sem antes documentar a mudança nos requisitos.\n\n<!-- image -->\n\n## O Ciclo Completo: Da Elicitação ao Gerenciamento\n\n- 1 Elicitação: Descobrir o que os stakeholders precisam por meio de entrevistas, etnografia e cenários.\n- 2 Especificação: Documentar em casos de uso, descrições estruturadas e no documento SRS.\n- 3 Validação: Revisões, prototipação e geração de casos de ",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "rições estruturadas e no documento SRS.\n- 3 Validação: Revisões, prototipação e geração de casos de teste para confirmar que os requisitos estão corretos.\n- 4 Gerenciamento: Controlar mudanças, manter rastreabilidade e atualizar o documento de requisitos.\n\n## Regra de Ouro\n\nInvestir tempo na qualidade dos requisitos é sempre mais barato do que corrigir o sistema após a entrega.\n\n<!-- image -->\n\n## Conexões com os Próximos Temas\n\n- Diagramas de Classes: Os substantivos identificados nos fluxos do",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": " Conexões com os Próximos Temas\n\n- Diagramas de Classes: Os substantivos identificados nos fluxos dos casos de uso se tornam as classes do modelo de domínio.\n- Diagramas de Sequência: Detalham como os objetos colaboram para realizar cada caso de uso.\n- Diagramas de Estado: Mostram como o sistema muda de estado ao longo dos fluxos de cada caso de uso.\n- Padrões de Projeto: Surgem como soluções recorrentes para problemas de design identificados durante a análise dos casos de uso.\n\n<!-- image -->\n\n",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "rrentes para problemas de design identificados durante a análise dos casos de uso.\n\n<!-- image -->\n\n## Referências Bibliográficas\n\n- SOMMERVILLE, Ian. Engenharia de Software . 9. ed. São Paulo: Pearson Prentice Hall, 2011. Cap. 4 (Engenharia de Requisitos), seções 4.4.3, 4.4.4, 4.5 e 4.6.\n- JACOBSON, I.; CHRISTERSON, M.; JONSSON, P.; OVERGAARD, G. Object-Oriented Software Engineering . Wokingham, UK: Addison-Wesley, 1993.\n- STEVENS, P.; POOLEY, R. Using UML: Software Engineering with Objects and",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "UK: Addison-Wesley, 1993.\n- STEVENS, P.; POOLEY, R. Using UML: Software Engineering with Objects and Components . 2. ed. Harlow, UK: Addison-Wesley, 2006.\n- ROBERTSON, S.; ROBERTSON, J. Mastering the Requirements Process . 3. ed. Boston: Addison-Wesley, 2013.\n- IEEE. IEEE Recommended Practice for Software Requirements Specifications . IEEE Software Engineering Standards Collection. Los Alamitos, CA: IEEE Computer Society Press, 1998.\n\n<!-- image -->\n\n## Obrigado!\n\n## Dúvidas e Discussões\n\nLeonar",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  },
+  {
+    "texto": "A: IEEE Computer Society Press, 1998.\n\n<!-- image -->\n\n## Obrigado!\n\n## Dúvidas e Discussões\n\nLeonardo S. Victorio\n\nleonardo.victorio@ufms.br\n\nFaculdade de Computação - UFMS\n\n'A engenharia de requisitos é a fundação de todo o desenvolvimento de software.'\n\n- Sommerville, 2011\n\n<!-- image -->",
+    "documento": "APSOO___Aula_Casos_de_Uso"
+  }
+]

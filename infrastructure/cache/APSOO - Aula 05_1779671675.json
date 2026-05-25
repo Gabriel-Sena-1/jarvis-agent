@@ -1,0 +1,238 @@
+[
+  {
+    "texto": "Análise e Projeto de Software Orientado a Objetos Engenharia de Requisitos: Levantamento, Requisitos Funcionais e Não Funcionais\n\nLeonardo S. Victorio\n\nFaculdade de Computação - UFMS\n\n2026/1\n\n<!-- image -->\n\n## Sumário\n\n- 1 Introdução à Engenharia de Requisitos\n- 2 Tipos de Requisitos\n- 3 Requisitos Funcionais\n- 4 Requisitos Não Funcionais\n- 5 Levantamento de Requisitos\n- 6 Especificação de Requisitos\n- 7 Validação e Gerenciamento de Requisitos\n\n<!-- image -->\n\n## O que são Requisitos?\n\n- Requis",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "itos\n- 7 Validação e Gerenciamento de Requisitos\n\n<!-- image -->\n\n## O que são Requisitos?\n\n- Requisitos de um sistema são descrições do que o sistema deve fazer: os serviços que oferece e as restrições ao seu funcionamento.\n- Refletem as necessidades dos clientes para um sistema que serve a determinado propósito.\n- O processo de descobrir, analisar, documentar e verificar esses serviços e restrições é chamado de Engenharia de Requisitos (RE) .\n\n<!-- image -->\n\n## Por que os Requisitos são Impor",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "ões é chamado de Engenharia de Requisitos (RE) .\n\n<!-- image -->\n\n## Por que os Requisitos são Importantes?\n\n- Erros nos requisitos são os mais caros de corrigir: quanto mais tarde são descobertos, maior o retrabalho.\n- Um sistema tecnicamente perfeito, mas que não atende aos requisitos corretos, é um projeto com falha .\n- Estudos mostram que a maioria dos fracassos em projetos de software tem origem em requisitos mal definidos ou incompletos.\n- A engenharia de requisitos estabelece a base sólid",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "gem em requisitos mal definidos ou incompletos.\n- A engenharia de requisitos estabelece a base sólida sobre a qual todo o desenvolvimento é construído.\n\n<!-- image -->\n\n## O Problema da Profundidade dos Requisitos\n\n## O Dilema do Nível de Abstração\n\nOs requisitos variam desde declarações abstratas de alto nível dos serviços do sistema até especificações detalhadas das funções do sistema.\n\n- O nível correto de detalhe depende do uso que se fará dos requisitos.\n- Requisitos muito vagos levam a amb",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "l correto de detalhe depende do uso que se fará dos requisitos.\n- Requisitos muito vagos levam a ambiguidades e mal-entendidos.\n- Requisitos muito detalhados prematuramente limitam a criatividade da solução de projeto.\n\n<!-- image -->\n\n## Requisitos de Usuário vs. Requisitos de Sistema\n\n## Dois Níveis de Abstração\n\n- Requisitos de Usuário: Declarações em linguagem natural de quais serviços o sistema deve oferecer e as restrições sob as quais deve operar. Escritos para os clientes .\n- Requisitos ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "ma deve oferecer e as restrições sob as quais deve operar. Escritos para os clientes .\n- Requisitos de Sistema: Documentos estruturados que definem de forma detalhada as funções, os serviços e as restrições operacionais do sistema. Escritos para os desenvolvedores .\n\n<!-- image -->\n\n## Quem Lê os Requisitos?\n\n## Requisitos de Usuário\n\n- Gerentes de clientes\n- Usuários finais\n- Engenheiros de clientes\n- Gerentes de contratados\n- Arquitetos do sistema\n\n## Requisitos de Sistema\n\n- Engenheiros de si",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "tes\n- Gerentes de contratados\n- Arquitetos do sistema\n\n## Requisitos de Sistema\n\n- Engenheiros de sistema\n- Engenheiros de software\n- Engenheiros de testes\n- Engenheiros de interface\n\n<!-- image -->\n\n## O Processo de Engenharia de Requisitos\n\nA engenharia de requisitos compreende um conjunto de atividades estruturadas:\n\n- 1 Estudo de Viabilidade: O sistema é útil e realizável para a empresa?\n- 2 Elicitação e Análise: Quais serviços os stakeholders necessitam?\n- 3 Especificação: Definição dos req",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "licitação e Análise: Quais serviços os stakeholders necessitam?\n- 3 Especificação: Definição dos requisitos de forma detalhada.\n- 4 Validação: Verificar se os requisitos definem o sistema que o cliente quer.\n- 5 Gerenciamento: Controle de mudanças ao longo do ciclo de vida.\n\n<!-- image -->\n\n## Classificação dos Requisitos\n\n## Divisão Principal\n\nOs requisitos de sistema são classificados em três grandes categorias:\n\n- 1 Requisitos Funcionais (RF): O que o sistema deve fazer .\n- 2 Requisitos Não F",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "andes categorias:\n\n- 1 Requisitos Funcionais (RF): O que o sistema deve fazer .\n- 2 Requisitos Não Funcionais (RNF): Restrições sobre o sistema ou o processo de desenvolvimento.\n- 3 Requisitos de Domínio: Derivados diretamente do domínio de aplicação do sistema.\n\n<!-- image -->\n\n## Requisitos Funcionais - Visão Geral\n\n- Descrevem os serviços que o sistema deve fornecer.\n- Descrevem como o sistema deve reagir a entradas específicas.\n- Descrevem como o sistema deve se comportar em situações partic",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "deve reagir a entradas específicas.\n- Descrevem como o sistema deve se comportar em situações particulares.\n- Em alguns casos, também declaram explicitamente o que o sistema não deve fazer .\n\n<!-- image -->\n\n## Requisitos Não Funcionais - Visão Geral\n\n- Definem propriedades e restrições do sistema: confiabilidade, tempo de resposta, uso de memória, etc.\n- Muitas vezes se aplicam ao sistema como um todo , não a funções individuais.\n- Podem ser mais críticos que os requisitos funcionais - um siste",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " todo , não a funções individuais.\n- Podem ser mais críticos que os requisitos funcionais - um sistema que não os satisfaz pode ser inutilizável .\n- Podem surgir de restrições de usuários (orçamento), políticas organizacionais, padrões de segurança ou interoperabilidade.\n\n<!-- image -->\n\n## Requisitos de Domínio\n\n- São derivados do domínio da aplicação do sistema.\n- Refletem características e restrições específicas daquele domínio.\n- Exemplos: regulamentações bancárias, normas médicas (HIPAA), l",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "rições específicas daquele domínio.\n- Exemplos: regulamentações bancárias, normas médicas (HIPAA), leis de privacidade (LGPD).\n- Podem ser funcionais ou não funcionais .\n\n## Exemplo\n\nEm um sistema de trem, os requisitos de domínio incluem regras de segurança que determinam a distância mínima entre trens, independente das funcionalidades desejadas pelos usuários.\n\n<!-- image -->\n\n## A Inter-relação entre os Tipos de Requisitos\n\n## Atenção Importante\n\nNa prática, a linha entre requisitos funcionai",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " entre os Tipos de Requisitos\n\n## Atenção Importante\n\nNa prática, a linha entre requisitos funcionais, não funcionais e de domínio pode ser tênue e subjetiva . Uma mesma necessidade pode ser expressa tanto como funcional quanto como não funcional dependendo da perspectiva.\n\n- Exemplo: 'O sistema deve criptografar todos os dados de pagamento.' - Este é um requisito funcional (criptografar) com motivação de domínio (segurança = RNF).\n\n<!-- image -->\n\n## Definição de Requisitos Funcionais\n\n## Defin",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "vação de domínio (segurança = RNF).\n\n<!-- image -->\n\n## Definição de Requisitos Funcionais\n\n## Definição\n\nRequisitos funcionais são declarações de serviços que o sistema deve fornecer, de como o sistema deve reagir a entradas particulares e de como o sistema deve se comportar em situações específicas.\n\n- Descrevem a funcionalidade ou os serviços do sistema.\n- Dependem do tipo de software, dos usuários esperados e do tipo de sistema.\n- Podem ser descritos de forma abstrata (para usuários) ou deta",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "rios esperados e do tipo de sistema.\n- Podem ser descritos de forma abstrata (para usuários) ou detalhada (para desenvolvedores).\n\n<!-- image -->\n\n## Exemplo: Sistema de Biblioteca (MHC-PMS)\n\n## Requisitos Funcionais de um Sistema de Informações Médicas\n\n- RF-01: Um usuário deve ser capaz de pesquisar todos os registros de pacientes do sistema de saúde.\n- RF-02: O sistema deve gerar a cada dia, para cada clínica, uma lista de pacientes esperados naquele dia.\n- RF-03: Cada membro da equipe usando",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "ra cada clínica, uma lista de pacientes esperados naquele dia.\n- RF-03: Cada membro da equipe usando o sistema deve ser identificado por seu número de empregado de 8 dígitos.\n- RF-04: O sistema deve permitir que os médicos registrem consultas, diagnósticos e medicamentos.\n\n<!-- image -->\n\n## Completude e Consistência dos RFs\n\n## Dois Requisitos Essenciais\n\n- Completude: Os requisitos devem incluir descrições de todos os serviços requeridos.\n- Consistência: Os requisitos não devem apresentar defi",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " descrições de todos os serviços requeridos.\n- Consistência: Os requisitos não devem apresentar definições contraditórias.\n- Na prática, é quase impossível produzir um documento de requisitos que seja completo e consistente desde o início.\n- Inconsistências aparecem gradualmente à medida que mais detalhes são descobertos.\n\n<!-- image -->\n\n## O Problema da Imprecisão\n\n- Problemas surgem quando os requisitos não são precisos o suficiente.\n- Interpretações ambíguas entre desenvolvedores e clientes ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "equisitos não são precisos o suficiente.\n- Interpretações ambíguas entre desenvolvedores e clientes são a principal causa de retrabalho.\n\n## Exemplo de Imprecisão\n\n- RF mal escrito: 'O sistema deve fornecer uma interface adequada para os operadores.'\n- Problema: O que é 'adequada'? Para o cliente pode ser simples; para o desenvolvedor pode ser sofisticada.\n- RF bem escrito: 'O sistema deve fornecer uma interface gráfica baseada em menus com tempo máximo de resposta de 2 segundos.'\n\n<!-- image --",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "r uma interface gráfica baseada em menus com tempo máximo de resposta de 2 segundos.'\n\n<!-- image -->\n\n## Especificando Requisitos Funcionais\n\n## Boas Práticas\n\n- Use a forma verbal 'deverá' (shall) para indicar obrigatoriedade.\n- Use 'deveria' (should) para indicar desejável, mas não obrigatório.\n- Numere cada requisito individualmente para rastreabilidade.\n- Escreva um requisito por vez - evite combinar múltiplas ações.\n- Cada requisito funcional deve ser verificável : deve ser possível escrev",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "combinar múltiplas ações.\n- Cada requisito funcional deve ser verificável : deve ser possível escrever um teste para ele.\n\n<!-- image -->\n\n## Definição de Requisitos Não Funcionais\n\n## Definição\n\nRequisitos não funcionais são restrições sobre os serviços ou as funções oferecidos pelo sistema. Incluem restrições de tempo, restrições sobre o processo de desenvolvimento e restrições impostas por padrões.\n\n- Frequentemente se aplicam ao sistema como um todo , em vez de a funções individuais.\n- Podem",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "ões.\n\n- Frequentemente se aplicam ao sistema como um todo , em vez de a funções individuais.\n- Podem ser mais críticos que os requisitos funcionais.\n- Um sistema que não satisfaz seus RNFs pode ser inutilizável , mesmo que funcione corretamente.\n\n<!-- image -->\n\n## Origens dos Requisitos Não Funcionais\n\n## Requisitos de Produto\n\nEspecificam o comportamento do produto:\n\n- Desempenho\n- Confiabilidade\n- Robustez\n- Portabilidade\n- Usabilidade\n\n## Req. Organizacionais\n\nDerivados de políticas da empre",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "e\n- Robustez\n- Portabilidade\n- Usabilidade\n\n## Req. Organizacionais\n\nDerivados de políticas da empresa:\n\n- Padrões de processo\n- Requisitos de implementação\n- Requisitos de entrega\n\n## Requisitos Externos\n\nDerivados de fatores externos :\n\n- Interoperabilidade\n- Requisitos legais\n- Ética\n- Legislação (LGPD)\n\n<!-- image -->\n\n## Requisitos de Produto - Detalhamento\n\n- Requisitos de velocidade: Número de transações processadas por segundo; tempo de resposta do usuário.\n- Requisitos de tamanho: Memór",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " de transações processadas por segundo; tempo de resposta do usuário.\n- Requisitos de tamanho: Memória utilizada; tamanho do disco requerido.\n- Requisitos de facilidade de uso: Tempo de treinamento necessário; conformidade com padrões de acessibilidade.\n- Requisitos de confiabilidade: Tempo médio entre falhas (MTBF); probabilidade de disponibilidade do sistema.\n- Requisitos de robustez: Tempo para reinício após falha; percentual de eventos que causam falha.\n- Requisitos de portabilidade: Percent",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " reinício após falha; percentual de eventos que causam falha.\n- Requisitos de portabilidade: Percentual de declarações dependentes da plataforma alvo.\n\n<!-- image -->\n\n## Requisitos Organizacionais e Externos - Detalhamento\n\n## Organizacionais\n\n- Ambientais: O sistema deve operar em ambientes com restrições específicas de hardware.\n- Operacionais: O sistema deve ser entregue como scripts Python e documentação HTML.\n- De desenvolvimento: O processo deve ser documentado de acordo com a norma ISO/I",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "documentação HTML.\n- De desenvolvimento: O processo deve ser documentado de acordo com a norma ISO/IEC 29119.\n\n## Externos\n\n- Regulatórios: O sistema deve obedecer às regulamentações de privacidade de dados (LGPD).\n- De segurança: O sistema deve seguir as normas de segurança de dados médicos.\n- De privacidade: Dados de pacientes devem ser armazenados e transmitidos de forma criptografada.\n\n## Exemplo de Requisito Não Funcional\n\n## RNF do Sistema de Saúde MHC-PMS\n\n- RNF-01 (Desempenho): O sistema",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "plo de Requisito Não Funcional\n\n## RNF do Sistema de Saúde MHC-PMS\n\n- RNF-01 (Desempenho): O sistema deve estar disponível para todas as clínicas durante o horário normal de trabalho (seg-sex, 8h às 17h30). Paradas para manutenção devem ocorrer fora desse horário.\n- RNF-02 (Privacidade): O sistema deve implementar disposições de privacidade do paciente conforme definido na HStan-03-2006-priv.\n- RNF-03 (Segurança): O sistema deve ser implementado em linguagem de programação segura (ex: Java ou Ad",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "F-03 (Segurança): O sistema deve ser implementado em linguagem de programação segura (ex: Java ou Ada).\n\n<!-- image -->\n\n## O Problema da Verificabilidade dos RNFs\n\n## RNFs Difíceis de Verificar\n\nRequisitos como 'o sistema deve ser fácil de usar' ou 'o sistema deve ser rápido' são inverificáveis .\n\n## Métricas para Tornar RNFs Verificáveis\n\n| Propriedade                                                                | Métrica                                                                       ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "                    | Métrica                                                                                                                                                                                          |\n|----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Velocid",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "-----------------------------------------------------------------------------------------|\n| Velocidade Tamanho Facilidade de uso Confiabilidade Robustez Portabilidade | Transações/seg; tempo de resposta Kbytes; número de chips de RAM Tempo de treinamento; erros/hora Prob. de indisponibilidade; MTBF Tempo de reinício; eventos de falha % declarações dependentes |\n\n<!-- image -->\n\n## Conflitos entre Requisitos\n\n- Requisitos não funcionais frequentemente conflitam entre si.\n\n## Exemplos de Conflito",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " Requisitos\n\n- Requisitos não funcionais frequentemente conflitam entre si.\n\n## Exemplos de Conflitos\n\n- Desempenho vs. Segurança: Criptografia aumenta a segurança, mas diminui o desempenho.\n- Usabilidade vs. Segurança: Senhas complexas aumentam a segurança, mas dificultam o uso.\n- Portabilidade vs. Desempenho: Código genérico é portável, mas menos eficiente que código otimizado para a plataforma.\n- É necessário negociar com os stakeholders para definir prioridades.\n\n<!-- image -->\n\n## O que é E",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "\n- É necessário negociar com os stakeholders para definir prioridades.\n\n<!-- image -->\n\n## O que é Elicitação de Requisitos?\n\n## Definição\n\nElicitação de requisitos (ou levantamento de requisitos) é o processo pelo qual engenheiros de software trabalham com clientes e usuários finais para descobrir os requisitos do sistema a ser desenvolvido.\n\n- Também chamada de descoberta de requisitos .\n- Envolve a interação com os stakeholders do sistema.\n- É um processo iterativo - os requisitos evoluem com",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "ve a interação com os stakeholders do sistema.\n- É um processo iterativo - os requisitos evoluem com o tempo.\n- Stakeholders raramente sabem exatamente o que querem e expressam de forma que pode ser mal interpretada.\n\n<!-- image -->\n\n## Os Stakeholders\n\n## Quem são os Stakeholders?\n\nStakeholders são as pessoas direta ou indiretamente afetadas pelo sistema - clientes, usuários finais, gerentes, reguladores e a própria equipe de desenvolvimento.\n\n- Usuários finais: Quem usará o sistema no dia a di",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "uladores e a própria equipe de desenvolvimento.\n\n- Usuários finais: Quem usará o sistema no dia a dia - sabem como o trabalho é feito.\n- Gerentes: Definem restrições de negócio e prioridades.\n- Engenheiros de sistema: Preocupados com a integração com outros sistemas.\n- Stakeholders externos: Reguladores, parceiros, entidades legais.\n\n<!-- image -->\n\n## Dificuldades do Levantamento de Requisitos\n\n## Problemas Comuns\n\n- Stakeholders não sabem o que querem e às vezes mudam de ideia durante a elicit",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "# Problemas Comuns\n\n- Stakeholders não sabem o que querem e às vezes mudam de ideia durante a elicitação.\n- Stakeholders descrevem os requisitos em sua própria linguagem (jargão de domínio) que o analista não conhece.\n- Diferentes stakeholders têm requisitos conflitantes - e ambos estão certos do seu ponto de vista.\n- Fatores políticos e organizacionais podem influenciar os requisitos do sistema.\n- O ambiente muda durante a elicitação - novos stakeholders ou legislações podem surgir.\n\n<!-- image",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "- O ambiente muda durante a elicitação - novos stakeholders ou legislações podem surgir.\n\n<!-- image -->\n\n## Técnicas de Levantamento: Entrevistas\n\n## Entrevistas Fechadas\n\n- Conjunto pré-definido de perguntas.\n- Útil para confirmar informações já coletadas.\n- Resultado mais consistente e fácil de analisar.\n\n## Entrevistas Abertas\n\n- Questões sem respostas pré-definidas.\n- Útil para descobrir novos requisitos.\n- Permite ao stakeholder explorar livremente o domínio.\n- Na prática, o mais eficiente",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "s requisitos.\n- Permite ao stakeholder explorar livremente o domínio.\n- Na prática, o mais eficiente é combinar os dois tipos ao longo do projeto.\n- O analista deve compreender o domínio do negócio antes de entrevistar.\n\n<!-- image -->\n\n## Técnicas de Levantamento: Etnografia\n\n## O que é Etnografia?\n\nTécnica de observação em que o analista se insere no ambiente de trabalho para observar e entender como os processos realmente funcionam na prática.\n\n- Eficaz para descobrir requisitos implícitos - ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " como os processos realmente funcionam na prática.\n\n- Eficaz para descobrir requisitos implícitos - aqueles que os usuários fazem automaticamente e não mencionam.\n- Revela a diferença entre o processo formal (como deveria ser) e o processo real (como acontece).\n- Captura o contexto social do trabalho (colaboração, interrupções, adaptações).\n- Limitação: não identifica requisitos novos ou organizacionais não representados na prática atual.\n\n<!-- image -->\n\n## Técnicas de Levantamento: Casos de Us",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "ionais não representados na prática atual.\n\n<!-- image -->\n\n## Técnicas de Levantamento: Casos de Uso e Cenários\n\n- Cenários são descrições narrativas de como o sistema será utilizado em situações específicas.\n- Casos de Uso são representações estruturadas dessas interações entre usuários (atores) e o sistema.\n\n## Estrutura de um Cenário\n\n- Descrição do estado inicial do sistema.\n- Fluxo normal de eventos.\n- O que pode dar errado e como tratar (fluxo alternativo).\n- Informação sobre atividades c",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " eventos.\n- O que pode dar errado e como tratar (fluxo alternativo).\n- Informação sobre atividades concorrentes.\n- Descrição do estado final após a interação.\n\n<!-- image -->\n\n## O Processo de Elicitação e Análise\n\n- O processo completo de levantamento envolve quatro atividades principais:\n- 1 Descoberta de Requisitos: Interação com os stakeholders para identificar e coletar suas necessidades.\n- 2 Classificação e Organização: Agrupar os requisitos relacionados em clusters coerentes (funcionais, ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " Classificação e Organização: Agrupar os requisitos relacionados em clusters coerentes (funcionais, de desempenho, de segurança, etc.).\n- 3 Priorização e Negociação: Resolver conflitos entre stakeholders, priorizando requisitos mais críticos.\n- 4 Especificação: Documentar os requisitos de forma clara, precisa e rastreável.\n\n<!-- image -->\n\n## O que é Especificação de Requisitos?\n\n## Definição\n\nEspecificação de requisitos é o processo de escrever os requisitos de usuário e de sistema em um docume",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "ecificação de requisitos é o processo de escrever os requisitos de usuário e de sistema em um documento formal e estruturado, geralmente chamado de Documento de Requisitos de Software (SRS) .\n\n- O documento deve ser completo e consistente .\n- Os requisitos de usuário em linguagem natural e os requisitos de sistema em formato estruturado.\n- Deve ser verificável : cada requisito precisa poder ser testado.\n\n<!-- image -->\n\n## Formas de Especificação\n\n| Notação                       | Descrição     ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "stado.\n\n<!-- image -->\n\n## Formas de Especificação\n\n| Notação                       | Descrição                                                              |\n|-------------------------------|------------------------------------------------------------------------|\n| Linguagem natural             | Frases em linguagem cotidiana numeradas. Forma mais comum e acessível. |\n| Linguagem natural estruturada | Formulários e templates padroni- zados para cada tipo de requisito.    |\n| Linguagem de descr",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "rada | Formulários e templates padroni- zados para cada tipo de requisito.    |\n| Linguagem de descrição (PDL)  | Linguagem parecida com código, mais precisa que texto livre.           |\n| Notação gráfica               | Diagramas UML: casos de uso, diagramas de sequência.                   |\n| Especificação matemática      | Baseada em lógica formal. Alta precisão, baixa legibilidade.           |\n\n<!-- image -->\n\n## Especificação em Linguagem Natural\n\n- É a forma mais universalmente utilizada -",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "\n\n<!-- image -->\n\n## Especificação em Linguagem Natural\n\n- É a forma mais universalmente utilizada - todos os stakeholders conseguem ler.\n- Vantagens: Expressiva, flexível, fácil de entender.\n- Desvantagens: Ambiguidade, falta de precisão, difícil de validar automaticamente.\n\n## Diretrizes para Escrever Requisitos em Linguagem Natural\n\n- Invente um formato padrão e use-o consistentemente.\n- Use 'deverá' para requisito obrigatório e 'deveria' para desejável.\n- Use negrito para destacar partes ess",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "everá' para requisito obrigatório e 'deveria' para desejável.\n- Use negrito para destacar partes essenciais do requisito.\n- Evite jargões de TI - escreva para o cliente.\n- Inclua a justificativa de por que o requisito existe.\n\n<!-- image -->\n\n## Especificação Estruturada de Requisitos\n\n## Campos Típicos de um Formulário de Requisito\n\n- Identificador único do requisito (ex: RF-07).\n- Descrição: Enunciado do serviço ou restrição.\n- Razão/Justificativa: Por que esse requisito é necessário.\n- Origem",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "nciado do serviço ou restrição.\n- Razão/Justificativa: Por que esse requisito é necessário.\n- Origem: Stakeholder ou documento fonte.\n- Dependências: Outros requisitos relacionados.\n- Critério de aceitação: Como testar se o requisito foi satisfeito.\n- Prioridade: Alta, Média, Baixa.\n\n<!-- image -->\n\n## O Documento de Requisitos de Software (SRS)\n\n- O documento oficial que comunica os requisitos do sistema para os clientes, desenvolvedores e testadores.\n- Deve especificar o que o sistema faz, não",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " sistema para os clientes, desenvolvedores e testadores.\n- Deve especificar o que o sistema faz, não como será implementado.\n\n## Estrutura Típica do SRS (IEEE 830)\n\n- 1 Prefácio e histórico de revisões\n- 2 Introdução e propósito\n- 3 Glossário\n- 4 Definição dos requisitos de usuário\n- 5 Arquitetura do sistema (visão geral)\n- 6 Especificação dos requisitos de sistema\n- 7 Modelos do sistema (UML)\n- 8 Evolução do sistema\n- 9 Apêndices e índice\n\n## Casos de Uso como Especificação\n\n- Casos de Uso são ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " Evolução do sistema\n- 9 Apêndices e índice\n\n## Casos de Uso como Especificação\n\n- Casos de Uso são uma forma visual e narrativa de especificar requisitos funcionais .\n- Cada Caso de Uso descreve uma interação entre um ator (usuário ou sistema externo) e o sistema.\n\n## Estrutura de um Caso de Uso\n\n- Nome: Registrar Consulta\n- Ator principal: Médico\n- Pré-condição: Médico autenticado; paciente localizado no sistema.\n- Fluxo principal: (1) Médico seleciona paciente; (2) informa dados da consulta; ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "lizado no sistema.\n- Fluxo principal: (1) Médico seleciona paciente; (2) informa dados da consulta; (3) sistema registra e confirma.\n- Fluxo alternativo: Paciente não encontrado → sistema solicita cadastro.\n- Pós-condição: Consulta registrada; lista de medicamentos atualizada.\n\n<!-- image -->\n\n## Validação de Requisitos\n\n## Objetivo\n\nValidação de requisitos visa demonstrar que os requisitos definidos correspondem de fato ao sistema que o cliente quer, antes que custos significativos sejam invest",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "dos correspondem de fato ao sistema que o cliente quer, antes que custos significativos sejam investidos no desenvolvimento.\n\n- Erros nos requisitos custam muito mais quando descobertos após a implementação.\n- Um erro de requisito pode levar à necessidade de redesenhar e reimplementar partes inteiras do sistema.\n- Verificações importantes: validade, consistência, completude, realismo, verificabilidade.\n\n<!-- image -->\n\n## Verificações na Validação\n\nValidade O sistema fornece as funções que melho",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "dade.\n\n<!-- image -->\n\n## Verificações na Validação\n\nValidade O sistema fornece as funções que melhor suportam as necessidades do cliente?\n\nConsistência Há algum conflito entre os requisitos documentados?\n\nCompletude Estão incluídos todos os serviços e restrições exigidos pelo cliente?\n\nRealismo Os requisitos podem ser implementados com o orçamento e tecnologia disponíveis?\n\nVerificabilidade Pode-se escrever um conjunto de testes para demonstrar que o requisito foi satisfeito?\n\n<!-- image -->\n\n#",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "se escrever um conjunto de testes para demonstrar que o requisito foi satisfeito?\n\n<!-- image -->\n\n## Técnicas de Validação de Requisitos\n\n## 1. Revisões de Requisitos\n\nEquipe de revisores analisa o documento de requisitos sistematicamente, buscando erros, ambiguidades e omissões. Pode ser formal (auditoria) ou informal (leitura em grupo).\n\n## 2. Prototipação\n\nDesenvolver um protótipo executável do sistema para que os stakeholders possam experimentar e validar os requisitos na prática.\n\n## 3. Ge",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "o sistema para que os stakeholders possam experimentar e validar os requisitos na prática.\n\n## 3. Geração de Casos de Teste\n\nDesenvolver testes para cada requisito antes da implementação - se um requisito é difícil de testar, é um sinal de que está mal especificado.\n\n<!-- image -->\n\n## Gerenciamento de Requisitos\n\n## Por que os Requisitos Mudam?\n\n- O ambiente de negócio muda após o início do projeto.\n- Os stakeholders mudam de opinião ou percebem que o sistema não atende às suas necessidades rea",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "to.\n- Os stakeholders mudam de opinião ou percebem que o sistema não atende às suas necessidades reais.\n- Novas leis, regulações ou competidores surgem.\n- A própria compreensão do problema evolui durante o desenvolvimento.\n\n## Conclusão\n\nMudanças em requisitos são inevitáveis . O gerenciamento de requisitos é o processo de compreender e controlar essas mudanças.\n\n<!-- image -->\n\n## Rastreabilidade de Requisitos\n\n- Rastreabilidade é a capacidade de relacionar, ao longo do ciclo de vida do softwar",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": " de Requisitos\n\n- Rastreabilidade é a capacidade de relacionar, ao longo do ciclo de vida do software, os requisitos às suas origens, às suas implementações e aos seus testes.\n\n## Rastreabilidade para frente\n\nRequisito → Módulo de código → Caso de teste. 'Onde este requisito está implementado?'\n\n## Rastreabilidade para trás\n\nMódulo de código → Requisito → Stakeholder. 'Por que este código existe?'\n\n<!-- image -->\n\n## Controle de Mudanças em Requisitos\n\n- 1 Solicitação de mudança: Registrar forma",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "\n\n<!-- image -->\n\n## Controle de Mudanças em Requisitos\n\n- 1 Solicitação de mudança: Registrar formalmente o que mudou e por quê (origem: stakeholder, bug, nova lei).\n- 2 Análise de impacto: Identificar quais partes do sistema são afetadas por essa mudança e qual o custo de implementá-la.\n- 3 Decisão: O comitê de controle de mudanças aprova ou rejeita a alteração.\n- 4 Implementação: Atualizar o documento de requisitos, o design e os testes afetados.\n\n<!-- image -->\n\n## Resumo: O Ciclo Completo d",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "cumento de requisitos, o design e os testes afetados.\n\n<!-- image -->\n\n## Resumo: O Ciclo Completo da Engenharia de Requisitos\n\n- Elicitação: Descobrir o que os stakeholders precisam por meio de entrevistas, etnografia e cenários.\n- Classificação: Separar em funcionais (o que o sistema faz) e não funcionais (como o sistema se comporta).\n- Especificação: Documentar de forma clara, completa e consistente no SRS.\n- Validação: Revisões, prototipação e geração de testes.\n- Gerenciamento: Controlar mu",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "tente no SRS.\n- Validação: Revisões, prototipação e geração de testes.\n- Gerenciamento: Controlar mudanças e manter rastreabilidade.\n\n<!-- image -->\n\n## Encerramento e Próximos Passos\n\n- A Engenharia de Requisitos é a fundação de todo o desenvolvimento de software - erros aqui se propagam e se ampliam nas fases seguintes.\n- Requisitos Funcionais definem o que o sistema faz; Requisitos Não Funcionais definem como o sistema deve se comportar.\n- A comunicação e a negociação com os stakeholders são ",
+    "documento": "APSOO - Aula 05"
+  },
+  {
+    "texto": "is definem como o sistema deve se comportar.\n- A comunicação e a negociação com os stakeholders são habilidades tão importantes quanto as técnicas formais.\n- Nos próximos passos, vamos modelar esses requisitos usando Casos de Uso e Diagramas UML .\n\n<!-- image -->",
+    "documento": "APSOO - Aula 05"
+  }
+]

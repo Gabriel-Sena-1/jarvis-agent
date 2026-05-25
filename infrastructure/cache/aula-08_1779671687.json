@@ -1,0 +1,226 @@
+[
+  {
+    "texto": "## Análise e Projeto de Software Orientado a Objetos Diagrama de Classes de Design\n\nLeonardo S. Victorio\n\nFaculdade de Computação - UFMS\n\n2026/1\n\n<!-- image -->\n\n## Sumário\n\n- 1 Design da Camada de Domínio\n- 2 Responsabilidades dos Objetos\n- 3 Visibilidade entre Objetos\n- 4 Modelagem Dinâmica\n- 5 Pós-condições Condicionais e sobre Coleções\n- 6 Consultas de Sistema\n- 7 Delegação e Acoplamento Baixo\n- 8 Diagrama de Classes de Design\n- 9 Conclusão\n\n<!-- image -->\n\n<!-- image -->\n\n## De onde Viemos ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "\n- 8 Diagrama de Classes de Design\n- 9 Conclusão\n\n<!-- image -->\n\n<!-- image -->\n\n## De onde Viemos - O que Vem a Seguir\n\nApós a análise (casos de uso, modelo conceitual, contratos), inicia-se o projeto de software . O projeto se divide em:\n\n## Projeto Lógico\n\n- Diagramas de classes evoluídos a partir do modelo conceitual.\n- Diagramas de interação (comunicação ou sequência).\n- Resultado: o DCD .\n\n## Foco desta aula\n\nProjeto lógico , também chamado de design da camada de domínio . Cobre a modelag",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "## Foco desta aula\n\nProjeto lógico , também chamado de design da camada de domínio . Cobre a modelagem dinâmica e a construção do Diagrama de Classes de Design (DCD) .\n\n## Projeto Tecnológico\n\n- Camada de interface (UI).\n- Camada de persistência.\n- Segurança, comunicação, etc.\n\n## O que o Projetista Precisa Ter em Mãos\n\nO projeto lógico pode ser realizado de forma sistemática , desde que existam dois artefatos da análise:\n\n<!-- image -->\n\n## Modelo Conceitual de Referência (Figura 9.13)\n\n- O sis",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "ois artefatos da análise:\n\n<!-- image -->\n\n## Modelo Conceitual de Referência (Figura 9.13)\n\n- O sistema Livir (livraria) será usado nos exemplos da aula. Este é o ponto de partida do DCD.\n\n<!-- image -->\n\nClasses: Livir (controlador), Pessoa , Venda , Item , Livro . A associação «temp» vendaCorrente guarda a venda em andamento.\n\nMS\n\n## Três Formas de Modelagem Dinâmica\n\n| Forma             | Vantagem                                                                             | Desvantagem      ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "agem                                                                             | Desvantagem                                                      |\n|-------------------|--------------------------------------------------------------------------------------|------------------------------------------------------------------|\n| Algoritmos        | Fáceis de escrever                                                                   | Ocultam as conexões en- tre objetos; induzem alto acoplamento    ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "                                 | Ocultam as conexões en- tre objetos; induzem alto acoplamento    |\n| Diag. Comunicação | Linhas de visibilidade explícitas; mostram bem a distribuição de respon- sabilidades | Difíceis de organizar em colaborações complexas                  |\n| Diag. Sequência   | Mais fáceis de ler                                                                   | Não explicitam visibili- dade; permitem comuni- cações inválidas |\n\n## Por que usar diagramas, e não só algoritmo",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "m visibili- dade; permitem comuni- cações inválidas |\n\n## Por que usar diagramas, e não só algoritmos?\n\nSem método sistemático, as responsabilidades tendem a se concentrar em uma ou duas classes - gerando código tão desestruturado quanto programas espaguete . Os diagramas tornam visíveis as ligações e ajudam a distribuir bem as responsabilidades.\n\n<!-- image -->\n\n## O Erro Comum: 'Simulação do Mundo Real'\n\n## Princípio\n\nUm sistema OO representa as informações sobre o mundo real, não as coisas em",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "do Real'\n\n## Princípio\n\nUm sistema OO representa as informações sobre o mundo real, não as coisas em si.\n\n- Métodos não correspondem a ações do mundo real.\n- Eles realizam internamente os contratos de operações de sistema.\n- Por isso, métodos só aparecem na atividade de projeto , nunca na análise.\n\n## Consequência do erro\n\nSem técnica, classes como Venda , Livro e Pagamento acabam sem métodos relevantes, enquanto a controladora ( Livir ) ou classes como Comprador fazem tudo. Isso é estrutura con",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "vantes, enquanto a controladora ( Livir ) ou classes como Comprador fazem tudo. Isso é estrutura concentradora , não OO de verdade. Seria preferível um bom projeto estruturado a um OO assim.\n\n<!-- image -->\n\n## Classificação das Responsabilidades - Tabela 9.1\n\nPara distribuir bem os métodos entre as classes, o livro classifica as responsabilidades em dois grupos , cada um com três subgrupos :\n\n|                                   | Conhecer (consultas)        | Fazer (comandos)                   ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "                                 | Conhecer (consultas)        | Fazer (comandos)                   |\n|-----------------------------------|-----------------------------|------------------------------------|\n| Sobre si mesmo (atributos)        | getAtributo()               | setAtributo(v)                     |\n| Sobre vizinhan- ças (associações) | getPapel()                  | addPapel(o) removePapel(o)         |\n| Outros (derivado / coordenado)    | getDerivado() consultaXYZ() | métodos delegad",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "pel(o)         |\n| Outros (derivado / coordenado)    | getDerivado() consultaXYZ() | métodos delegados (no- mes variam) |\n\nConhecer corresponde a consultas (devolvem valor sem alterar estado). Fazer corresponde a operações (alteram o estado de algum objeto).\n\n<!-- image -->\n\n## Responsabilidades de Conhecer - Detalhes\n\n<!-- image -->\n\n## Responsabilidades de Fazer - Detalhes\n\n<!-- image -->\n\n## Operações Básicas são Implícitas no DCD\n\nCada classe já tem por padrão todos os métodos básicos:\n\n## O",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "erações Básicas são Implícitas no DCD\n\nCada classe já tem por padrão todos os métodos básicos:\n\n## Operações implícitas em qualquer classe\n\n- create , destroy\n- Para cada atributo: getAtrib() e setAtrib(v)\n- Para cada associação: getPapel() , addPapel(o) , removePapel(o)\n\n## Conta da padaria\n\nUma classe com 6 associações e 15 atributos teria, só de básicas: 1 create + 1 destroy + 15 set + 15 get + 6 add + 6 remove + 6 get = 50 métodos .\n\nNo DCD só aparecem explicitamente os métodos delegados (e ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " 6 add + 6 remove + 6 get = 50 métodos .\n\nNo DCD só aparecem explicitamente os métodos delegados (e atributos derivados). Os básicos ficam subentendidos pela existência dos atributos e associações.\n\n<!-- image -->\n\n## Por que Visibilidade Importa?\n\nPara que dois objetos possam trocar mensagens , deve existir visibilidade entre eles. Sem visibilidade, não há comunicação.\n\n## Quatro formas básicas de visibilidade\n\n- 1 Por associação - existe ligação definida no modelo conceitual.\n- 2 Por parâmetro",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "e visibilidade\n\n- 1 Por associação - existe ligação definida no modelo conceitual.\n- 2 Por parâmetro - o objeto chega como argumento de um método.\n- 3 Localmente declarada - o objeto chega como retorno de uma consulta.\n- 4 Global - o objeto é declarado globalmente (Singleton).\n\n## Assimetria\n\nNenhuma forma é simétrica : se x enxerga y , isso não implica que y enxerga x .\n\n<!-- image -->\n\n## Visibilidade por Associação - Para Um (Figura 9.1)\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n## Vis",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "lidade por Associação - Para Um (Figura 9.1)\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n## Visibilidade por Associação - Para Muitos (Figura 9.2)\n\n<!-- image -->\n\n## Associações Ordenadas e Qualificadas (Figuras 9.3 e 9.4)\n\n<!-- image -->\n\n## Ordenadas {ordered}\n\nAcesso por posição : capitulos[n] (n-ésimo) capitulos.last (último)\n\n<!-- image -->\n\n## Qualificadas\n\nCom a chave do qualificador , acesso direto ao elemento: cartoes[123456] dá visibilidade imediata para aquele cartão.\n\n<!-- imag",
+    "documento": "aula-08"
+  },
+  {
+    "texto": ", acesso direto ao elemento: cartoes[123456] dá visibilidade imediata para aquele cartão.\n\n<!-- image -->\n\n## Classe de Associação (Figura 9.6)\n\n<!-- image -->\n\n## Dupla visibilidade\n\nPelo papel empregos , uma :Pessoa enxerga dois conjuntos:\n\n- o conjunto de Empresa ;\n- o conjunto de Emprego .\n\n## Volta sempre para um\n\nUma instância de Emprego enxerga exatamente uma Pessoa e exatamente uma Empresa .\n\n<!-- image -->\n\n## Visibilidade por Parâmetro (Figura 9.10)\n\n<!-- image -->\n\n## Como funciona\n\nA",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " .\n\n<!-- image -->\n\n## Visibilidade por Parâmetro (Figura 9.10)\n\n<!-- image -->\n\n## Como funciona\n\nAo executar um método, um objeto recebe outro como parâmetro e passa a poder enviar mensagens a ele mesmo sem associação entre suas classes.\n\n## Validade temporária\n\nA visibilidade por parâmetro existe só durante a execução do método. Depois desaparece, igual a uma variável local.\n\n<!-- image -->\n\n(b)\n\n## Visibilidade Localmente Declarada (Figura 9.11)\n\n<!-- image -->\n\n## Como funciona\n\nQuando um o",
+    "documento": "aula-08"
+  },
+  {
+    "texto": ")\n\n## Visibilidade Localmente Declarada (Figura 9.11)\n\n<!-- image -->\n\n## Como funciona\n\nQuando um objeto recebe outro como retorno de uma consulta, passa a ter visibilidade local sobre ele.\n\nNo exemplo, :Venda chama getLivro() em :Item e obtém liv:Livro .\n\n## Também é temporária\n\nVale apenas dentro do método.\n\n<!-- image -->\n\n## Princípio 'Não Fale com Estranhos'\n\n## Regra (Lei de Demeter)\n\nEvite ao máximo usar visibilidade por parâmetro ou local para enviar mensagens a objetos.\n\n- Mensagens de",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " ao máximo usar visibilidade por parâmetro ou local para enviar mensagens a objetos.\n\n- Mensagens devem trafegar pelas linhas de visibilidade por associação .\n- Objetos recebidos como parâmetro/retorno deveriam apenas ser repassados , não chamados.\n- Exceção aceitável da local: quando o método que retorna o objeto cria esse objeto.\n\n## Por que?\n\nCada mensagem fora das associações cria acoplamento extra - não previsto no modelo conceitual - e degrada o projeto.\n\n<!-- image -->\n\n## Visibilidade Gl",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "extra - não previsto no modelo conceitual - e degrada o projeto.\n\n<!-- image -->\n\n## Visibilidade Global (Figura 9.12)\n\n<!-- image -->\n\n## Padrão Singleton\n\nVisibilidade global é válida apenas para instância única de uma classe - o padrão Singleton .\n\nCostuma ser usada para classes de serviço : ConversorDeMoedas , ContadorDeTempo .\n\nEntidades do domínio ( Venda , Livro ) nunca devem ser Singletons.\n\n<!-- image -->\n\n## Pós-condições e Diagramas de Interação\n\nOs contratos dizem o que deve acontece",
+    "documento": "aula-08"
+  },
+  {
+    "texto": ".\n\n<!-- image -->\n\n## Pós-condições e Diagramas de Interação\n\nOs contratos dizem o que deve acontecer (pós-condições). Os diagramas mostram como os objetos trocam mensagens para fazê-lo.\n\n## Quatro princípios\n\n- 1 A visibilidade entre objetos é regida pela multiplicidade (e por pré-condições).\n- 2 Cada pós-condição vira o envio de uma mensagem básica ao responsável imediato.\n- 3 O fluxo sempre inicia no controlador recebendo mensagem da interface.\n- 4 Sem visibilidade para o alvo, o controlador ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "cia no controlador recebendo mensagem da interface.\n- 4 Sem visibilidade para o alvo, o controlador deve delegar ao objeto que enxerga.\n\n| Tipo                                                      | Posição           | Quantidade                                       |\n|-----------------------------------------------------------|-------------------|--------------------------------------------------|\n| Operação de sistema Mensagens básicas Mensagens delegadas | Raiz Folhas Ramos | 1 por diagrama ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "-|\n| Operação de sistema Mensagens básicas Mensagens delegadas | Raiz Folhas Ramos | 1 por diagrama 1 por pós-condição quando preciso |\n\n<!-- image -->\n\n## Criação de Instância - Padrão Criador\n\n<!-- image -->\n\n## Exemplo Livir : criar um Item\n\nQuem cria? Venda - pois há agregação Venda-Item . Livro , Pessoa e Livir não criariam:\n\n- Livir sequer tem associação com Item .\n- Livro associa-se a Item , mas Venda ganha pela agregação.\n\n<!-- image -->\n\n## Criação de Instância - Diagramas (Figura 9.14)",
+    "documento": "aula-08"
+  },
+  {
+    "texto": ", mas Venda ganha pela agregação.\n\n<!-- image -->\n\n## Criação de Instância - Diagramas (Figura 9.14)\n\nContrato: Livir::adicionaItem(...) cria um novo Item .\n\n<!-- image -->\n\nLivir não tem visibilidade para Item , então delega (mensagem 1) à vendaCorrente:Venda , que então executa o create (mensagem 1.1) - a folha da árvore.\n\nFACOM-UFMS\n\n## Criação de Associação (Figura 9.15)\n\nToda instância recém-criada precisa ser imediatamente ligada a outra para se tornar acessível.\n\n<!-- image -->\n\n## Pós-co",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "criada precisa ser imediatamente ligada a outra para se tornar acessível.\n\n<!-- image -->\n\n## Pós-condição\n\nvendaCorrente.addItens(item)\n\n## Duas formas simétricas\n\nvenda.addItens(item) e item.addVenda(venda) produzem o mesmo efeito. Prefira o receptor mais próximo do controlador .\n\n<!-- image -->\n\n## Caso Completo - Cria, Associa e Atualiza (Figura 9.17)\n\n## Contrato: Livir::adicionaItem(idLivro, quantidade)\n\n<!-- image -->\n\n1: liv := getLivros(idLivro) (qualif.) 2: adicionaItem(liv, qtd) (dele",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " quantidade)\n\n<!-- image -->\n\n1: liv := getLivros(idLivro) (qualif.) 2: adicionaItem(liv, qtd) (delega) 2.1: it := create() 2.2: addItens(it) 2.3: addLivro(liv) 2.4: setQuantidade(qtd)\n\nFACOM-UFMS\n\n## Destruição de Instância (Figura 9.18)\n\n<!-- image -->\n\n## destroy()\n\nApós destroy , nenhuma mensagem pode mais ser enviada ao objeto.\n\nVale o mesmo padrão Criador : composição, agregação ou associação 1-para-*.\n\n## Sem órfãos\n\nCom contratos bem formados, nenhum objeto fica com referência pendente p",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "o 1-para-*.\n\n## Sem órfãos\n\nCom contratos bem formados, nenhum objeto fica com referência pendente para o destruído.\n\n<!-- image -->\n\n## Remoção de Associação (Figura 9.19) - Troca de Dono\n\n<!-- image -->\n\n## Pós-condições\n\nremoveDono(antigo) AND addDono(novo)\n\nControladora obtém os três objetos via consultas qualificadas e envia remove + add .\n\n<!-- image -->\n\n## Pós-condições Condicionais - Mensagens com Guarda\n\nAlgumas pós-condições só valem se uma condição inicial for satisfeita. Nos diagram",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "agens com Guarda\n\nAlgumas pós-condições só valem se uma condição inicial for satisfeita. Nos diagramas, isso vira uma mensagem com guarda .\n\n## Exemplo do livro: desconto de 10% se total &gt; 1000\n\n```\nContext Livir::aplicaDesconto() pre: vendaCorrente.size() = 1 post: vendaCorrente.valorTotal > 1000 IMPLIES vendaCorrente.setValorTotal(.../1.1)\n```\n\n## No diagrama\n\n```\nComunicação: a guarda vai entre colchetes antes da mensagem: 2: [vt>1000]: setValorTotal(vt/1.1) Sequência: a mensagem fica dent",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "tre colchetes antes da mensagem: 2: [vt>1000]: setValorTotal(vt/1.1) Sequência: a mensagem fica dentro de um bloco opt com a condição.\n```\n\n<!-- image -->\n\n## Mensagem Condicional nos Diagramas (Figura 9.20)\n\n<!-- image -->\n\n(b)\n\nSe vt ≤ 1000 , a mensagem simplesmente não é executada . Para um if-then-else , basta uma segunda mensagem com a guarda negada. Para um case , uma mensagem por caso.\n\n## Pós-condições sobre Coleções - Iteração\n\nQuando o contrato atualiza todos os elementos de uma coleçã",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "Pós-condições sobre Coleções - Iteração\n\nQuando o contrato atualiza todos os elementos de uma coleção, usa-se o prefixo * antes da mensagem.\n\n## Exemplo do livro: aumentar 10% em todos os livros\n\n```\nContext Livir::aumentaPrecos() post: livros->forAll(livro | livro.setPreco(livro.preco@pre * 1.1))\n```\n\n## Todos os elementos\n\n```\n1: *preco := getPreco() 2: *setPreco(preco*1.1)\n```\n\n## No diagrama de sequência\n\nO * vira um bloco loop ; o *[cond] vira loop com opt interno.\n\n## Apenas alguns (filtro",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "e sequência\n\nO * vira um bloco loop ; o *[cond] vira loop com opt interno.\n\n## Apenas alguns (filtro)\n\n2: *[preco&lt;100] setPreco(...) Só envia a mensagem aos elementos que satisfazem a condição.\n\n## Iteração nos Diagramas (Figura 9.21)\n\n<!-- image -->\n\nLivir envia duas mensagens a cada elemento de livros : getPreco() e setPreco(preco*1.1) . O retângulo empilhado representa a coleção .\n\nAS\n\n## Iteração com Filtro (Figura 9.22)\n\n<!-- image -->\n\nLivir::aumentaLivrosBaratos() - só aumenta os livro",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "eração com Filtro (Figura 9.22)\n\n<!-- image -->\n\nLivir::aumentaLivrosBaratos() - só aumenta os livros com preco &lt; 100 . No diagrama de sequência, dentro do loop aparece um opt [preco&lt;100] que filtra.\n\nMS\n\n## Consultas de Sistema - Três Tipos de Mensagem\n\nEm diagramas de consulta, as mensagens se organizam em três níveis:\n\n## 1. Consulta de sistema (raiz)\n\nVem da interface, é a única mensagem 'de entrada' no diagrama. Retorna alfanumérico ou uma estrutura DTO ( Data Transfer Object ).\n\n## 2",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " 'de entrada' no diagrama. Retorna alfanumérico ou uma estrutura DTO ( Data Transfer Object ).\n\n## 2. Consultas básicas (folhas)\n\nSão os get de atributos e papéis de associação. Não precisam ser detalhadas.\n\n## 3. Consultas intermediárias (ramos)\n\nCorrespondem a atributos derivados ou a consultas com cálculo - e ficam nas classes mais próximas dos dados.\n\n<!-- image -->\n\n## Exemplo CRUD - Consulta de Livro (Figura 9.23)\n\nContrato: consultaLivro(umIsbn) retorna um DTO com os dados do livro.\n\n<!--",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " de Livro (Figura 9.23)\n\nContrato: consultaLivro(umIsbn) retorna um DTO com os dados do livro.\n\n<!-- image -->\n\nLivir usa getLivros(umIsbn) (qualificada) para obter o livro , depois envia getTitulo , getAutor , getPreco e getStatus (todas básicas). A Tuple{...} é\n\n.\n\nS\n\n## Quando não Vale a Pena o Diagrama\n\n## Limitação dos diagramas\n\nDiagrama de comunicação e sequência não representam bem funções matemáticas, filtros ou combinações complexas de valores.\n\n## Recomendação do livro\n\nPara consultas",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " matemáticas, filtros ou combinações complexas de valores.\n\n## Recomendação do livro\n\nPara consultas com lógica complexa, use algoritmo ou programação direta a partir do contrato, mantendo em mente:\n\n- Se a consulta retorna alfanumérico simples, considere transformá-la em atributo derivado .\n- Procure agrupar consultas básicas em estruturas reusáveis (DTO já filtrado, tupla, etc.).\n\n<!-- image -->\n\n## Padrões de Consulta com Filtro\n\nSuponha o modelo da Figura 9.24: Livir tem catálogo de Livro , ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "\n\n## Padrões de Consulta com Filtro\n\nSuponha o modelo da Figura 9.24: Livir tem catálogo de Livro , e queremos filtrar por autor, ano ou gênero.\n\n| Padrão   | Como funciona                                                   | Quando usar                                                  |\n|----------|-----------------------------------------------------------------|--------------------------------------------------------------|\n| A        | Retorna tudo ; quem cha- mou filtra.                     ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "----------------------------|\n| A        | Retorna tudo ; quem cha- mou filtra.                            | Muitos filtros, poucas chamadas; mas gera có- digo repetido. |\n| B        | Um método por fil- tro : getPorAutor(a) , getPorGenero(g) . . . | Poucos filtros, muitas chamadas.                             |\n| C        | Objeto filtro como parâmetro: getCatalogo(f:Filtro)             | Muitos filtros possíveis; chamadas simples.                  |\n\n## Escolha do padrão\n\nDepende da quantidade",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "filtros possíveis; chamadas simples.                  |\n\n## Escolha do padrão\n\nDepende da quantidade de filtros e da quantidade de chamadas . Não há padrão sempre correto.\n\n<!-- image -->\n\n## Padrão C - Objeto Filtro (Figura 9.25)\n\n+autorNome:String\n\n+periodo:Intervalo\n\n+genero:String\n\n<!-- image -->\n\n## Duas Abordagens Opostas: Concentração vs. Delegação\n\nQuando o controlador não enxerga o objeto que executaria a operação, há dois caminhos possíveis:\n\n<!-- image -->\n\n<!-- image -->\n\n## Modelo d",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " que executaria a operação, há dois caminhos possíveis:\n\n<!-- image -->\n\n<!-- image -->\n\n## Modelo do Exemplo (Figura 9.26)\n\n<!-- image -->\n\n## Cenário\n\nConsulta: valor total da venda corrente .\n\nCálculo: somar quantidade × valor de cada Item da venda.\n\nLivir não tem associação com Item . Só com Venda (via vendaCorrente ).\n\n<!-- image -->\n\n## Pseudocódigo concentrador\n\n```\nCLASSE Livir MÉTODO getTotalVendaCorrente() : Moeda itens := vendaCorrente.getItens() total := 0 PARA CADA item EM itens FAÇ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "otalVendaCorrente() : Moeda itens := vendaCorrente.getItens() total := 0 PARA CADA item EM itens FAÇA total := total + (item.getValor() * item.getQuantidade()) FIM PARA RETORNA total\n```\n\n## Avaliação\n\n- Está correto. Resolve o problema.\n- Mas não gera nada reusável : o cálculo fica trancado dentro de getTotalVendaCorrente .\n- Livir passa a depender da estrutura interna de Item ( valor , quantidade ).\n\n## Versão com Delegação - Cada Classe Faz o Seu\n\nCada cálculo vira um atributo derivado na cla",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "e ).\n\n## Versão com Delegação - Cada Classe Faz o Seu\n\nCada cálculo vira um atributo derivado na classe que tem os dados:\n\n## Definições OCL\n\n```\nContext Item::subtotal:Moeda derive: quantidade*valor Context Venda::valorTotal:Moeda derive: itens->sum(subtotal)\n```\n\n## Pseudocódigo distribuído\n\n```\nCLASSE Livir MÉTODO getTotalVendaCorrente():Moeda RETORNA vendaCorrente.getValorTotal() CLASSE Venda // soma os subtotais dos itens CLASSE Item // calcula quantidade*valor\n```\n\n## Resultado\n\ngetSubtota",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "// soma os subtotais dos itens CLASSE Item // calcula quantidade*valor\n```\n\n## Resultado\n\ngetSubtotal() e getValorTotal() viram métodos reusáveis em qualquer contexto. Livir não conhece mais Item .\n\n## Delegação em Comandos (Figura 9.27)\n\nOperação: mudaData(umaData) - atualiza a data da venda corrente.\n\n<!-- image -->\n\n## (b) Concentrador\n\nLivir obtém venda via getVendaCorrente() e chama setData diretamente. Acopla-se ao atributo interno.\n\n<!-- image -->\n\n## O que é o DCD?\n\n<!-- image -->\n\n## Ci",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "iretamente. Acopla-se ao atributo interno.\n\n<!-- image -->\n\n## O que é o DCD?\n\n<!-- image -->\n\n## Cinco Modificações Feitas no DCD durante o Projeto\n\n- 1 Adição de métodos. Métodos delegados descobertos nos diagramas de interação são adicionados às classes correspondentes.\n- 2 Direção das associações. Antes não-direcionais; passam a ter setas conforme o sentido das mensagens trocadas nos diagramas.\n- 3 Detalhamento de tipos. Tipos abstratos podem virar concretos ( lista → array ou LinkedList ). ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": ".\n- 3 Detalhamento de tipos. Tipos abstratos podem virar concretos ( lista → array ou LinkedList ). Tipos de atributos podem ser fixados.\n- 4 Reestruturação. Novas classes de projeto podem ser introduzidas (estratégias, serviços, filtros). O DCD pode divergir do conceitual.\n- 5 Visibilidade de atributos. No conceitual todos são públicos. No DCD podem aparecer privados ou protegidos para encapsular estado interno.\n\n<!-- image -->\n\n## O que NÃO se Coloca no DCD - Métodos Básicos\n\nToda classe já te",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " estado interno.\n\n<!-- image -->\n\n## O que NÃO se Coloca no DCD - Métodos Básicos\n\nToda classe já tem por padrão os métodos básicos - eles podem ser deduzidos da estrutura:\n\n## Métodos implícitos em qualquer classe\n\n- create , destroy\n- Para cada atributo : getAtrib() , setAtrib(v)\n- Para cada associação : getPapel() , addPapel(o) , removePapel(o)\n\n## Conta da padaria\n\nUma classe com 6 associações e 15 atributos teria 50 métodos básicos . Listar todos polui o diagrama.\n\n## O que entra explicitam",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " e 15 atributos teria 50 métodos básicos . Listar todos polui o diagrama.\n\n## O que entra explicitamente no DCD\n\nApenas os métodos delegados (e atributos derivados não triviais), já que não podem ser deduzidos da estrutura.\n\n## Método Delegado Gera Método no DCD (Figura 9.28)\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n## Direção das Associações no DCD (Figuras 9.29 e 9.30)\n\nA direção de cada associação no DCD vem do sentido das mensagens nos diagramas de interação.\n\n<!-- image -->\n\n## DCD ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " associação no DCD vem do sentido das mensagens nos diagramas de interação.\n\n<!-- image -->\n\n## DCD vs. Modelo Conceitual\n\n| Aspecto       | Modelo Conceitual                               | DCD                                    |\n|---------------|-------------------------------------------------|----------------------------------------|\n| Propósito     | Representar o domínio                           | Guiar a implementa- ção                |\n| Atributos     | Todos públicos                  ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "       | Guiar a implementa- ção                |\n| Atributos     | Todos públicos                                  | Podem ser priva- dos/protegidos        |\n| Métodos       | Só op./consultas de sistema (na controla- dora) | Métodos delegados ex- plicitados       |\n| Associações   | Não direcionais                                 | Direcionadas pelo fluxo                |\n| Novas classes | Não                                             | Sim (estratégias, fil- tros, serviços) |\n| Tipos       ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "                                           | Sim (estratégias, fil- tros, serviços) |\n| Tipos         | Abstratos                                       | Podem ser concretos ( array , etc.)    |\n\n## O DCD é vivo\n\nVai sendo refinado a cada contrato analisado. Mudanças eventuais no modelo conceitual devem ser propagadas ao DCD.\n\n## Pontos-Chave desta Aula\n\n- O design da camada de domínio consiste em modelagem dinâmica e construção do DCD .\n- Responsabilidades dos objetos: conhecer e atualizar , ca",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " modelagem dinâmica e construção do DCD .\n- Responsabilidades dos objetos: conhecer e atualizar , cada uma com três subgrupos.\n- Quatro formas de visibilidade. Apenas a por associação é permanente.\n- O Padrão Criador define quem cria instâncias - prioriza composição e agregação.\n- Delegação produz código com menor acoplamento e maior coesão do que concentração.\n- O DCD evolui do modelo conceitual: métodos adicionados, associações direcionadas, tipos detalhados.\n- 'Não Fale com Estranhos' restrin",
+    "documento": "aula-08"
+  },
+  {
+    "texto": " métodos adicionados, associações direcionadas, tipos detalhados.\n- 'Não Fale com Estranhos' restringe a comunicação entre objetos sem associação semântica.\n- Pós-condições condicionais usam mensagens guardadas ; iterações usam o prefixo * .\n\n<!-- image -->\n\n## Resumo do Processo de Design Lógico\n\n- 1 Partir do modelo conceitual (primeira versão do DCD).\n- 2 Para cada contrato de operação de sistema :\n- a. Identificar as pós-condições e as visibilidades disponíveis.\n- b. Construir o diagrama de ",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "ma :\n- a. Identificar as pós-condições e as visibilidades disponíveis.\n- b. Construir o diagrama de comunicação iniciando no controlador.\n- c. Delegar responsabilidades respeitando as linhas de visibilidade.\n- 3 A cada mensagem recebida por um objeto, adicionar o método à sua classe no DCD.\n- 4 Direcionar as associações conforme o fluxo de mensagens.\n- 5 Identificar consultas intermediárias e transformá-las em atributos derivados quando possível.\n- 6 Repetir até todos os contratos estarem modela",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "sformá-las em atributos derivados quando possível.\n- 6 Repetir até todos os contratos estarem modelados.\n- 7 Revisar o DCD garantindo baixo acoplamento e alta coesão .\n\n<!-- image -->\n\n## Conexão com o Restante do Projeto\n\nCom o DCD estabilizado, o projeto tecnológico pode avançar:\n\n<!-- image -->\n\n## O DCD é vivo\n\nÀ medida que novos contratos são analisados e a implementação avança, o DCD é refinado. Mudanças no modelo conceitual devem ser propagadas.\n\n## Referências Bibliográficas\n\n- WAZLAWICK",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "ado. Mudanças no modelo conceitual devem ser propagadas.\n\n## Referências Bibliográficas\n\n- WAZLAWICK, Raul Sidnei. Análise e Projeto de Sistemas de Informação Orientados a Objetos . 3. ed. Rio de Janeiro: Elsevier, 2015. Cap. 9 - Projeto da Camada de Domínio.\n- LARMAN, Craig. Utilizando UML e Padrões . 3. ed. Porto Alegre: Bookman, 2007. Cap. 9 - Domain Layer Design.\n- GAMMA, Erich et al. Padrões de Projeto: soluções reutilizáveis de software OO . Porto Alegre: Bookman, 2000.\n- LES/PUC-Rio. UML:",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "de Projeto: soluções reutilizáveis de software OO . Porto Alegre: Bookman, 2000.\n- LES/PUC-Rio. UML: Diagrama de Classes . Laboratório de Engenharia de Software, PUC-Rio.\n\n<!-- image -->\n\n## Obrigado!\n\nDúvidas e Discussões\n\nLeonardo S. Victorio leonardo.victorio@ufms.br\n\nFaculdade de Computação - UFMS\n\n'Fazer design de software orientado a objetos deve ser entendido como um método preciso, guiado por padrões aprendidos, e não simplesmente como o ato de criar classes e associar métodos ad hoc a e",
+    "documento": "aula-08"
+  },
+  {
+    "texto": "por padrões aprendidos, e não simplesmente como o ato de criar classes e associar métodos ad hoc a elas.'\n\n- Wazlawick (2015)\n\n<!-- image -->",
+    "documento": "aula-08"
+  }
+]
