@@ -4,6 +4,7 @@ from typing import Optional
 
 class AskRequest(BaseModel):
     question: str
+    tool_call: Optional[str] = None
 
 
 class AskResponse(BaseModel):
