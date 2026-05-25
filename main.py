@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.routers import chatbot
+from app.routers import agenda
+from app.routers import files
 from app.services.chatbot_service import ChatbotService
 
 # Carregar variáveis de ambiente do .env
@@ -46,7 +48,8 @@ app.add_middleware(
 
 # Incluir routers
 app.include_router(chatbot.router)
-
+app.include_router(agenda.router)
+app.include_router(files.router)
 
 @app.get("/", tags=["health"])
 async def root():
