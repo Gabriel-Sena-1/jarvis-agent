@@ -41,7 +41,9 @@ class ToolCaller:
             '- "concluir_tarefa": Se o usuário quer concluir, finalizar ou marcar como feito um compromisso ou tarefa.\n'
             '- "buscar_material_rag": Se o usuário faz perguntas informativas sobre os materiais/documentos de estudos, conceitos teóricos, explicações, resumos, ou qualquer dúvida conceitual.\n'
             '- "priorizar_hoje": Se o usuário pergunta o que deve priorizar HOJE, o que fazer agora, o que é mais urgente para hoje. Use este tipo quando a pergunta tem foco no DIA ATUAL e na prioridade imediata.\n'
-            '- "montar_plano_estudos": Se o usuário quer montar um plano de estudos para vários dias, uma semana, ou organizar tempo de estudos de forma mais ampla. NÃO use para perguntas sobre o que priorizar hoje.\n'
+            '- "montar_plano_estudos": Se o usuário quer organizar estudos. '
+            'Detecte expressões como: amanhã, hoje, esta semana, próxima prova, revisão final. '
+            'O plano deve respeitar exatamente o prazo informado.\n'
             '- "gerar_perguntas_recall": Se o usuário quer gerar perguntas de estudo, active recall, simulação de prova ou treinar com o conteúdo do RAG.\n'
             '- "avaliar_resposta_recall": Se o usuário está respondendo a uma pergunta de recall anteriormente feita pelo sistema.\n'
             '- "recomendar_revisao": Se o usuário quer saber o que revisar, recomendações de estudo ou ver dificuldades com base em erros passados.\n\n'
@@ -62,9 +64,58 @@ class ToolCaller:
             print(f"⚠️ Erro na classificação: {e}")
         return "buscar_material_rag"
 
-    async def _buscar_rag(self, question: str, chat_ctx: list = None) -> dict:
-        resposta, docs = await self.rag_manager.responder_rag(question, chat_ctx=chat_ctx, metodo="hibrido", k=5)
-        return {"answer": resposta, "chunks_usados": len(docs)}
+async def _buscar_rag(self, question: str, chat_ctx: list = None) -> dict:
+
+    resposta, docs = await self.rag_manager.responder_rag(
+        question,
+        chat_ctx=chat_ctx,
+        metodo="hibrido",
+        k=8,
+        alpha=0.45
+    )
+
+    texto = str(resposta).lower()
+
+    termos_ruins = [
+        "não encontrado",
+        "não encontrei",
+        "não há informações",
+        "não consta",
+        "contexto fornecido"
+    ]
+
+    contexto_fraco = (
+        len(docs) <= 1 or
+        any(t in texto for t in termos_ruins)
+    )
+
+    if contexto_fraco:
+
+        fallback = self.rag_manager.get_response(
+            f"""
+Responda normalmente usando conhecimento geral.
+
+Pergunta:
+{question}
+
+Regras:
+- Não diga que não encontrou contexto.
+- Se faltar certeza, avise.
+- Explique objetivamente.
+"""
+        )
+
+        return {
+            "answer": fallback,
+            "chunks_usados": len(docs),
+            "modo": "fallback"
+        }
+
+    return {
+        "answer": resposta,
+        "chunks_usados": len(docs),
+        "modo": "rag"
+    }
 
     async def handle(self, question: str, chat_ctx: list = None) -> dict:
         print(f"🔍 question={question!r}")
@@ -77,7 +128,7 @@ class ToolCaller:
         result = await tool_call if inspect.isawaitable(tool_call) else tool_call
         print(f"✅ Resultado da ferramenta '{tipo}': {result}")
         if self.logs_service:
-            self.logs_service.salvar_log(pergunta=question, resposta=str(result), tool=tipo)
+            self.logs_service.salvar_log(pergunta=question,resposta=json.dumps(result, ensure_ascii=False),tool=tipo)
         return result
         
     
