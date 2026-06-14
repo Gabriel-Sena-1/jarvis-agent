@@ -62,9 +62,49 @@ class ToolCaller:
             print(f"⚠️ Erro na classificação: {e}")
         return "buscar_material_rag"
 
-    async def _buscar_rag(self, question: str, chat_ctx: list = None) -> dict:
-        resposta, docs = await self.rag_manager.responder_rag(question, chat_ctx=chat_ctx, metodo="hibrido", k=5)
-        return {"answer": resposta, "chunks_usados": len(docs)}
+async def _buscar_rag(
+    self,
+    question: str,
+    chat_ctx: list = None
+) -> dict:
+
+    resposta, docs = await self.rag_manager.responder_rag(
+        question,
+        chat_ctx=chat_ctx,
+        metodo="hibrido",
+        k=8,
+        alpha=0.45
+    )
+
+    qtd = len(docs)
+
+    # qualidade baseada na recuperação
+    if qtd >= 5:
+        confianca = "alta"
+
+    elif qtd >= 2:
+        confianca = "media"
+
+    else:
+        confianca = "baixa"
+
+    if confianca == "baixa":
+
+        return {
+            "answer": (
+                "Não encontrei contexto suficiente "
+                "nos materiais carregados para responder "
+                "com confiança."
+            ),
+            "chunks_usados": qtd,
+            "confianca": confianca
+        }
+
+    return {
+        "answer": resposta,
+        "chunks_usados": qtd,
+        "confianca": confianca
+    }
 
     async def handle(self, question: str, chat_ctx: list = None) -> dict:
         print(f"🔍 question={question!r}")
