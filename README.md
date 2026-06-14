@@ -1,6 +1,10 @@
 # Jarvis Agent
 
-API REST de chatbot inteligente construída com FastAPI. Responde perguntas sobre documentos carregados, gerencia agenda do usuário e auxilia no estudo com geração de planos, Active Recall e recomendações personalizadas.
+API REST de chatbot inteligente construída com FastAPI.
+
+O Jarvis responde perguntas sobre documentos carregados, gerencia a agenda do usuário e auxilia no estudo utilizando busca híbrida (RAG), Active Recall, planejamento de estudos e recomendação de revisão.
+
+---
 
 ## Estrutura de Pastas
 
@@ -20,10 +24,10 @@ jarvis-agent/
 │   └── services/
 │       ├── chatbot_service.py       # Orquestração principal
 │       ├── tool_caller.py           # Classificação e roteamento
-│       ├── rag_manager.py           # Busca híbrida + geração
+│       ├── rag_manager.py           # Busca híbrida e recuperação
 │       ├── agenda_tools.py          # Agenda + estudo + recall
-│       ├── agenda_service.py        # CRUD de compromissos
-│       ├── recall_service.py        # Histórico de treino
+│       ├── agenda_service.py        # CRUD da agenda
+│       ├── recall_service.py        # Histórico de estudo
 │       ├── logs_service.py          # Persistência de logs
 │       └── tools.py                 # Definições auxiliares
 
@@ -31,41 +35,33 @@ jarvis-agent/
     ├── documents/                   # Arquivos carregados
     ├── database/                    # Banco SQLite
     ├── cache/                       # Cache de embeddings
-    └── markdowns/                   # Conversão de documentos
+    └── markdowns/                   # Conversão para markdown
 ```
 
 ---
 
 # Como Funciona a Geração de Resposta
 
-Toda pergunta recebida via `POST /api/ask` passa pelo seguinte fluxo.
+Toda pergunta recebida via `POST /api/ask` passa pelo fluxo abaixo.
 
-## 1. Classificação da intenção
+---
 
-O próprio LLM identifica automaticamente a intenção da pergunta.
+## 1. Classificação da Intenção
 
-Categorias disponíveis:
+O LLM classifica automaticamente a pergunta.
 
-- `consultar_agenda`
-    
-- `listar_tarefas`
-    
-- `adicionar_tarefa`
-    
-- `concluir_tarefa`
-    
-- `buscar_material_rag`
-    
-- `priorizar_hoje`
-    
-- `montar_plano_estudos`
-    
-- `gerar_perguntas_recall`
-    
-- `avaliar_resposta_recall`
-    
-- `recomendar_revisao`
-    
+Tipos disponíveis:
+
+* `consultar_agenda`
+* `listar_tarefas`
+* `adicionar_tarefa`
+* `concluir_tarefa`
+* `buscar_material_rag`
+* `priorizar_hoje`
+* `montar_plano_estudos`
+* `gerar_perguntas_recall`
+* `avaliar_resposta_recall`
+* `recomendar_revisao`
 
 Fluxo:
 
@@ -73,48 +69,30 @@ Fluxo:
 Pergunta
 ↓
 
-LLM Classificador
-
+Classificador
 ↓
 
-Tool adequada
+Ferramenta
 ```
 
 ---
 
-## 2. Recuperação do Contexto
+## 2. Recuperação de Contexto
 
-### Se for Agenda
+### Se Agenda
 
 Busca compromissos relevantes.
 
-Informações utilizadas:
+Informações consideradas:
 
-- nome
-    
-- data
-    
-- horário
-    
-- status
-    
-- proximidade temporal
-    
-
-Exemplo:
-
-```text
-Compromissos:
-
-[id:12]
-Prova APSOO
-2026-06-15
-Pendente
-```
+* data
+* horário
+* status
+* proximidade
 
 ---
 
-### Se for Documentos (RAG)
+### Se Documentos (RAG)
 
 Executa busca híbrida.
 
@@ -127,7 +105,7 @@ BM25
 Embeddings
 ```
 
-Configuração:
+Parâmetros atuais:
 
 ```text
 metodo = hibrido
@@ -137,50 +115,79 @@ alpha = 0.45
 
 Objetivos:
 
-- melhorar recuperação de siglas
-    
-- reduzir perda de contexto
-    
-- aumentar cobertura
-    
+* melhorar recuperação de siglas
+* reduzir perda de contexto
+* aumentar cobertura
 
 ---
 
 ## 3. Validação do Contexto
 
-Antes de responder, o sistema verifica se o contexto recuperado é confiável.
+Após recuperar documentos, o sistema valida se existe informação suficiente.
 
-Critérios:
+Importante:
+
+**A decisão NÃO usa o texto produzido pela IA.**
+
+Não existe tratamento como:
 
 ```text
+if resposta contém:
+"não encontrei"
+```
+
+A validação utiliza apenas dados objetivos da recuperação.
+
+Sinais considerados:
+
+```text
+Quantidade de chunks
+Cobertura do contexto
+Diversidade dos documentos
+```
+
+Exemplo:
+
+```text
+chunks >= 5
+→ confiança alta
+
+chunks entre 2–4
+→ confiança média
+
 chunks <= 1
-
-OU
-
-resposta contém:
-
-não encontrado
-não encontrei
-não há informações
-contexto fornecido
+→ confiança baixa
 ```
 
 ---
 
-## 4. Sistema de Fallback
+## 4. Controle de Confiança
 
-Se o contexto falhar:
-
-ANTES:
+Fluxo:
 
 ```text
-Não encontrado no contexto
-```
+Pergunta
+↓
 
-AGORA:
+Busca RAG
+↓
 
-```text
-Responder usando conhecimento geral
+Validação
+
+↓
+
+ALTA
+→ responder
+
+↓
+
+MÉDIA
+→ responder com limites
+
+↓
+
+BAIXA
+→ informar falta de contexto
 ```
 
 Exemplo:
@@ -188,14 +195,22 @@ Exemplo:
 Entrada:
 
 ```text
-Como funciona KNN?
+Explique plano inclinado
 ```
 
 Saída:
 
 ```text
-Explicação completa do algoritmo
+Não encontrei informação suficiente
+nos materiais carregados para responder
+com confiança.
 ```
+
+Objetivo:
+
+* evitar alucinação
+* evitar respostas inventadas
+* manter precisão do sistema
 
 ---
 
@@ -203,29 +218,20 @@ Explicação completa do algoritmo
 
 Planejamento atualizado.
 
-Detecta automaticamente:
+Reconhece:
 
-- hoje
-    
-- amanhã
-    
-- esta semana
-    
-- próxima prova
-    
-- revisão final
-    
+* hoje
+* amanhã
+* esta semana
+* próxima prova
+* revisão final
 
 Regras:
 
-- respeitar prazo informado
-    
-- não criar dias extras
-    
-- considerar agenda
-    
-- funcionar sem documentos
-    
+* respeitar prazo
+* não criar dias extras
+* considerar agenda
+* funcionar sem documentos
 
 Exemplo:
 
@@ -251,7 +257,7 @@ Fluxo:
 Tema
 ↓
 
-Busca de documentos
+Busca
 ↓
 
 Validação
@@ -268,20 +274,14 @@ Recomendação
 
 Regras:
 
-- perguntas apenas do tema solicitado
-    
-- não misturar documentos
-    
-- evitar perguntas irrelevantes
-    
-- funcionar sem contexto quando necessário
-    
+* perguntas apenas do tema solicitado
+* não misturar documentos
+* evitar contexto incorreto
+* funcionar sem material quando permitido
 
 ---
 
 ## 7. Recomendação de Revisão
-
-Sistema atualizado.
 
 Pontuação:
 
@@ -303,6 +303,11 @@ Prioridade 2
 Prioridade 3
 ```
 
+Objetivo:
+
+* revisar dificuldades reais
+* evitar peso igual para erros diferentes
+
 ---
 
 ## 8. Logs
@@ -313,13 +318,13 @@ Formato:
 
 ```json
 {
-  "pergunta": "...",
-  "resposta": "...",
-  "tool": "..."
+  "pergunta":"...",
+  "resposta":"...",
+  "tool":"..."
 }
 ```
 
-Codificação:
+Armazenamento:
 
 ```text
 UTF-8
@@ -332,43 +337,33 @@ JSON serializado
 
 ## RAG
 
-- fallback automático
-    
-- busca híbrida otimizada
-    
-- recuperação melhor para siglas
-    
+* busca híbrida otimizada
+* recuperação melhor para siglas
+* validação por recuperação
+* controle de confiança
 
 ## Agenda
 
-- priorização real para hoje
-    
-- integração com materiais
-    
+* priorização real para hoje
+* integração com materiais
 
-## Plano de Estudos
+## Plano
 
-- respeito ao prazo
-    
-- geração mesmo sem documentos
-    
+* respeito ao prazo
+* funciona sem documentos
 
-## Active Recall
+## Recall
 
-- isolamento por tema
-    
-- redução de mistura de contexto
-    
+* isolamento por tema
+* redução de mistura de contexto
 
 ## Revisão
 
-- score baseado em desempenho
-    
+* score baseado em desempenho
 
 ## Logs
 
-- estrutura padronizada
-    
+* persistência estruturada
 
 ---
 
@@ -376,20 +371,13 @@ JSON serializado
 
 Métricas acompanhadas:
 
-- qualidade RAG
-    
-- cobertura de contexto
-    
-- aderência temporal
-    
-- priorização
-    
-- Active Recall
-    
-- revisão personalizada
-    
-- geração de plano
-    
+* qualidade RAG
+* cobertura de contexto
+* aderência temporal
+* priorização
+* Active Recall
+* precisão de revisão
+* geração de plano
 
 ---
 
@@ -423,13 +411,13 @@ http://localhost:8000/docs
 
 # Endpoints
 
-|Método|Rota|Descrição|
-|---|---|---|
-|POST|`/api/ask`|Envia pergunta ao Jarvis|
-|POST|`/api/files/upload`|Upload de documentos|
-|GET|`/api/files`|Lista arquivos|
-|GET|`/stats`|Estatísticas do RAG|
-|GET|`/api/agenda`|Lista compromissos|
-|POST|`/api/agenda`|Cria compromisso|
-|PATCH|`/api/agenda/{id}/concluir`|Concluir compromisso|
-|DELETE|`/api/agenda/{id}`|Remover compromisso|                                 |
+| Método | Rota                        | Descrição                |
+| ------ | --------------------------- | ------------------------ |
+| POST   | `/api/ask`                  | Envia pergunta ao Jarvis |
+| POST   | `/api/files/upload`         | Upload de documentos     |
+| GET    | `/api/files`                | Lista arquivos           |
+| GET    | `/stats`                    | Estatísticas do RAG      |
+| GET    | `/api/agenda`               | Lista compromissos       |
+| POST   | `/api/agenda`               | Cria compromisso         |
+| PATCH  | `/api/agenda/{id}/concluir` | Conclui compromisso      |
+| DELETE | `/api/agenda/{id}`          | Remove compromisso       |
