@@ -332,3 +332,26 @@ class RAGManager:
             "total_embeddings": self.embeddings.shape[0] if self.embeddings is not None else 0,
             "documentos": list(set([chunk["documento"] for chunk in self.chunks]))
         }
+
+def contexto_confiavel(
+    self,
+    docs,
+    minimo=2
+):
+
+    if not docs:
+        return False
+
+    validos = 0
+
+    for d in docs:
+
+        texto = (
+            d.get("texto","")
+            .strip()
+        )
+
+        if len(texto) > 120:
+            validos += 1
+
+    return validos >= minimo
