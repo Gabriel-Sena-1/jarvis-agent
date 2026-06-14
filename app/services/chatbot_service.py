@@ -3,7 +3,11 @@ from pathlib import Path
 from datetime import datetime
 from app.services.rag_manager import RAGManager
 from app.services.agenda_service import AgendaService
+from app.services.recall_service import RecallService
+from app.services.chat_service import ChatService
 from app.services.tool_caller import ToolCaller
+from app.services.logs_service import LogsService
+from typing import Optional
 
 DOCUMENTS_FOLDER_PATH = Path(__file__).parent.parent.parent / "infrastructure" / "documents"
 
@@ -14,13 +18,36 @@ class ChatbotService:
 
         self.rag_manager = RAGManager.get_instance()
         self.agenda_service = AgendaService()
-        self.tool_caller = ToolCaller(self.rag_manager, self.agenda_service)
+        self.recall_service = RecallService()
+        self.chat_service = ChatService()
+        self.logs_service = LogsService()
+        self.tool_caller = ToolCaller(self.rag_manager, self.agenda_service, self.recall_service, self.logs_service)
 
-    async def process_question(self, question: str, tool_call: str | None = None) -> dict:
+    async def process_question(self, question: str, chat_id: Optional[int] = None) -> dict:
         try:
-            return await self.tool_caller.handle(question, tool_call)
+            if chat_id is not None:
+                chat = self.chat_service.obter_chat(chat_id)
+                if not chat:
+                    title = question[:40] + ("..." if len(question) > 40 else "")
+                    new_chat = self.chat_service.criar_chat(title)
+                    chat_id = new_chat["id"]
+            else:
+                title = question[:40] + ("..." if len(question) > 40 else "")
+                new_chat = self.chat_service.criar_chat(title)
+                chat_id = new_chat["id"]
+
+            self.chat_service.adicionar_interacao(chat_id, question, "user")
+            
+            chat_ctx = self.chat_service.listar_ultimas_10_interacoes(chat_id)
+            result = await self.tool_caller.handle(question, chat_ctx)
+            
+            answer = result.get("answer", "")
+            self.chat_service.adicionar_interacao(chat_id, answer, "assistant")
+            
+            result["chat_id"] = chat_id
+            return result
         except Exception as e:
-            return {"answer": f"Erro ao processar pergunta: {str(e)}", "chunks_usados": 0}
+            return {"answer": f"Erro ao processar pergunta: {str(e)}", "chunks_usados": 0, "chat_id": chat_id}
 
     async def warmup(self):
         if not self.documents_folder.exists():
