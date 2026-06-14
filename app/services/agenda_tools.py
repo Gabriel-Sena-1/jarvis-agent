@@ -185,11 +185,29 @@ class AgendaTools:
 
         ctx_docs = self.rag_manager.build_doc_context(docs)
 
-        if not docs:
-            return {
-                "answer": "Não há material carregado para planejar os estudos. Por favor, faça upload de arquivos PDF/TXT para continuar.",
-                "chunks_usados": 0
-            }
+if not docs:
+
+    prompt = (
+        f"""
+Monte um plano de estudos usando conhecimento geral.
+
+Pergunta:
+{question}
+
+Regras:
+- Respeite datas mencionadas.
+- Não invente compromissos.
+- Se faltar agenda, diga isso.
+- Gere plano mesmo sem material.
+"""
+    )
+
+    resposta = self.rag_manager.get_response(prompt)
+
+    return {
+        "answer": resposta,
+        "chunks_usados": 0
+    }
 
         prompt = self._prompt_plano_estudos(question, ctx_agenda, ctx_docs)
         resposta = self.rag_manager.get_response(prompt)
@@ -222,11 +240,25 @@ class AgendaTools:
 
         topico = self._extrair_topico(question)
         docs = self.rag_manager.recuperar_hibrido(question, k=8)
-        if not docs:
-            return {
-                "answer": f"Não encontrei material sobre **{topico}** nos documentos carregados. Faça upload do documento correspondente para continuar.",
-                "chunks_usados": 0
-            }
+if not docs:
+
+    prompt = (
+        f"""
+Gere 5 perguntas de Active Recall.
+
+Tema:
+{topico}
+
+Mesmo sem documentos.
+"""
+    )
+
+    resposta = self.rag_manager.get_response(prompt)
+
+    return {
+        "answer": resposta,
+        "chunks_usados":0
+    }
 
         # Guard anti-alucinação: verifica se os docs recuperados são realmente sobre o tópico pedido
         if not self._topico_presente_nos_docs(topico, docs):
