@@ -1,0 +1,196 @@
+id,tipo_pergunta,pergunta,resposta_ia,chunks_usados,nota,justificativa,palavras_chave_encontradas
+1,RAG,O que é herança em orientação a objetos?,"Em programação orientada a objetos, herança é um conceito que permite criar uma nova classe baseada em uma classe já existente. A classe original é chamada de superclasse ou classe pai, enquanto a nova classe criada é conhecida como subclasse ou classe filha. A subclasse herda automaticamente todos os métodos e atributos da superclasse, o que facilita a reutilização de código e a organização hierárquica de classes. Além disso, a subclasse pode adicionar novos atributos e métodos exclusivos, bem como modificar (sobrescrever) as características herdadas da superclasse.",5,2,"A resposta fornece uma explicação clara sobre o conceito de herança em programação orientada a objetos, mencionando superclasse e subclasse, além de destacar a importância do reuso de código. A explicação é completa e abrange todos os pontos solicitados.",
+2,RAG,Como funciona o algoritmo KNN?,"Não encontrado no contexto.
+
+Os trechos fornecidos não contêm informações sobre o algoritmo KNN (K-Nearest Neighbors). No entanto, posso fornecer uma explicação geral sobre como o KNN funciona:
+
+O KNN é um algoritmo de aprendizado supervisionado utilizado principalmente para classificação, mas também pode ser usado para regressão. O funcionamento básico do KNN é o seguinte:
+
+1. **Seleção do Valor de k**: O primeiro passo é escolher um valor para k, que representa o número de vizinhos mais próximos a serem considerados ao classificar um novo exemplo.
+
+2. **Medida da Distância**: Para cada novo exemplo, calcula-se a distância até todos os outros exemplos existentes no conjunto de dados. Existem várias métricas de distância possíveis, como a distância euclidiana, a distância Manhattan, etc.
+
+3. **Identificação dos K-Próximos Vizinhos**: Identifica-se os k-exemplos mais próximos ao novo exemplo com base na medida de distância escolhida.
+
+4. **Classificação**: Finalmente, o novo exemplo é classificado com base na maioria das categorias presentes entre os k-vizinhos mais próximos. Por exemplo, se k = 5 e três dos cinco vizinhos mais próximos são de uma categoria específica, então o novo exemplo será classificado como pertencente a essa categoria.
+
+Este é um resumo geral do funcionamento do algoritmo KNN.",5,2,"A resposta fornece uma explicação adequada sobre o funcionamento do algoritmo KNN, mencionando a seleção do valor de k, a medida da distância, a identificação dos k-próximos vizinhos e a classificação final.","KNN, distância, k, vizinhos, classificação"
+3,Study Plan,Monte um plano de estudos para a prova de APSOO amanhã,"Baseado nos trechos fornecidos e considerando a solicitação de preparação para a prova de APSOO (Auditando Processos de Sistemas de Operações), elaborarei um plano de estudos detalhado para o próximo dia. Como não há compromissos específicos na agenda além deste pedido, vou focar no conteúdo relevante para a prova.
+
+### Plano de Estudos para Prova de APSOO
+
+**Data:** 2026-06-15
+
+**Material de Referência:** Documento 'Projeto-Pedagogico-SI-2026-Completo'
+
+#### Horário 1: 8:00 - 10:00
+- **Tópico:** Políticas de Segurança de Informações
+- **Tempo Estimado:** 2 horas
+- **Conteúdo:** Definição de políticas de segurança de informações, incluindo vulnerabilidades e ameaças.
+- **Material Consultado:** Trecho 8 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Horário 2: 10:30 - 12:30
+- **Tópico:** Conceitos e Objetivos da Auditoria de Sistemas de Informação
+- **Tempo Estimado:** 2 horas
+- **Conteúdo:** Discussão sobre o conceito e os objetivos da auditoria de sistemas de informação.
+- **Material Consultado:** Trecho 8 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Horário 3: 13:30 - 15:30
+- **Tópico:** Pontos de Controle de Auditoria de Sistemas
+- **Tempo Estimado:** 2 horas
+- **Conteúdo:** Identificação e discussão dos pontos de controle de auditoria de sistemas.
+- **Material Consultado:** Trecho 8 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Horário 4: 16:00 - 18:00
+- **Tópico:** Plano de Contingência e Continuidade dos Serviços
+- **Tempo Estimado:** 2 horas
+- **Conteúdo:** Elaboração e discussão de planos de contingência e continuidade dos serviços.
+- **Material Consultado:** Trecho 8 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Horário 5: 18:30 - 20:30
+- **Tópico:** Técnicas de Auditoria em Sistemas de Informação
+- **Tempo Estimado:** 2 horas
+- **Conteúdo:** Aplicação e discussão de técnicas de auditoria em sistemas de informação.
+- **Material Consultado:** Trecho 8 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+Este plano de estudos abrange os principais aspectos relacionados à APSOO, com base nos trechos fornecidos do documento 'Projeto-Pedagogico-SI-2026-Completo'. Recomenda-se revisar esses conteúdos antes da prova para garantir uma compreensão sólida e completa do tema.",8,2,"A resposta fornece um plano de estudo completo e específico para a prova de APSOO, incluindo horários, tópicos de estudo e referências ao documento 'Projeto-Pedagogico-SI-2026-Completo'.","APSOO, plano, estudos, tempo, revisão"
+4,Task Prioritization,O que devo priorizar hoje?,"1. Estudar sobre ""Gestão Estratégica"" e ""Fundamentos da Administração"", incluindo os tópicos de escolhas estratégicas, implementação de estratégias e indicadores de controle e desempenho.
+2. Revisar conteúdo sobre ""Wicked Problems"" e técnicas de reframing em design interdisciplinar.
+3. Analisar exemplos e dados relacionados a decisões meteorológicas para viagens, focando em como condições climáticas influenciam decisões.",5,0,A resposta não atende aos critérios estabelecidos na pergunta e não menciona prioridades para o dia atual.,priorizar
+5,Active Recall,Gere 5 perguntas sobre Árvores de Decisão,"Aqui estão 5 perguntas de **Active Recall** sobre **Árvores de Decisão**:
+
+**Pergunta 1**: Qual é o critério mais comumente usado para escolher o atributo que particiona o conjunto de exemplos em cada iteração durante a construção de uma árvore de decisão?
+
+**Pergunta 2**: Em que tipo de tarefa práticas da Inteligência Artificial as árvores de decisão são frequentemente utilizadas?
+
+**Pergunta 3**: Quais são algumas das possibilidades mencionadas para escolher o atributo durante a criação de uma árvore de decisão?
+
+**Pergunta 4**: Qual é o objetivo principal da aula sobre indução de árvores de decisão?
+
+**Pergunta 5**: De acordo com o material fornecido, quais são os métodos utilizados para escolher o atributo em cada nó de uma árvore de decisão?
+
+---
+💬 **Responda a Pergunta 1 no chat agora!** Digite sua resposta e eu avalio para você.",8,2,"A resposta gera cinco perguntas de Active Recall sobre Árvores de Decisão, todas elas são claras e relevantes. A resposta também sugere que o usuário responda à primeira pergunta no chat.","perguntas, Árvores de Decisão, responder"
+6,Active Recall,Quero treinar com perguntas sobre IHC,"Aqui estão 5 perguntas de **Active Recall** sobre **IHC**:
+
+**Pergunta 1**: Qual é o objetivo do ciclo de vida de modelos de aprendizado de máquina mencionado no documento 'Projeto-Pedagogico-SI-2026-Completo'?
+
+**Pergunta 2**: De acordo com o documento 'Projeto-Pedagogico-SI-2026-Completo', quais são os métodos de busca utilizados na resolução de problemas de IA?
+
+**Pergunta 3**: Como o documento 'Projeto-Pedagogico-SI-2026-Completo' define a importância da colaboração em projetos de IHC?
+
+**Pergunta 4**: Qual estratégia é usada para transformar desafios em perguntas abertas que estimulam a idealização de soluções em projetos de IHC, conforme mencionado no documento 'Projeto-Pedagogico-SI-2026-Completo'?
+
+**Pergunta 5**: Quais são as principais componentes curriculares do curso de Sistemas de Informação mencionadas no documento 'Projeto-Pedagogico-SI-2026-Completo'?
+
+---
+💬 **Responda a Pergunta 1 no chat agora!** Digite sua resposta e eu avalio para você.",8,0,"As perguntas apresentadas não se referem a temas relacionados a IHC, usabilidade e prototipação, mas sim a conceitos de aprendizado de máquina, métodos de busca e estrutura curricular de cursos de Sistemas de Informação.",
+7,Revision Recommendation,Quais tópicos devo revisar com base nos meus erros?,"Com base nos dados fornecidos, é possível identificar algumas áreas onde você está tendo mais dificuldade ao utilizar a técnica de Active Recall. Vamos analisar cada um dos itens mencionados:
+
+1. **aula-arvoresDecisao**: Você cometeu 34 erros em 34 tentativas. Isso significa que você errou 100% das vezes que tentou responder questões sobre este tópico. Esta é claramente a área mais crítica que precisa de atenção imediata.
+
+2. **aula-08**: Com 5 erros em 5 tentativas, também temos aqui uma taxa de erro de 100%. Embora seja um pequeno conjunto de dados, é importante não ignorá-lo.
+
+3. **Projeto-Pedagogico-SI-2026-Completo**: Aqui, você cometeu 47 erros em 47 tentativas, resultando em uma taxa de erro de 100%. Este é outro ponto de foco crítico.
+
+4. **IHC___Aula_04**: Você errou 10 vezes em 10 tentativas, com uma taxa de erro de 100%. Esta área também requer atenção.
+
+### Recomendação Personalizada
+
+#### Prioridade: 
+As aulas **aula-arvoresDecisao**, **aula-08**, **Projeto-Pedagogico-SI-2026-Completo** e **IHC___Aula_04** devem ser suas prioridades de estudo. Todos eles apresentam taxas de erro de 100%, indicando que você ainda não consegue responder corretamente às perguntas sobre esses temas.
+
+#### Estratégias de Estudo:
+Para melhorar seu desempenho nestes tópicos, aqui estão algumas sugestões:
+
+1. **Revisão Profunda**: Revise o material de cada aula novamente, desta vez prestando atenção especial aos conceitos que você encontrou mais difíceis na primeira leitura.
+
+2. **Práticas de Interleaving**: Em vez de estudar um único tópico por longos períodos, intercale seus estudos entre diferentes tópicos. Isso pode ajudar a reforçar sua compreensão geral do conteúdo.
+
+3. **Uso de Cartões de Flashcards**: Crie cartões de flashcards para cada tópico problemático. Escreva as perguntas em um lado e as respostas no outro. Use-os regularmente para testar sua memória.
+
+4. **Grupos de Estudo**: Se possível, forme grupos de estudo com colegas que já dominam esses tópicos. Eles podem fornecer perspectivas úteis e ajudá-lo a entender melhor o material.
+
+5. **Recursos Adicionais**: Procure recursos adicionais online, como vídeos tutoriais, artigos acadêmicos ou livros de texto relacionados ao tema. Às vezes, uma explicação diferente pode ser exatamente o que você precisa para entender melhor.
+
+6. **Consultoria com Professores**: Não hesite em procurar ajuda adicional de seus professores ou tutores. Eles podem fornecer orientações valiosas e esclarecer qualquer confusão que você possa estar enfrentando.
+
+Lembre-se, o progresso em estudos como esse é gradual e requer persistência. Continue se esforçando e você verá resultados positivos!",0,2,"A resposta da IA listou os erros cometidos nas sessões de recall passadas e gerou recomendações de revisão com base neles, incluindo estratégias específicas para melhorar o desempenho nos tópicos problemáticos.","recomendar, revisão, erros, recall"
+8,Empty Context,Gere perguntas sobre Redes Neurais,"Aqui estão 5 perguntas de **Active Recall** sobre **Redes Neurais**:
+
+**Pergunta 1**: Qual é uma técnica comum usada para evitar o overfitting em redes neurais?
+
+**Pergunta 2**: Quais são as principais arquiteturas de redes neurais mencionadas no documento?
+
+**Pergunta 3**: Como se chama o método de treinamento supervisionado que envolve retropropagação do erro em redes neurais?
+
+**Pergunta 4**: Quais são os diferentes métodos de otimização de redes neurais mencionados?
+
+**Pergunta 5**: Qual método de treinamento de redes neurais é mencionado como sendo eficaz para lidar com conjuntos de dados grandes?
+
+---
+💬 **Responda a Pergunta 1 no chat agora!** Digite sua resposta e eu avalio para você.",8,0,"A resposta da IA gera perguntas sobre redes neurais, mas não menciona que não há documentos carregados no sistema de RAG. A resposta também não prevê alucinações nem sugere o upload de documentos.",
+9,Study Plan,Monte um plano de estudos para esta semana,"Como não há nenhum compromisso relevante na agenda para esta semana, vou gerar um plano de estudos genérico com base nos materiais disponíveis do documento 'Projeto-Pedagogico-SI-2026-Completo'. O plano foi elaborado considerando os tópicos relevantes do documento, organizando-os em uma estrutura de estudo diária.
+
+### Plano de Estudos Semanal (2026-06-14 a 2026-06-20)
+
+#### Dia 1: Entendimento do Projeto Pedagógico e Metas do Curso (2026-06-14)
+- **Tópico**: Entenda o Projeto Pedagógico do Curso e suas metas.
+- **Tempo estimado**: 3 horas
+- **Material a consultar**: Trechos 1 e 2 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Dia 2: Estrutura Acadêmica e Responsabilidades do Colegiado de Curso (2026-06-15)
+- **Tópico**: Compreender a estrutura acadêmica e as responsabilidades do Colegiado de Curso.
+- **Tempo estimado**: 3 horas
+- **Material a consultar**: Trechos 4 e 5 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Dia 3: Implementação da Matriz Curricular e Avaliação (2026-06-16)
+- **Tópico**: Entender a implementação da nova matriz curricular e os critérios de avaliação.
+- **Tempo estimado**: 3 horas
+- **Material a consultar**: Trecho 3 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Dia 4: Atualizações e Reuniões do Colegiado de Curso (2026-06-17)
+- **Tópico**: Entender a importância das reuniões do Colegiado de Curso e as atualizações regulares.
+- **Tempo estimado**: 3 horas
+- **Material a consultar**: Trechos 6 e 7 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Dia 5: Atendimento aos Requisitos Legais e Normativos (2026-06-18)
+- **Tópico**: Entender as políticas de atendimento aos requisitos legais e normativos.
+- **Tempo estimado**: 3 horas
+- **Material a consultar**: Trecho 8 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Dia 6: Planejamento de Melhorias e Ações Corretivas (2026-06-19)
+- **Tópico**: Compreender a importância do planejamento de melhorias e ações corretivas.
+- **Tempo estimado**: 3 horas
+- **Material a consultar**: Trechos 6 e 7 do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+#### Dia 7: Preparação para a Próxima Semana e Revendo Conceitos (2026-06-20)
+- **Tópico**: Revisitar os conceitos aprendidos e preparar-se para a próxima semana de estudos.
+- **Tempo estimado**: 3 horas
+- **Material a consultar**: Todos os trechos do documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+Este plano de estudos é uma sugestão baseada nos trechos fornecidos do documento 'Projeto-Pedagogico-SI-2026-Completo'. Ele deve ser adaptado conforme as necessidades individuais e as circunstâncias específicas de cada estudante.",8,2,"A resposta fornece um plano de estudos semanal estruturado, cobrindo diferentes tópicos relevantes e indicando os materiais de estudo correspondentes. Ela também menciona a necessidade de adaptação às necessidades individuais dos estudantes.","semana, plano, estudos, materiais"
+10,RAG,Explique o que é um Diagrama de Casos de Uso,"Um Diagrama de Casos de Uso é uma ferramenta de modelagem usada principalmente em análise de sistemas e design orientado a objetos. Este tipo de diagrama faz parte da Unified Modeling Language (UML) e é usado para representar graficamente as interações entre diferentes atores (pessoas, sistemas ou outros elementos externos) e o sistema sob análise.
+
+### Componentes Básicos do Diagrama:
+
+1. **Ator**: Representado graficamente como um ""boneco palito"", os atores podem ser seres humanos, sistemas externos ou qualquer outra entidade que interage com o sistema.
+   
+2. **Casos de Uso**: Representados como círculos (elipses) nomeadas, cada caso de uso representa uma funcionalidade ou um comportamento específico do sistema.
+
+### Função do Diagrama:
+
+- Oferece uma visão geral das funcionalidades do sistema, mostrando quais atores estão envolvidos e quais são suas interações.
+- Serve como ponto de partida para a descrição mais detalhada de cada caso de uso através de descrições textuais e outros modelos UML.
+
+### Complementos ao Diagrama:
+
+- **Descrição Textual**: Fornece o contexto, pré-condições, fluxos principais e alternativos, bem como pós-condições para cada caso de uso.
+- **Outros Modelos UML**: Como diagramas de sequência, atividades e máquinas de estados, podem ser utilizados para fornecer detalhes adicionais sobre a implementação de cada caso de uso.
+
+### Aplicações:
+
+- **Comunicação**: Facilita a comunicação entre engenheiros de software e stakeholders não técnicos.
+- **Escopo do Sistema**: O conjunto de casos de uso representa todas as interações possíveis descritas nos requisitos do sistema.
+
+Em resumo, o Diagrama de Casos de Uso é uma ferramenta essencial para entender e comunicar as interações entre os atores e o sistema, sendo fundamental tanto para a análise quanto para o design de sistemas.",5,2,"A resposta fornece uma explicação clara e abrangente sobre o que é um Diagrama de Casos de Uso, incluindo seus componentes básicos, função e aplicações. A resposta menciona atores e casos de uso, mas não especificamente os relacionamentos 'include' e 'extend'.",

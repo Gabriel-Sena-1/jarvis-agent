@@ -22,7 +22,7 @@ class RAGManager:
         if getattr(self, "_initialized", False):
             return
         self._initialized = True
-        self.client = OpenAI(base_url='https://llm.liaufms.org/v1/gemma-3-12b-it', api_key=os.getenv("OPENAI_API_KEY"))
+        self.client = OpenAI()
         
         print("Carregando modelo de embeddings multilingual...")
         self.embedding_model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
@@ -33,8 +33,8 @@ class RAGManager:
         self.bm25_model = None
         self.tokenized_chunks = []
         
-        self.chunk_size = 500
-        self.chunk_overlap = 100
+        self.chunk_size = 650
+        self.chunk_overlap = 150
         
         self.markdowns_folder = Path(__file__).parent.parent.parent / "infrastructure" / "markdowns"
         self.markdowns_folder.mkdir(exist_ok=True)
@@ -75,18 +75,49 @@ class RAGManager:
             return 0
 
         cache_path = self._cache_path(cache_key)
+        embeddings_cache_path = self.cache_folder / f"{cache_key}_embeddings.npy"
+
         if cache_path.exists():
             print(f"Carregando chunks do cache: {cache_path}")
             novos_chunks = json.loads(cache_path.read_text(encoding="utf-8"))
         else:
             novos_chunks = [
-                {"texto": chunk, "documento": nome_documento}
+                {"texto": f"Documento: {nome_documento}\n\n{chunk}", "documento": nome_documento}
                 for chunk in self.chunking_janela(texto)
             ]
             cache_path.write_text(json.dumps(novos_chunks, ensure_ascii=False, indent=2), encoding="utf-8")
             print(f"Chunks salvos no cache: {cache_path}")
 
-        self.chunks.extend(novos_chunks)
+        if len(novos_chunks) > 0:
+            if embeddings_cache_path.exists():
+                print(f"Carregando embeddings do cache: {embeddings_cache_path}")
+                novos_embeddings = np.load(str(embeddings_cache_path))
+                if len(novos_embeddings) != len(novos_chunks):
+                    print(f"Aviso: Tamanho dos embeddings no cache ({len(novos_embeddings)}) não coincide com o número de chunks ({len(novos_chunks)}). Gerando novamente...")
+                    textos = [chunk["texto"] for chunk in novos_chunks]
+                    novos_embeddings = self.embedding_model.encode(
+                        textos,
+                        normalize_embeddings=True,
+                        show_progress_bar=False,
+                    ).astype("float32")
+                    np.save(str(embeddings_cache_path), novos_embeddings)
+                    print(f"Embeddings salvos no cache: {embeddings_cache_path}")
+            else:
+                textos = [chunk["texto"] for chunk in novos_chunks]
+                novos_embeddings = self.embedding_model.encode(
+                    textos,
+                    normalize_embeddings=True,
+                    show_progress_bar=False,
+                ).astype("float32")
+                np.save(str(embeddings_cache_path), novos_embeddings)
+                print(f"Embeddings salvos no cache: {embeddings_cache_path}")
+
+            self.chunks.extend(novos_chunks)
+            if self.embeddings is None:
+                self.embeddings = novos_embeddings
+            else:
+                self.embeddings = np.vstack([self.embeddings, novos_embeddings])
+
         self._chunks_carregados[cache_key] = True
         self._atualizar_indices()
         return len(novos_chunks)
@@ -135,15 +166,17 @@ class RAGManager:
             self.tokenized_chunks = []
             return
         
-        print(f"Gerando embeddings para {len(self.chunks)} chunks...")
+        if self.embeddings is None or len(self.embeddings) != len(self.chunks):
+            print(f"Gerando embeddings para {len(self.chunks)} chunks...")
+            textos = [chunk["texto"] for chunk in self.chunks]
+            
+            self.embeddings = self.embedding_model.encode(
+                textos,
+                normalize_embeddings=True,
+                show_progress_bar=False,
+            ).astype("float32")
+        
         textos = [chunk["texto"] for chunk in self.chunks]
-        
-        self.embeddings = self.embedding_model.encode(
-            textos,
-            normalize_embeddings=True,
-            show_progress_bar=False,
-        ).astype("float32")
-        
         dim = self.embeddings.shape[1]
         self.faiss_index = faiss.IndexFlatIP(dim)
         self.faiss_index.add(self.embeddings)
@@ -220,34 +253,57 @@ class RAGManager:
         
         return resultado
     
-    def construir_prompt(self, pergunta: str, docs: list[dict]) -> str:
+    def build_doc_context(self, docs: list[dict]) -> str:
+        if not docs:
+            return "Nenhum material encontrado no contexto."
+        linhas = []
+        for i, d in enumerate(docs):
+            linhas.append(f"Documento '{d.get('documento', 'desconhecido')}' (Trecho {i+1}):\n{d.get('texto', '')}")
+        return "\n\n".join(linhas)
+
+    def construir_prompt(self, pergunta: str, docs: list[dict]) -> str | None:
+        if not docs:
+            return None
+            
         partes = []
+        trechos = "\n\n".join(
+            [f"Trecho {i+1}:\n{d['texto']}" for i, d in enumerate(docs)]
+        )
+        partes.append(f"Contexto de documentos:\n{trechos}")
 
-        if docs:
-            trechos = "\n\n".join(
-                [f"Trecho {i+1}:\n{d['texto']}" for i, d in enumerate(docs)]
-            )
-            partes.append(f"Contexto de documentos:\n{trechos}")
-
-        contexto_completo = "\n\n".join(partes) if partes else ""
+        contexto_completo = "\n\n".join(partes)
 
         instrucao = (
             "Responda em português usando as informações do contexto abaixo. "
             "Se não houver informação suficiente, diga: não encontrado no contexto.\n\n"
         )
 
-        return instrucao + (f"Contexto:\n{contexto_completo}\n\n" if contexto_completo else "") + f"Pergunta: {pergunta}"
+        return instrucao + f"Contexto:\n{contexto_completo}\n\nPergunta: {pergunta}"
     
-    def get_response(self, content):
+    def get_response(self, content: str, chat_history: list = None) -> str:
+        """Gera resposta do modelo. Se `chat_history` for fornecido, injeta as
+        mensagens anteriores da conversa para manter contexto."""
+        messages = []
+
+        if chat_history:
+            for msg in reversed(chat_history):  # listar_ultimas_10 vem DESC; revertemos para ASC
+                role = msg.get("role", "user")
+                text = msg.get("message", "")
+                if role in ("user", "assistant") and text:
+                    messages.append({"role": role, "content": text})
+
+        messages.append({"role": "user", "content": content})
+
         resp = self.client.chat.completions.create(
-            model='google/gemma-3-12b-it',
-            messages=[{"role": "user", "content": content}],
+            model='Qwen/Qwen2.5-14B-Instruct-AWQ',
+            messages=messages,
         )
         return resp.choices[0].message.content
 
     async def responder_rag(
         self,
         pergunta: str,
+        chat_ctx: list = None,
         metodo: str = "hibrido",
         k: int = 3,
         alpha: float = 0.6,
@@ -262,12 +318,11 @@ class RAGManager:
 
         print(f"Documentos recuperados: {len(docs)}")
 
-        if not docs:
-            return "Não há documentos no contexto para responder.", []
-
         conteudo = self.construir_prompt(pergunta, docs)
+        if conteudo is None:
+            return "Não há material carregado para responder sobre este tema. Faça upload do documento no endpoint /api/files/upload.", []
 
-        resp = self.get_response(conteudo)
+        resp = self.get_response(conteudo, chat_history=chat_ctx)
 
         return resp, docs
     

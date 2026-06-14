@@ -1,0 +1,172 @@
+id,tipo_pergunta,pergunta,resposta_ia,chunks_usados,nota,justificativa,palavras_chave_encontradas
+1,RAG,O que é herança em orientação a objetos?,"Em orientação a objetos, herança é um mecanismo que permite definir uma nova classe a partir de uma classe já existente. A classe original é chamada de superclasse e a nova classe derivada é a subclasse. A subclasse herda automaticamente todos os métodos e atributos da superclasse. Isso permite a reutilização de código e a criação de hierarquias de classes, onde a subclasse pode adicionar novos atributos e métodos exclusivos além de poder sobrescrever (override) os métodos herdados da superclasse.",5,2,"A resposta fornece uma explicação clara sobre o conceito de herança em orientação a objetos, mencionando superclasse e subclasse, além de destacar a reutilização de código e a possibilidade de adicionar novos atributos e métodos na subclasse.","herança, superclasse, subclasse, classe, objetos"
+2,RAG,Como funciona o algoritmo KNN?,"Não encontrado no contexto.
+
+O texto fornecido não contém informações sobre o algoritmo KNN. Os trechos apresentados tratam principalmente de disciplinas relacionadas à Ciência da Computação e Tecnologia da Informação, incluindo programação para redes, análise de algoritmos, inteligência artificial e arquitetura de computadores. Para responder à sua pergunta sobre o algoritmo KNN, seria necessário outro tipo de fonte ou contexto.",5,0,A resposta da IA foi que não havia informações sobre o algoritmo KNN no contexto fornecido e não explicou como funciona o algoritmo KNN.,
+3,Study Plan,Monte um plano de estudos para a prova de APSOO amanhã,"Como não há nenhum compromisso relevante na agenda e somente materiais relacionados ao conteúdo de APSOO disponíveis, montarei um plano de estudo genérico para preparação da prova de APSOO.
+
+### Plano de Estudos para Prova de APSOO
+
+#### Dia 1 (15 de Junho de 2026)
+
+**Tópicos a serem estudados:**
+- **Revisão de Requisitos:** Entender a importância de revisar documentos de requisitos, incluindo métodos de revisão formal e informal.
+- **Prototipação:** Familiarizar-se com a técnica de prototipação e como ela é utilizada para validar requisitos.
+- **Geração de Casos de Teste:** Aprender sobre a geração de casos de teste para validação de requisitos.
+
+**Estimativa de Tempo:**
+- 1 hora para revisar o trecho sobre Revisão de Requisitos no documento 'APSOO - Aula 05'.
+- 1 hora para estudar sobre Prototipação no mesmo documento.
+- 1 hora para aprender sobre a geração de casos de teste.
+
+**Material a ser consultado:**
+- Documento 'APSOO - Aula 05'.
+
+---
+
+#### Dia 2 (16 de Junho de 2026)
+
+**Tópicos a serem estudados:**
+- **Gerenciamento de Requisitos:** Entender as razões pelas quais os requisitos mudam e como gerenciar essas mudanças.
+- **Regulamentos e Normas:** Revisar as normas e regulamentos pertinentes à avaliação de requisitos.
+
+**Estimativa de Tempo:**
+- 1 hora para estudar sobre Gerenciamento de Requisitos no documento 'APSOO - Aula 05'.
+- 1 hora para revisar os regulamentos e normas pertinentes ao documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+**Material a ser consultado:**
+- Documento 'APSOO - Aula 05'.
+- Documento 'Projeto-Pedagogico-SI-2026-Completo'.
+
+---
+
+Este plano de estudos é baseado nos materiais disponíveis e visa preparar você para a prova de APSOO. Certifique-se de revisar todos os pontos mencionados e praticar resolvendo questões similares aos exemplos fornecidos nos documentos mencionados. Boa sorte!",8,2,"O plano de estudos cita os documentos de APSOO, indica que a preparação é para amanhã, e propõe blocos de tempo/tópicos específicos.","plano, estudos, tempo, revisão"
+4,Task Prioritization,O que devo priorizar hoje?,"1. Estudar sobre a elicição de requisitos e como negociar com stakeholders, com base no documento ""APSOO - Aula 05"".
+2. Analisar os trechos do documento ""Projeto-Pedagogico-SI-2026-Completo"" relacionados aos objetivos estratégicos e à gestão do curso.
+3. Revisar o conteúdo sobre viés para ação, colaboração radical e reformulação do documento ""IHC___Aula_04"".",5,1,"A resposta lista três atividades a serem realizadas, mas não menciona explicitamente a ordem de urgência nem refere-se diretamente à 'priorização de hoje'.",hoje
+5,Active Recall,Gere 5 perguntas sobre Árvores de Decisão,"Aqui estão 5 perguntas de **Active Recall** sobre **Árvores de Decisão**:
+
+**Pergunta 1**: O que caracteriza a família TDIDT (Top Down Induction of Decision Trees)?
+
+**Pergunta 2**: Por que os algoritmos de construção de árvores de decisão são chamados de 'gulosos'?
+
+**Pergunta 3**: Qual é a principal abordagem utilizada para construir um modelo de conhecimento nas árvores de decisão?
+
+**Pergunta 4**: Como são as características de um nó em uma árvore de decisão?
+
+**Pergunta 5**: Quais são as implicações de usar combinações lineares de atributos em árvores de decisão?
+
+---
+💬 **Responda a Pergunta 1 no chat agora!** Digite sua resposta e eu avalio para você.",8,2,"A resposta gera cinco perguntas de Active Recall sobre Árvores de Decisão, todas relacionadas ao tema proposto e formatadas de forma legível. Além disso, sugere que o usuário responda à primeira pergunta no chat, conforme solicitado.",
+6,Active Recall,Quero treinar com perguntas sobre IHC,"Aqui estão 5 perguntas de **Active Recall** sobre **IHC**:
+
+**Pergunta 1**: Qual é a função principal da estrutura 'Como a gente poderia...' (CGP) mencionada no documento 'IHC___Aula_04'?
+
+**Pergunta 2**: De acordo com o documento 'Projeto-Pedagogico-SI-2026-Completo', quais são três habilidades que os cursos de bacharelado em Sistemas de Informação devem fornecer?
+
+**Pergunta 3**: Quais são os dois métodos de busca discutidos no documento 'Projeto-Pedagogico-SI-2026-Completo'?
+
+**Pergunta 4**: De acordo com o documento 'Projeto-Pedagogico-SI-2026-Completo', qual é o objetivo principal do curso de Sistemas de Informação?
+
+**Pergunta 5**: No contexto do documento 'aula-arvoresDecisao', quais são dois critérios usados para avaliar as decisões em árvores de decisão?
+
+---
+💬 **Responda a Pergunta 1 no chat agora!** Digite sua resposta e eu avalio para você.",8,0,"As perguntas apresentadas não abordam tópicos relacionados a IHC, usabilidade e prototipação. Além disso, as perguntas fazem referência a documentos específicos que não foram fornecidos no contexto da questão.",
+7,Revision Recommendation,Quais tópicos devo revisar com base nos meus erros?,"Com base nos dados fornecidos, podemos observar que você está enfrentando algumas dificuldades específicas ao estudar certos documentos. Aqui está uma análise detalhada dos seus resultados:
+
+- **IHC___Aula_04**: Você cometeu 20 erros em 20 tentativas, o que significa que você errou todas as perguntas relacionadas a esta aula. Isso indica que você precisa revisar este conteúdo novamente.
+
+- **Projeto-Pedagogico-SI-2026-Completo**: Nesta seção, você cometeu 51 erros em 51 tentativas, indicando que todos os itens desta matéria foram respondidos incorretamente. Este é um ponto crítico onde você precisa focar sua atenção.
+
+- **aula-arvoresDecisao**: Você cometeu 24 erros em 24 tentativas, o que significa que você errou em todas as perguntas sobre árvores de decisão. Este também é um tópico que requer revisão intensiva.
+
+- **aula-08**: Embora você tenha cometido apenas 5 erros em 5 tentativas, este ainda é um ponto fraco que merece atenção para garantir que você entenda completamente o conteúdo.
+
+### Recomendação de Revisão Personalizada
+
+**Prioridade Máxima:**
+- **Projeto-Pedagogico-SI-2026-Completo**: Como este tópico apresentou uma taxa de erro de 100%, ele deve ser sua principal prioridade. Considere usar técnicas como mapas mentais e gráficos para visualizar melhor os conceitos e conectar as ideias entre si.
+
+- **aula-arvoresDecisao**: Com uma taxa de erro de 100%, este também é um ponto crucial. Tente criar exemplos práticos de situações onde árvores de decisão podem ser aplicadas para ajudar na compreensão prática do tópico.
+
+**Prioridade Alta:**
+- **IHC___Aula_04**: Esta aula também apresentou uma taxa de erro de 100%. Você pode querer revisar as anotações da aula, assistir a vídeos de explicação adicionais ou encontrar tutoriais online para reforçar seu entendimento.
+
+### Estratégias de Estudo
+
+1. **Revisão Activa**: Em vez de simplesmente ler as informações, teste constantemente seu conhecimento usando cartões de estudo ou ferramentas de aprendizado ativo como Anki.
+
+2. **Grupos de Estudo**: Organize um grupo de estudo com colegas. Isso não apenas ajuda a manter você motivado, mas também permite que você explique os conceitos aos outros, fortalecendo assim o seu próprio entendimento.
+
+3. **Pausas Curtas e Descanso**: Certifique-se de fazer pausas regulares durante suas sessões de estudo. O cérebro precisa de tempo para processar e consolidar informações.
+
+4. **Prática de Exercícios**: Resolva vários problemas relacionados ao tema. A prática constante é fundamental para a fixação do conhecimento.
+
+5. **Feedback Construtivo**: Peça feedback de professores ou colegas de classe sobre áreas específicas onde você está tendo dificuldade. Eles podem fornecer dicas valiosas para ajudá-lo a entender melhor.
+
+Lembre-se, cada pequeno passo que você dá hoje é um passo rumo ao sucesso futuro. Mantenha a motivação alta e continue a trabalhar duro!",0,2,"A resposta da IA forneceu uma análise detalhada dos erros cometidos em diferentes sessões, listando-os claramente e oferecendo recomendações de revisão personalizadas com base nesses erros. Além disso, a resposta incluiu estratégias de estudo eficazes.","recomendar, revisão, erros, recall"
+8,Empty Context,Gere perguntas sobre Plano inclinado da física mecânica,"Não encontrei conteúdo sobre **Plano inclinado da física mecânica** nos documentos carregados.
+Para treinar com Active Recall sobre este tema, faça upload do material correspondente.",0,0,A resposta da IA não respondeu à pergunta original e apresentou uma informação que não foi solicitada.,
+9,Study Plan,Monte um plano de estudos para esta semana,"Como não há compromissos na agenda, vou montar um plano de estudos genérico baseado nos materiais disponíveis para a semana a partir de hoje, 2026-06-14.
+
+### Plano de Estudos
+
+**Segunda-feira, 2026-06-16**
+- **Tópico:** Entendimento Geral do Projeto Pedagógico
+- **Tempo Estimado:** 2 horas
+- **Material Consultado:** Documento 'Projeto-Pedagogico-SI-2026-Completo' (Trechos 1 e 2)
+- **Descrição:** Leitura e análise do documento completo do Projeto Pedagógico do Curso de Sistemas de Informação.
+
+**Terça-feira, 2026-06-17**
+- **Tópico:** Políticas e Estruturas Administrativas do Curso
+- **Tempo Estimado:** 3 horas
+- **Material Consultado:** Documento 'Projeto-Pedagogico-SI-2026-Completo' (Trechos 2 e 3)
+- **Descrição:** Estudo detalhado das políticas administrativas e estruturas organizacionais do curso.
+
+**Quarta-feira, 2026-06-18**
+- **Tópico:** Capacitação Docente e Avaliação Periódica
+- **Tempo Estimado:** 2 horas
+- **Material Consultado:** Documento 'Projeto-Pedagogico-SI-2026-Completo' (Trechos 3 e 4)
+- **Descrição:** Exame dos procedimentos de avaliação periódica e capacitação docente.
+
+**Quinta-feira, 2026-06-19**
+- **Tópico:** Integração Curricular e Resolução de Problemas Multidisciplinares
+- **Tempo Estimado:** 2 horas
+- **Material Consultado:** Documento 'Projeto-Pedagogico-SI-2026-Completo' (Trechos 4 e 5)
+- **Descrição:** Estudo sobre a integração curricular e a resolução de problemas multidisciplinares.
+
+**Sexta-feira, 2026-06-20**
+- **Tópico:** Programas de Estágio e Atividades Complementares
+- **Tempo Estimado:** 2 horas
+- **Material Consultado:** Documento 'Projeto-Pedagogico-SI-2026-Completo' (Trechos 5 e 6)
+- **Descrição:** Revisão das diretrizes para programas de estágio e atividades complementares.
+
+**Sábado, 2026-06-21**
+- **Tópico:** Responsabilidades do Colegiado de Curso e Coordenação
+- **Tempo Estimado:** 2 horas
+- **Material Consultado:** Documento 'Projeto-Pedagogico-SI-2026-Completo' (Trechos 6 e 7)
+- **Descrição:** Análise das responsabilidades do Colegiado de Curso e Coordenação.
+
+**Domingo, 2026-06-22**
+- **Tópico:** Ética e Políticas de Gestão
+- **Tempo Estimado:** 2 horas
+- **Material Consultado:** Documento 'Projeto-Pedagogico-SI-2026-Completo' (Trechos 7 e 8)
+- **Descrição:** Discussão sobre ética e políticas de gestão no contexto acadêmico.
+
+### Materiais Usados
+- Documento 'Projeto-Pedagogico-SI-2026-Completo'
+
+Este plano de estudos foi elaborado com base nos trechos fornecidos do documento 'Projeto-Pedagogico-SI-2026-Completo', cobrindo diversos aspectos do Projeto Pedagógico do Curso de Sistemas de Informação da UFMS.",8,2,"A resposta fornece um plano de estudos estruturado e abrangente para cada dia da semana, incluindo tópicos específicos, tempo estimado, materiais consultados e descrições detalhadas. A resposta também menciona a semana e os materiais de estudo.","semana, plano, estudos, materiais"
+10,RAG,Explique o que é um Diagrama de Casos de Uso,"Um Diagrama de Casos de Uso é uma representação gráfica utilizada para descrever as interações entre atores (que podem ser pessoas ou outros sistemas) e um sistema específico. Este diagrama é uma ferramenta chave na análise e projeto de software orientado a objetos (OOP), especialmente no processo de engenharia de requisitos.
+
+Neste tipo de diagrama, você encontrará os seguintes componentes:
+
+1. **Ator**: Representado graficamente como um ""boneco palito"", os atores são entidades que interagem com o sistema. Eles podem ser usuários finais, sistemas externos, etc.
+
+2. **Casos de Uso**: Estes são representados por elipses nomeadas, indicando diferentes classes de interações que o sistema pode realizar.
+
+3. **Linhas de Associação**: As linhas conectam os atores aos casos de uso, mostrando quais interações cada ator está envolvido. Às vezes, essas linhas podem ter pontas de seta para indicar qual ator ou o sistema iniciou a interação.
+
+4. **Sistema**: Delimitado por um retângulo que representa a fronteira do sistema dentro do qual os casos de uso ocorrem.
+
+Este diagrama ajuda a visualizar e entender a funcionalidade do sistema e suas interações com o mundo exterior. É uma ferramenta valiosa para comunicação entre equipes de desenvolvimento, stakeholders e usuários finais, pois facilita a compreensão das necessidades funcionais do sistema e como estas serão atendidas.",5,2,"A resposta fornece uma explicação clara e completa sobre o que é um Diagrama de Casos de Uso, incluindo a descrição dos componentes principais como atores, casos de uso e relacionamentos. A resposta também menciona o sistema como um componente do diagrama.","Diagrama de Casos de Uso, atores, relacionamentos"
