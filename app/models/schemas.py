@@ -4,12 +4,13 @@ from typing import Optional
 
 class AskRequest(BaseModel):
     question: str
-    tool_call: Optional[str] = None
+    chat_id: Optional[int] = None
 
 
 class AskResponse(BaseModel):
     answer: str
     chunks_usados: Optional[int] = None
+    chat_id: Optional[int] = None
 
 
 class FileUploadResponse(BaseModel):
