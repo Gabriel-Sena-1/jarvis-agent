@@ -1,8 +1,3 @@
-"""
-Ferramentas de agenda: prompts, geração de insumos e execução das tools.
-Cada método segue o fluxo: gera insumo → cria prompt → chama IA → retorna dict.
-"""
-
 import json
 import re
 from datetime import date
@@ -11,7 +6,9 @@ from app.services.recall_service import RecallService
 
 
 class AgendaTools:
-    def __init__(self, agenda_service: AgendaService, recall_service: RecallService, rag_manager):
+    def __init__(
+        self, agenda_service: AgendaService, recall_service: RecallService, rag_manager
+    ):
         self.agenda_service = agenda_service
         self.recall_service = recall_service
         self.rag_manager = rag_manager
@@ -30,8 +27,37 @@ class AgendaTools:
             )
         return "\n".join(linhas)
 
+    def _extract_agenda_items_json(self, raw: str) -> list | None:
+        """Extrai um array JSON de itens de agenda da resposta da IA (mesma lógica de _extract_recall_json)."""
+        match = re.search(r"\[\s*\{.*\}\s*\]", raw, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group())
+            except json.JSONDecodeError:
+                pass
+        clean = raw.strip()
+        if clean.startswith("```json"):
+            clean = clean.split("```json")[1].split("```")[0].strip()
+        elif clean.startswith("```"):
+            clean = clean.split("```")[1].split("```")[0].strip()
+        try:
+            val = json.loads(clean)
+            if isinstance(val, list):
+                return val
+            if isinstance(val, dict):
+                return []  # ex: {"erro": "..."} ou objeto único sem ser lista
+        except Exception:
+            pass
+        return None
+
+    def _validar_item_agenda(self, item: dict) -> bool:
+        """Valida se um item tem os campos mínimos exigidos por AgendaService.criar()."""
+        if not isinstance(item, dict):
+            return False
+        return all(item.get(c) for c in ("nome", "data", "horario"))
+
     def _extract_json(self, raw: str) -> dict | None:
-        match = re.search(r'\{[^{}]*\}', raw, re.DOTALL)
+        match = re.search(r"\{[^{}]*\}", raw, re.DOTALL)
         if match:
             try:
                 return json.loads(match.group())
@@ -96,10 +122,14 @@ class AgendaTools:
             items = all_items
             label = "Todas as tarefas"
 
-        ctx = label + ":\n" + "\n".join(
-            f"- [id:{it['id']}] {it['nome']} em {it['data']} às {it['horario']} "
-            f"(Status: {'Concluído' if it.get('finished_at') else 'Pendente'})"
-            for it in items
+        ctx = (
+            label
+            + ":\n"
+            + "\n".join(
+                f"- [id:{it['id']}] {it['nome']} em {it['data']} às {it['horario']} "
+                f"(Status: {'Concluído' if it.get('finished_at') else 'Pendente'})"
+                for it in items
+            )
         )
         prompt = self._prompt_responder(question, ctx, chat_ctx)
         resposta = self.rag_manager.get_response(prompt)
@@ -113,14 +143,23 @@ class AgendaTools:
         data = self._extract_json(raw)
 
         if data is None:
-            return {"answer": "Não consegui entender os dados do compromisso. Por favor, informe nome, data e horário.", "chunks_usados": 0}
+            return {
+                "answer": "Não consegui entender os dados do compromisso. Por favor, informe nome, data e horário.",
+                "chunks_usados": 0,
+            }
 
         if "erro" in data:
-            return {"answer": f"Não foi possível criar o compromisso: {data['erro']}", "chunks_usados": 0}
+            return {
+                "answer": f"Não foi possível criar o compromisso: {data['erro']}",
+                "chunks_usados": 0,
+            }
 
         ausentes = [c for c in ("nome", "data", "horario") if not data.get(c)]
         if ausentes:
-            return {"answer": f"Faltam as seguintes informações: {', '.join(ausentes)}.", "chunks_usados": 0}
+            return {
+                "answer": f"Faltam as seguintes informações: {', '.join(ausentes)}.",
+                "chunks_usados": 0,
+            }
 
         criado = self.agenda_service.criar(
             nome=data["nome"],
@@ -146,38 +185,66 @@ class AgendaTools:
         data = self._extract_json(raw)
 
         if data is None or "erro" in (data or {}):
-            motivo = data.get("erro", "não identificado") if data else "não identificado"
-            return {"answer": f"Não consegui identificar o compromisso a concluir: {motivo}", "chunks_usados": 0}
+            motivo = (
+                data.get("erro", "não identificado") if data else "não identificado"
+            )
+            return {
+                "answer": f"Não consegui identificar o compromisso a concluir: {motivo}",
+                "chunks_usados": 0,
+            }
 
         id_tarefa = data.get("id")
         if not isinstance(id_tarefa, int):
-            return {"answer": "Não foi possível identificar o ID do compromisso. Por favor, seja mais específico.", "chunks_usados": 0}
+            return {
+                "answer": "Não foi possível identificar o ID do compromisso. Por favor, seja mais específico.",
+                "chunks_usados": 0,
+            }
 
         concluido = self.agenda_service.concluir(id_tarefa)
         if concluido is None:
-            return {"answer": f"Compromisso com id {id_tarefa} não encontrado.", "chunks_usados": 0}
+            return {
+                "answer": f"Compromisso com id {id_tarefa} não encontrado.",
+                "chunks_usados": 0,
+            }
 
-        return {"answer": f"Compromisso '{concluido['nome']}' marcado como concluído com sucesso!", "chunks_usados": 0}
+        return {
+            "answer": f"Compromisso '{concluido['nome']}' marcado como concluído com sucesso!",
+            "chunks_usados": 0,
+        }
 
     # ── Novas Ferramentas T2 ──────────────────────────────────────────────────
 
     async def priorizar_hoje(self, question: str) -> dict:
         compromissos = self.agenda_service.listar()
-        ctx_agenda = self._build_context(compromissos) if compromissos else "Nenhum compromisso cadastrado na agenda."
+        ctx_agenda = (
+            self._build_context(compromissos)
+            if compromissos
+            else "Nenhum compromisso cadastrado na agenda."
+        )
 
         docs = []
         if self.rag_manager.chunks:
             docs = self.rag_manager.recuperar_hibrido(question, k=5)
 
-        ctx_docs = self.rag_manager.build_doc_context(docs) if docs else "Nenhum material de estudo carregado."
+        ctx_docs = (
+            self.rag_manager.build_doc_context(docs)
+            if docs
+            else "Nenhum material de estudo carregado."
+        )
 
         prompt = self._prompt_priorizar_hoje(question, ctx_agenda, ctx_docs)
         resposta = self.rag_manager.get_response(prompt)
         return {"answer": resposta, "chunks_usados": len(docs)}
 
-    async def montar_plano_estudos(self, question: str) -> dict:
+    async def montar_plano_estudos(
+        self, question: str, gerar_itens_agenda: bool = True
+    ) -> dict:
         compromissos = self.agenda_service.listar()
-        ctx_agenda = self._build_context(compromissos) if compromissos else "Nenhum compromisso cadastrado na agenda."
+        ctx_agenda = (
+            self._build_context(compromissos)
+            if compromissos
+            else "Nenhum compromisso cadastrado na agenda."
+        )
 
         docs = []
         if self.rag_manager.chunks:
@@ -188,16 +255,63 @@ class AgendaTools:
         if not docs:
             return {
                 "answer": "Não há material carregado para planejar os estudos. Por favor, faça upload de arquivos PDF/TXT para continuar.",
-                "chunks_usados": 0
+                "chunks_usados": 0,
+                "agenda_itens": [],
             }
 
         prompt = self._prompt_plano_estudos(question, ctx_agenda, ctx_docs)
         resposta = self.rag_manager.get_response(prompt)
-        return {"answer": resposta, "chunks_usados": len(docs)}
+
+        resultado = {"answer": resposta, "chunks_usados": len(docs), "agenda_itens": []}
+
+        if gerar_itens_agenda:
+            resultado["agenda_itens"] = self._gerar_itens_agenda_do_plano(
+                question, resposta, ctx_agenda
+            )
+
+            for item in resultado["agenda_itens"]:
+                self.agenda_service.criar(
+                    nome=item["nome"],
+                    data=item["data"],
+                    horario=item["horario"],
+                    descricao=item.get("descricao", ""),
+                )
+
+        itens_adicionados_a_agenda = (
+            "Itens adicionados à agenda"
+            if resultado["agenda_itens"]
+            else "Nenhum item adicionado à agenda"
+        )
+        resultado["answer"] += f"\n\n---\n{itens_adicionados_a_agenda}."
+        return resultado
+
+    def _gerar_itens_agenda_do_plano(
+        self, question: str, plano_texto: str, ctx_agenda: str
+    ) -> list[dict]:
+        """
+        Pede à IA um payload JSON serializável com um item por sessão/dia de estudo do plano,
+        já no formato aceito por AgendaService.criar() (nome, data, horario, descricao).
+        Itens malformados são descartados silenciosamente; falha total retorna lista vazia.
+        """
+        prompt_itens = self._prompt_plano_estudos_itens(
+            question, plano_texto, ctx_agenda
+        )
+        raw_itens = self.rag_manager.get_response(prompt_itens)
+        print(f"🗓️ Itens de agenda gerados pelo plano: {raw_itens}")
+
+        itens = self._extract_agenda_items_json(raw_itens)
+        if not itens:
+            return []
+
+        return [item for item in itens if self._validar_item_agenda(item)]
 
     def _topico_presente_nos_docs(self, topico: str, docs: list[dict]) -> bool:
         """Verifica se as palavras-chave do tópico aparecem em pelo menos um chunk recuperado."""
-        palavras = [p.strip().lower() for p in topico.replace(",", " ").split() if len(p.strip()) > 3]
+        palavras = [
+            p.strip().lower()
+            for p in topico.replace(",", " ").split()
+            if len(p.strip()) > 3
+        ]
         if not palavras:
             return True  # sem palavras-chave suficientes para filtrar
         texto_total = " ".join(d.get("texto", "").lower() for d in docs)
@@ -210,14 +324,14 @@ class AgendaTools:
         q = question.lower()
         for prep in ["sobre ", "de ", "acerca de ", "referente a ", "em "]:
             if prep in q:
-                return question[q.index(prep) + len(prep):].strip()
+                return question[q.index(prep) + len(prep) :].strip()
         return question.strip()
 
     async def gerar_perguntas_recall(self, question: str) -> dict:
         if not self.rag_manager.chunks:
             return {
                 "answer": "Não há material carregado para treinar com Active Recall. Faça upload de arquivos PDF/TXT para continuar.",
-                "chunks_usados": 0
+                "chunks_usados": 0,
             }
 
         topico = self._extrair_topico(question)
@@ -225,18 +339,20 @@ class AgendaTools:
         if not docs:
             return {
                 "answer": f"Não encontrei material sobre **{topico}** nos documentos carregados. Faça upload do documento correspondente para continuar.",
-                "chunks_usados": 0
+                "chunks_usados": 0,
             }
 
         # Guard anti-alucinação: verifica se os docs recuperados são realmente sobre o tópico pedido
         if not self._topico_presente_nos_docs(topico, docs):
-            print(f"⚠️ Chunks recuperados não contêm o tópico '{topico}'. Abortando recall.")
+            print(
+                f"⚠️ Chunks recuperados não contêm o tópico '{topico}'. Abortando recall."
+            )
             return {
                 "answer": (
                     f"Não encontrei conteúdo sobre **{topico}** nos documentos carregados.\n"
                     "Para treinar com Active Recall sobre este tema, faça upload do material correspondente."
                 ),
-                "chunks_usados": 0
+                "chunks_usados": 0,
             }
 
         ctx_docs = self.rag_manager.build_doc_context(docs)
@@ -246,7 +362,9 @@ class AgendaTools:
         perguntas = self._extract_recall_json(raw) or []
 
         if len(perguntas) < 5 and len(self.rag_manager.chunks) > 8:
-            print(f"⚠️ Apenas {len(perguntas)} perguntas geradas. Buscando mais chunks...")
+            print(
+                f"⚠️ Apenas {len(perguntas)} perguntas geradas. Buscando mais chunks..."
+            )
             docs_extendidos = self.rag_manager.recuperar_hibrido(question, k=16)
             novos_docs = [d for d in docs_extendidos if d not in docs]
             if novos_docs and self._topico_presente_nos_docs(topico, novos_docs):
@@ -265,7 +383,7 @@ class AgendaTools:
         if not perguntas:
             return {
                 "answer": "Não consegui gerar perguntas com base no material encontrado. Tente reformular a pergunta.",
-                "chunks_usados": len(docs)
+                "chunks_usados": len(docs),
             }
 
         doc_nomes = list(set([d.get("documento", "documento") for d in docs]))
@@ -275,12 +393,12 @@ class AgendaTools:
             self.recall_service.salvar_pergunta_recall(
                 documento=doc_nome,
                 pergunta=p["pergunta"],
-                resposta_correta=p["resposta_esperada"]
+                resposta_correta=p["resposta_esperada"],
             )
 
         linhas_perguntas = []
         for i, p in enumerate(perguntas):
-            linhas_perguntas.append(f"**Pergunta {i+1}**: {p['pergunta']}")
+            linhas_perguntas.append(f"**Pergunta {i + 1}**: {p['pergunta']}")
 
         resposta_final = (
             f"Aqui estão {len(perguntas)} perguntas de **Active Recall** sobre **{topico}**:\n\n"
@@ -296,13 +414,13 @@ class AgendaTools:
         if not pendente:
             return {
                 "answer": "Não encontrei nenhuma pergunta de Active Recall pendente de resposta. Inicie um novo treino com `/gerar_perguntas_recall`.",
-                "chunks_usados": 0
+                "chunks_usados": 0,
             }
 
         prompt = self._prompt_avaliar_resposta(
             pergunta=pendente["pergunta"],
             gabarito=pendente["resposta_correta"],
-            resposta_usuario=question
+            resposta_usuario=question,
         )
 
         raw_eval = self.rag_manager.get_response(prompt)
@@ -320,9 +438,7 @@ class AgendaTools:
             feedback = eval_data.get("feedback", "")
 
         self.recall_service.atualizar_resposta_recall(
-            id=pendente["id"],
-            resposta_usuario=question,
-            avaliacao=avaliacao
+            id=pendente["id"], resposta_usuario=question, avaliacao=avaliacao
         )
 
         ultimas = self.recall_service.obter_ultimas_perguntas(limite=5)
@@ -341,7 +457,11 @@ class AgendaTools:
             score = corretas + (parciais * 0.5)
 
             reforcar = [u["pergunta"] for u in ultimas if u["avaliacao"] != "correta"]
-            lista_reforco = "\n".join([f"- {r}" for r in reforcar]) if reforcar else "Nenhum! Excelente desempenho!"
+            lista_reforco = (
+                "\n".join([f"- {r}" for r in reforcar])
+                if reforcar
+                else "Nenhum! Excelente desempenho!"
+            )
 
             resultado += (
                 f"🎉 **Sessão de Active Recall concluída!**\n"
@@ -352,11 +472,25 @@ class AgendaTools:
             resultado += f"**Próxima pergunta**: {proximo_pendente['pergunta']}"
         else:
             totais = len(concluidas)
-            corretas = sum(1 for u in ultimas if u["resposta_usuario"] is not None and u["avaliacao"] == "correta")
-            parciais = sum(1 for u in ultimas if u["resposta_usuario"] is not None and u["avaliacao"] == "parcial")
+            corretas = sum(
+                1
+                for u in ultimas
+                if u["resposta_usuario"] is not None and u["avaliacao"] == "correta"
+            )
+            parciais = sum(
+                1
+                for u in ultimas
+                if u["resposta_usuario"] is not None and u["avaliacao"] == "parcial"
+            )
             score = corretas + (parciais * 0.5)
-            reforcar = [u["pergunta"] for u in ultimas if u["resposta_usuario"] is not None and u["avaliacao"] != "correta"]
-            lista_reforco = "\n".join([f"- {r}" for r in reforcar]) if reforcar else "Nenhum!"
+            reforcar = [
+                u["pergunta"]
+                for u in ultimas
+                if u["resposta_usuario"] is not None and u["avaliacao"] != "correta"
+            ]
+            lista_reforco = (
+                "\n".join([f"- {r}" for r in reforcar]) if reforcar else "Nenhum!"
+            )
 
             resultado += (
                 f"🎉 **Sessão de Active Recall concluída!**\n"
@@ -371,7 +505,7 @@ class AgendaTools:
         if not historico:
             return {
                 "answer": "Nenhum histórico de treino encontrado ainda. Faça ao menos uma sessão de Active Recall primeiro!",
-                "chunks_usados": 0
+                "chunks_usados": 0,
             }
 
         erros_por_doc = {}
@@ -389,7 +523,9 @@ class AgendaTools:
 
     # ── Prompts e Helpers ─────────────────────────────────────────────────────
 
-    def _prompt_priorizar_hoje(self, question: str, ctx_agenda: str, ctx_docs: str) -> str:
+    def _prompt_priorizar_hoje(
+        self, question: str, ctx_agenda: str, ctx_docs: str
+    ) -> str:
         return (
             "Você é o Jarvis, assistente de estudos e produtividade.\n"
             "O usuário quer saber o que deve PRIORIZAR HOJE. Responda de forma objetiva e direta, listando no máximo 3 itens de alta prioridade para hoje.\n"
@@ -404,7 +540,9 @@ class AgendaTools:
             f"Pergunta do usuário: {question}"
         )
 
-    def _prompt_plano_estudos(self, question: str, ctx_agenda: str, ctx_docs: str) -> str:
+    def _prompt_plano_estudos(
+        self, question: str, ctx_agenda: str, ctx_docs: str
+    ) -> str:
         return (
             "Você é o Jarvis, assistente de estudos. "
             "Monte um plano de estudos detalhado em português com base nas informações fornecidas abaixo.\n"
@@ -419,11 +557,37 @@ class AgendaTools:
             f"Solicitação do usuário: {question}"
         )
 
-    def _prompt_gerar_perguntas(self, question: str, ctx_docs: str, topico: str = "") -> str:
+    def _prompt_plano_estudos_itens(
+        self, question: str, plano_texto: str, ctx_agenda: str
+    ) -> str:
+        return (
+            "Você é um assistente que converte um plano de estudos em itens de agenda.\n"
+            "Com base no PLANO DE ESTUDOS abaixo, gere um array JSON com um item para cada bloco de "
+            "estudo/dia do plano, pronto para ser inserido na agenda do usuário.\n"
+            "Diretrizes OBRIGATÓRIAS:\n"
+            f"- A data atual é {date.today().isoformat()}. Use apenas datas reais a partir desta, no formato YYYY-MM-DD.\n"
+            "- Cada item deve ter um horário plausível no formato HH:MM (use um horário padrão como 09:00 "
+            "se o plano não especificar horário, variando entre itens do mesmo dia para não colidir).\n"
+            '- O campo "nome" deve ser curto e descritivo (ex: "Estudar Capítulo 3 - Termodinâmica").\n'
+            '- O campo "descricao" deve resumir o que será estudado e o material de referência, pode ser vazio.\n'
+            "- NÃO crie itens em datas que já tenham compromisso idêntico na AGENDA ATUAL abaixo.\n"
+            "- Gere um item por tópico/sessão de estudo prevista no plano, na ordem cronológica.\n"
+            "Responda APENAS com um JSON válido (um array de objetos), sem texto antes ou depois, no formato exato:\n"
+            '[{"nome": "...", "data": "YYYY-MM-DD", "horario": "HH:MM", "descricao": "..."}, ...]\n\n'
+            "Se não for possível extrair nenhum item do plano, responda com um array vazio: []\n\n"
+            f"AGENDA ATUAL:\n{ctx_agenda}\n\n"
+            f"PLANO DE ESTUDOS GERADO:\n{plano_texto}\n\n"
+            f"Solicitação original do usuário: {question}"
+        )
+
+    def _prompt_gerar_perguntas(
+        self, question: str, ctx_docs: str, topico: str = ""
+    ) -> str:
         topico_instrucao = (
             f"ATENÇÃO: As perguntas devem ser EXCLUSIVAMENTE sobre o tema '{topico}'. "
             f"Não gere perguntas sobre outros assuntos que não sejam '{topico}'.\n"
-            if topico else ""
+            if topico
+            else ""
         )
         return (
             "Você é o Jarvis, assistente de estudos especializado em Active Recall.\n"
@@ -440,7 +604,9 @@ class AgendaTools:
             f"Solicitação do usuário: {question}"
         )
 
-    def _prompt_avaliar_resposta(self, pergunta: str, gabarito: str, resposta_usuario: str) -> str:
+    def _prompt_avaliar_resposta(
+        self, pergunta: str, gabarito: str, resposta_usuario: str
+    ) -> str:
         return (
             "Você é o Jarvis, assistente de estudos. Avalie a resposta do aluno para a pergunta fornecida abaixo com base no gabarito oficial.\n"
             "Responda APENAS com um JSON válido, sem blocos de texto explicativos antes ou depois. "
@@ -461,7 +627,7 @@ class AgendaTools:
         )
 
     def _extract_recall_json(self, raw: str) -> list | None:
-        match = re.search(r'\[\s*\{.*\}\s*\]', raw, re.DOTALL)
+        match = re.search(r"\[\s*\{.*\}\s*\]", raw, re.DOTALL)
         if match:
             try:
                 return json.loads(match.group())

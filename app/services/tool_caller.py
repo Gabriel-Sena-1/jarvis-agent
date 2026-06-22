@@ -16,11 +16,18 @@ TOOL_CALLS = (
     "montar_plano_estudos",
     "gerar_perguntas_recall",
     "avaliar_resposta_recall",
-    "recomendar_revisao"
+    "recomendar_revisao",
 )
 
+
 class ToolCaller:
-    def __init__(self, rag_manager, agenda_service: AgendaService, recall_service: RecallService, logs_service: LogsService):
+    def __init__(
+        self,
+        rag_manager,
+        agenda_service: AgendaService,
+        recall_service: RecallService,
+        logs_service: LogsService,
+    ):
         self.rag_manager = rag_manager
         self.agenda = AgendaTools(agenda_service, recall_service, rag_manager)
         self.logs_service = logs_service
@@ -62,49 +69,37 @@ class ToolCaller:
             print(f"⚠️ Erro na classificação: {e}")
         return "buscar_material_rag"
 
-async def _buscar_rag(
-    self,
-    question: str,
-    chat_ctx: list = None
-) -> dict:
 
-    resposta, docs = await self.rag_manager.responder_rag(
-        question,
-        chat_ctx=chat_ctx,
-        metodo="hibrido",
-        k=8,
-        alpha=0.45
-    )
+    async def _buscar_rag(self, question: str, chat_ctx: list = None) -> dict:
 
-    qtd = len(docs)
+        resposta, docs = await self.rag_manager.responder_rag(
+            question, chat_ctx=chat_ctx, metodo="hibrido", k=8, alpha=0.45
+        )
 
-    # qualidade baseada na recuperação
-    if qtd >= 5:
-        confianca = "alta"
+        qtd = len(docs)
 
-    elif qtd >= 2:
-        confianca = "media"
+        # qualidade baseada na recuperação
+        if qtd >= 5:
+            confianca = "alta"
 
-    else:
-        confianca = "baixa"
+        elif qtd >= 2:
+            confianca = "media"
 
-    if confianca == "baixa":
+        else:
+            confianca = "baixa"
 
-        return {
-            "answer": (
-                "Não encontrei contexto suficiente "
-                "nos materiais carregados para responder "
-                "com confiança."
-            ),
-            "chunks_usados": qtd,
-            "confianca": confianca
-        }
+        if confianca == "baixa":
+            return {
+                "answer": (
+                    "Não encontrei contexto suficiente "
+                    "nos materiais carregados para responder "
+                    "com confiança."
+                ),
+                "chunks_usados": qtd,
+                "confianca": confianca,
+            }
 
-    return {
-        "answer": resposta,
-        "chunks_usados": qtd,
-        "confianca": confianca
-    }
+        return {"answer": resposta, "chunks_usados": qtd, "confianca": confianca}
 
     async def handle(self, question: str, chat_ctx: list = None) -> dict:
         print(f"🔍 question={question!r}")
@@ -117,10 +112,11 @@ async def _buscar_rag(
         result = await tool_call if inspect.isawaitable(tool_call) else tool_call
         print(f"✅ Resultado da ferramenta '{tipo}': {result}")
         if self.logs_service:
-            self.logs_service.salvar_log(pergunta=question, resposta=str(result), tool=tipo)
+            self.logs_service.salvar_log(
+                pergunta=question, resposta=str(result), tool=tipo
+            )
         return result
-        
-    
+
     def map_tool_to_function(self, tool_name: str, chat_ctx: list = None) -> callable:
         if tool_name == "consultar_agenda":
             return lambda q: self.agenda.consultar(q)
